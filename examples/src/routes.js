@@ -16,5 +16,8 @@ module.exports = {
   },
   "/panels": {
     component: require('./components/panels.vue')
+  },
+  "/modals": {
+    component: require('./components/modals.vue')
   }
 };

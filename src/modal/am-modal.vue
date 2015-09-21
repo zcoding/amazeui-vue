@@ -13,9 +13,6 @@
 <script>
 
 module.exports = {
-
-  
-
 };
 
 </script>
