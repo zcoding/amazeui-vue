@@ -13150,15 +13150,27 @@
 
 	module.exports = {
 
-	  props: ['type', 'radius', 'round', 'active', 'disabled'],
+	  props: {
+	    "type": {
+	      type: String,
+	      default: 'default'
+	    },
+	    "radius": {
+	      type: Boolean,
+	      default: false
+	    },
+	    "round": {
+	      type: Boolean,
+	      default: false
+	    },
+	    "active": {
+	      type: Boolean,
+	      default: false
+	    }
+	  },
 
 	  data: function() {
 	    return {
-	      type: 'default',
-	      radius: false,
-	      round: false,
-	      active: false,
-	      disabled: false
 	    };
 	  },
 	  
@@ -13171,7 +13183,7 @@
 /* 108 */
 /***/ function(module, exports) {
 
-	module.exports = "<button type=\"button\" class=\"am-btn am-btn-{{ type }}\" v-class=\"am-radius: radius,am-round: round,am-active: active\" v-attr=\"disabled: disabled\"><content>This is a button</content></button>";
+	module.exports = "<button type=\"button\" class=\"am-btn am-btn-{{ type }}\" v-class=\"am-radius: radius,am-round: round,am-active: active\"><content>This is a button</content></button>";
 
 /***/ },
 /* 109 */,
@@ -13189,6 +13201,8 @@
 	module.exports = {
 	  
 	  components: {
+	    "amGrid": __webpack_require__(147),
+	    "amCol": __webpack_require__(150),
 	    "amButton": __webpack_require__(106)
 	  },
 	  
@@ -13204,7 +13218,7 @@
 /* 112 */
 /***/ function(module, exports) {
 
-	module.exports = "<am-button></am-button>\r\n  <am-button type=\"primary\" v-on=\"click: alert\">主色按钮</am-button>\r\n  <am-button type=\"secondary\">次色按钮</am-button>\r\n  <am-button type=\"success\" disabled=\"true\">绿色禁用按钮</am-button>\r\n  <am-button type=\"warning\" round=\"true\">橙色圆角按钮</am-button>\r\n  <am-button type=\"danger\" active=\"true\">红色激活按钮</am-button>";
+	module.exports = "<am-grid>\r\n  <am-col sm=\"12\" md=\"8\" lg=\"6\">\r\n    <am-button></am-button>\r\n    <am-button type=\"primary\" v-on=\"click: alert\">主色按钮</am-button>\r\n    <am-button type=\"secondary\" radius>次色圆角按钮</am-button>\r\n    <am-button type=\"success\" disabled round>绿色禁用椭圆按钮</am-button>\r\n    <am-button type=\"warning\" round>橙色椭圆按钮</am-button>\r\n    <am-button type=\"danger\" active>红色激活按钮</am-button>\r\n  </am-col>\r\n  <am-col sm=\"12\" md=\"8\" lg=\"6\">\r\n    <a v-link=\"{ path: '/' }\">返回</a>\r\n  </am-col>\r\n</am-grid>";
 
 /***/ },
 /* 113 */,
@@ -13223,6 +13237,8 @@
 	module.exports = {
 	  
 	  components: {
+	    "amGrid": __webpack_require__(147),
+	    "amCol": __webpack_require__(150),
 	    "amForm": __webpack_require__(117),
 	    "amInput": __webpack_require__(122),
 	    "amCheckbox": __webpack_require__(126),
@@ -13286,7 +13302,7 @@
 /* 120 */
 /***/ function(module, exports) {
 
-	module.exports = "<am-form>\r\n    <am-input type=\"email\" name=\"email\" placeholder=\"请输入邮箱\">邮箱</am-input>\r\n    <am-input name=\"nick\" placeholder=\"请输入昵称\">昵称</am-input>\r\n    <am-input type=\"password\" name=\"passwd\" placeholder=\"请输入密码\">密码</am-input>\r\n    <am-checkbox name=\"when\" items=\"{{ checkboxes }}\"></am-checkbox>\r\n    <am-radio name=\"type\" items=\"{{ radios }}\"></am-radio>\r\n    <am-select label=\"时间\" name=\"when\" items=\"{{ options }}\"></am-select>\r\n  </am-form>";
+	module.exports = "<am-grid>\r\n    <am-col sm=\"12\" md=\"6\" lg=\"8\">\r\n      <am-form>\r\n        <am-input type=\"email\" name=\"email\" placeholder=\"请输入邮箱\">邮箱</am-input>\r\n        <am-input name=\"nick\" placeholder=\"请输入昵称\">昵称</am-input>\r\n        <am-input name=\"nick2\" placeholder=\"请输入昵称\" disabled>被禁用</am-input>\r\n        <am-input type=\"password\" name=\"passwd\" placeholder=\"请输入密码\">密码</am-input>\r\n        <am-checkbox name=\"when\" items=\"{{ checkboxes }}\"></am-checkbox>\r\n        <am-radio name=\"type\" items=\"{{ radios }}\"></am-radio>\r\n        <am-select label=\"时间\" name=\"when\" items=\"{{ options }}\"></am-select>\r\n      </am-form>\r\n    </am-col>\r\n  </am-grid>";
 
 /***/ },
 /* 121 */,
@@ -13303,11 +13319,26 @@
 
 	module.exports = {
 
-	  props: ['type', 'name', 'placeholder'],
+	  props: {
+	    "type": {
+	      type: String,
+	      default: 'text'
+	    },
+	    "name": {
+	      type: String,
+	      required: true
+	    },
+	    "placeholder": {
+	      type: String
+	    },
+	    "disabled": {
+	      type: Boolean,
+	      default: false
+	    }
+	  },
 
 	  data: function() {
 	    return {
-	      "type": "text"
 	    };
 	  }
 
@@ -13317,7 +13348,7 @@
 /* 124 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"am-form-group\">\r\n  <label for=\"f-{{ name }}\"><content></content></label>\r\n  <input id=\"f-{{ name }}\" v-attr=\"type: type, name: name, placeholder: placeholder\">\r\n</div>";
+	module.exports = "<div class=\"am-form-group\">\r\n  <label for=\"f-{{ name }}\"><content></content></label>\r\n  <input id=\"f-{{ name }}\" v-attr=\"type: type, name: name, placeholder: placeholder, disabled: disabled\">\r\n</div>";
 
 /***/ },
 /* 125 */,
@@ -13334,11 +13365,19 @@
 
 	module.exports = {
 	  
-	  props: ['name', 'items'],
+	  props: {
+	    "name": {
+	      type: String,
+	      required: true
+	    },
+	    "items": {
+	      type: Array,
+	      required: true
+	    }
+	  },
 	  
 	  data: function() {
 	    return {
-	      "items": []
 	    };
 	  }
 	  
@@ -13365,11 +13404,19 @@
 
 	module.exports = {
 	  
-	  props: ['name', 'items'],
+	  props: {
+	    "name": {
+	      type: String,
+	      required: true
+	    },
+	    "items": {
+	      type: Array,
+	      required: true
+	    }
+	  },
 	  
 	  data: function() {
 	    return {
-	      "items": []
 	    };
 	  }
 	  
@@ -13396,7 +13443,20 @@
 
 	module.exports = {
 	  
-	  props: ['label', 'name', 'items'],
+	  props: {
+	    "label": {
+	      type: String,
+	      default: ''
+	    },
+	    "name": {
+	      type: String,
+	      required: true
+	    },
+	    "items": {
+	      type: Array,
+	      required: true
+	    }
+	  },
 	  
 	  data: function() {
 	    return {
@@ -13409,7 +13469,7 @@
 /* 136 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"am-form-group\">\r\n  <label for=\"f-{{ name }}\">{{ label }}</label>\r\n  <select id=\"f-{{ name }}\" name=\"{{ name }}\">\r\n    <option value=\"{{ item.value }}\" v-repeat=\"item in items\">{{ item.label }}</option>\r\n  </select>\r\n  <span class=\"am-form-caret\"></span>\r\n</div>";
+	module.exports = "<div class=\"am-form-group\">\r\n  <label for=\"f-{{ name }}\" v-if=\"label !== ''\">{{ label }}</label>\r\n  <select id=\"f-{{ name }}\" name=\"{{ name }}\">\r\n    <option value=\"{{ item.value }}\" v-repeat=\"item in items\">{{ item.label }}</option>\r\n  </select>\r\n  <span class=\"am-form-caret\"></span>\r\n</div>";
 
 /***/ },
 /* 137 */,
@@ -13466,19 +13526,111 @@
 
 	module.exports = {
 	  
-	  props: ['items', 'headers', 'bordered', 'radius', 'striped', 'hover', 'compact'],
+	  props: {
+	    "bordered": {
+	      type: Boolean,
+	      default: false
+	    },
+	    "radius": {
+	      type: Boolean,
+	      default: false
+	    },
+	    "striped": {
+	      type: Boolean,
+	      default: false
+	    },
+	    "hover": {
+	      type: Boolean,
+	      default: false
+	    },
+	    "compact": {
+	      type: Boolean,
+	      default: false
+	    },
+	    "items": {
+	      type: Array,
+	      default: function() {
+	        return [];
+	      }
+	    },
+	    "headers": {
+	      type: Array,
+	      default: function() {
+	        return [];
+	      }
+	    }
+	  },
 	  
 	  data: function() {
 	    return {
-	      bordered: false,
-	      radius: false,
-	      striped: false,
-	      hover: false,
-	      compact: false
 	    };
 	  }
 	  
 	};
+
+/***/ },
+/* 145 */,
+/* 146 */,
+/* 147 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(148)
+	module.exports.template = __webpack_require__(149)
+
+
+/***/ },
+/* 148 */
+/***/ function(module, exports) {
+
+	module.exports = {};
+
+/***/ },
+/* 149 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"am-g\">\r\n  <content></content>\r\n</div>";
+
+/***/ },
+/* 150 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(151)
+	module.exports.template = __webpack_require__(152)
+
+
+/***/ },
+/* 151 */
+/***/ function(module, exports) {
+
+	module.exports = {
+	  
+	  props: {
+	    "sm": {
+	      type: Number,
+	      default: 0
+	    },
+	    "md": {
+	      type: Number,
+	      default: 0
+	    },
+	    "lg": {
+	      type: Number,
+	      default: 0
+	    }
+	  },
+	  
+	  data: function() {
+	    return {
+	    };
+	  }
+	  
+	};
+
+/***/ },
+/* 152 */
+/***/ function(module, exports) {
+
+	module.exports = "<div v-class=\"\r\n  am-u-sm-1: sm === 1,\r\n  am-u-sm-2: sm === 2,\r\n  am-u-sm-3: sm === 3,\r\n  am-u-sm-4: sm === 4,\r\n  am-u-sm-5: sm === 5,\r\n  am-u-sm-6: sm === 6,\r\n  am-u-sm-7: sm === 7,\r\n  am-u-sm-8: sm === 8,\r\n  am-u-sm-9: sm === 9,\r\n  am-u-sm-10: sm === 10,\r\n  am-u-sm-11: sm === 11,\r\n  am-u-sm-12: sm === 12,\r\n  am-u-md-1: md === 1,\r\n  am-u-md-2: md === 2,\r\n  am-u-md-3: md === 3,\r\n  am-u-md-4: md === 4,\r\n  am-u-md-5: md === 5,\r\n  am-u-md-6: md === 6,\r\n  am-u-md-7: md === 7,\r\n  am-u-md-8: md === 8,\r\n  am-u-md-9: md === 9,\r\n  am-u-md-10: md === 10,\r\n  am-u-md-11: md === 11,\r\n  am-u-md-12: md === 12,\r\n  am-u-lg-1: lg === 1,\r\n  am-u-lg-2: lg === 2,\r\n  am-u-lg-3: lg === 3,\r\n  am-u-lg-4: lg === 4,\r\n  am-u-lg-5: lg === 5,\r\n  am-u-lg-6: lg === 6,\r\n  am-u-lg-7: lg === 7,\r\n  am-u-lg-8: lg === 8,\r\n  am-u-lg-9: lg === 9,\r\n  am-u-lg-10: lg === 10,\r\n  am-u-lg-11: lg === 11,\r\n  am-u-lg-12: lg === 12\r\n\">\r\n  <content></content>\r\n</div>";
 
 /***/ }
 /******/ ]);

@@ -12,11 +12,19 @@
   
 module.exports = {
   
-  props: ['name', 'items'],
+  props: {
+    "name": {
+      type: String,
+      required: true
+    },
+    "items": {
+      type: Array,
+      required: true
+    }
+  },
   
   data: function() {
     return {
-      "items": []
     };
   }
   

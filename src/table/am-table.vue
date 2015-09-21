@@ -19,15 +19,43 @@
   
 module.exports = {
   
-  props: ['items', 'headers', 'bordered', 'radius', 'striped', 'hover', 'compact'],
+  props: {
+    "bordered": {
+      type: Boolean,
+      default: false
+    },
+    "radius": {
+      type: Boolean,
+      default: false
+    },
+    "striped": {
+      type: Boolean,
+      default: false
+    },
+    "hover": {
+      type: Boolean,
+      default: false
+    },
+    "compact": {
+      type: Boolean,
+      default: false
+    },
+    "items": {
+      type: Array,
+      default: function() {
+        return [];
+      }
+    },
+    "headers": {
+      type: Array,
+      default: function() {
+        return [];
+      }
+    }
+  },
   
   data: function() {
     return {
-      bordered: false,
-      radius: false,
-      striped: false,
-      hover: false,
-      compact: false
     };
   }
   
