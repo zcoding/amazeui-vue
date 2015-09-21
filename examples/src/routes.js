@@ -10,5 +10,11 @@ module.exports = {
   },
   "/tables": {
     component: require('./components/tables.vue')
+  },
+  "/list": {
+    component: require('./components/list.vue')
+  },
+  "/panels": {
+    component: require('./components/panels.vue')
   }
 };

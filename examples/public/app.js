@@ -13108,6 +13108,12 @@
 	  },
 	  "/tables": {
 	    component: __webpack_require__(139)
+	  },
+	  "/list": {
+	    component: __webpack_require__(155)
+	  },
+	  "/panels": {
+	    component: __webpack_require__(167)
 	  }
 	};
 
@@ -13125,7 +13131,7 @@
 /* 103 */
 /***/ function(module, exports) {
 
-	module.exports = "<ul>\r\n    <li><a v-link=\"{ path: '/buttons' }\">按钮组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/forms' }\">表单组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/tables' }\">表格组件例子</a></li>\r\n  </ul>";
+	module.exports = "<ul>\r\n    <li><a v-link=\"{ path: '/buttons' }\">按钮组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/forms' }\">表单组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/tables' }\">表格组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/list' }\">列表组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/panels' }\">面板组件例子</a></li>\r\n  </ul>";
 
 /***/ },
 /* 104 */
@@ -13631,6 +13637,133 @@
 /***/ function(module, exports) {
 
 	module.exports = "<div v-class=\"\r\n  am-u-sm-1: sm === 1,\r\n  am-u-sm-2: sm === 2,\r\n  am-u-sm-3: sm === 3,\r\n  am-u-sm-4: sm === 4,\r\n  am-u-sm-5: sm === 5,\r\n  am-u-sm-6: sm === 6,\r\n  am-u-sm-7: sm === 7,\r\n  am-u-sm-8: sm === 8,\r\n  am-u-sm-9: sm === 9,\r\n  am-u-sm-10: sm === 10,\r\n  am-u-sm-11: sm === 11,\r\n  am-u-sm-12: sm === 12,\r\n  am-u-md-1: md === 1,\r\n  am-u-md-2: md === 2,\r\n  am-u-md-3: md === 3,\r\n  am-u-md-4: md === 4,\r\n  am-u-md-5: md === 5,\r\n  am-u-md-6: md === 6,\r\n  am-u-md-7: md === 7,\r\n  am-u-md-8: md === 8,\r\n  am-u-md-9: md === 9,\r\n  am-u-md-10: md === 10,\r\n  am-u-md-11: md === 11,\r\n  am-u-md-12: md === 12,\r\n  am-u-lg-1: lg === 1,\r\n  am-u-lg-2: lg === 2,\r\n  am-u-lg-3: lg === 3,\r\n  am-u-lg-4: lg === 4,\r\n  am-u-lg-5: lg === 5,\r\n  am-u-lg-6: lg === 6,\r\n  am-u-lg-7: lg === 7,\r\n  am-u-lg-8: lg === 8,\r\n  am-u-lg-9: lg === 9,\r\n  am-u-lg-10: lg === 10,\r\n  am-u-lg-11: lg === 11,\r\n  am-u-lg-12: lg === 12\r\n\">\r\n  <content></content>\r\n</div>";
+
+/***/ },
+/* 153 */,
+/* 154 */,
+/* 155 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(156)
+	module.exports.template = __webpack_require__(160)
+
+
+/***/ },
+/* 156 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = {
+	  components: {
+	    "amList": __webpack_require__(162)
+	  }
+	};
+
+/***/ },
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */
+/***/ function(module, exports) {
+
+	module.exports = "<am-list>\r\n  <li><a v-link=\"{ path: '/' }\">首页</a></li>\r\n  <li><a v-link=\"{ path: '/buttons' }\">按钮</a></li>\r\n  <li><a v-link=\"{ path: '/forms' }\">表单</a></li>\r\n  <li><a v-link=\"{ path: '/tables' }\">表格</a></li>\r\n</am-list>";
+
+/***/ },
+/* 161 */,
+/* 162 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(163)
+	module.exports.template = __webpack_require__(164)
+
+
+/***/ },
+/* 163 */
+/***/ function(module, exports) {
+
+	module.exports = {};
+
+/***/ },
+/* 164 */
+/***/ function(module, exports) {
+
+	module.exports = "<ul class=\"am-list\">\r\n  <content></content>\r\n</ul>";
+
+/***/ },
+/* 165 */,
+/* 166 */,
+/* 167 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(168)
+	module.exports.template = __webpack_require__(172)
+
+
+/***/ },
+/* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = {
+	  
+	  components: {
+	    "amGrid": __webpack_require__(147),
+	    "amCol": __webpack_require__(150),
+	    "amPanel": __webpack_require__(169),
+	    "amTable": __webpack_require__(141),
+	    "amList": __webpack_require__(162)
+	  },
+
+	  data: function() {
+	    return {
+	      items: [[1, 2, 3, 4, 5], [3, 4, 5, 6, 7]]
+	    };
+	  }
+
+	};
+
+/***/ },
+/* 169 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(170)
+	module.exports.template = __webpack_require__(171)
+
+
+/***/ },
+/* 170 */
+/***/ function(module, exports) {
+
+	module.exports = {
+	  
+	  props: {
+	    "style": {
+	      type: String,
+	      default: 'default'
+	    },
+	    "header": {
+	      type: String,
+	      default: ''
+	    }
+	  },
+	  
+	  data: function() {
+	    return {};
+	  }
+	  
+	  // TODO: https://github.com/allmobilize/amazeui/blob/master/js/ui.collapse.js
+	  
+	};
+
+/***/ },
+/* 171 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"am-panel am-panel-{{ style }}\">\r\n  <div class=\"am-panel-hd\" v-if=\"header !== ''\">{{ header }}</div>\r\n  <content></content>\r\n</div>";
+
+/***/ },
+/* 172 */
+/***/ function(module, exports) {
+
+	module.exports = "<am-grid>\r\n  <am-col sm=\"12\" md=\"8\" lg=\"6\">\r\n  \r\n    <am-panel header=\"面板标题\" style=\"success\">\r\n      <div class=\"am-panel-bd\">面板内容</div>\r\n    </am-panel>\r\n    \r\n    <am-panel header=\"面板+表格\" style=\"primary\">\r\n      <am-table items=\"{{ items }}\"></am-table>\r\n    </am-panel>\r\n    \r\n    <am-panel header=\"面板+列表\" style=\"warning\">\r\n      <am-list>\r\n        <li><a v-link=\"{ path: '/' }\">首页</a></li>\r\n        <li><a v-link=\"{ path: '/buttons' }\">按钮</a></li>\r\n        <li><a v-link=\"{ path: '/forms' }\">表单</a></li>\r\n        <li><a v-link=\"{ path: '/tables' }\">表格</a></li>\r\n      </am-list>\r\n    </am-panel>\r\n    \r\n  </am-col>\r\n</am-grid>";
 
 /***/ }
 /******/ ]);
