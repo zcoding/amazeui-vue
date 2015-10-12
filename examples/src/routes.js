@@ -8,9 +8,6 @@ module.exports = {
   "/forms": {
     component: require('./components/forms.vue')
   },
-  "/tables": {
-    component: require('./components/tables.vue')
-  },
   "/list": {
     component: require('./components/list.vue')
   },
@@ -19,5 +16,8 @@ module.exports = {
   },
   "/modals": {
     component: require('./components/modals.vue')
+  },
+  "/paginations": {
+    component: require('./components/paginations.vue')
   }
 };
