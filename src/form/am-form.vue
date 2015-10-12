@@ -15,19 +15,33 @@
 
 module.exports = {
 
-  props: ['action', 'method'],
+  props: {
+    "action": {
+      type: String,
+      default: '/api?',
+      required: false
+    },
+    "method": {
+      type: String,
+      default: 'GET',
+      required: false
+    },
+    "submit": {
+      type: Function,
+      required: true,
+      default: function(event) {
+        event.preventDefault();
+        return false;
+      }
+    }
+  },
 
   data: function() {
     return {
-      action: '?',
-      method: 'GET'
     };
   },
-  
+
   methods: {
-    submit: function(event) {
-      // this.$disaptch('submit');
-    }
   }
 
 };

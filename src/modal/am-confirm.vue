@@ -1,13 +1,13 @@
 <template>
 
-<am-modal>
-  <div class="am-modal-hd">{{ title }}</div>
-  <div class="am-modal-bd">{{ question }}</div>
+<modal show="{{@ show }}" close-via-dimmer="false">
+  <div class="am-modal-hd" v-if="title !== ''">{{ title }}</div>
+  <div class="am-modal-bd"><content>Are you sure ?</content></div>
   <div class="am-modal-footer">
     <span class="am-modal-btn" v-on="click: cancel">取消</span>
     <span class="am-modal-btn" v-on="click: ok">确定</span>
   </div>
-</am-modal>
+</modal>
 
 </template>
 
@@ -15,10 +15,32 @@
 
 module.exports = {
 
-  props: ['title', 'question', 'ok', 'cancel'],
+  props: {
+    title: {
+      type: String,
+      default: ''
+    },
+    show: {
+      type: Boolean,
+      default: false,
+      twoWay: true
+    },
+    ok: {
+      type: Function,
+      default: function() {
+        return false;
+      }
+    },
+    cancel: {
+      type: Function,
+      default: function() {
+        return false;
+      }
+    }
+  },
 
   components: {
-    "amModal": require('./am-modal.vue')
+    "modal": require('./am-modal.vue')
   }
 
 };

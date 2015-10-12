@@ -2,7 +2,7 @@
 
 <div class="am-form-group">
   <label for="f-{{ name }}"><content></content></label>
-  <input id="f-{{ name }}" v-attr="type: type, name: name, placeholder: placeholder, disabled: disabled">
+  <input id="f-{{ name }}" v-attr="type: type, name: name, placeholder: placeholder, disabled: disabled" v-model="model">
 </div>
 
 </template>
@@ -26,6 +26,12 @@ module.exports = {
     "disabled": {
       type: Boolean,
       default: false
+    },
+    "model": {
+      type: String,
+      twoWay: true,
+      default: '',
+      required: false
     }
   },
 
