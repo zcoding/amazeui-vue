@@ -7,9 +7,11 @@
   am-btn-xl: xl,
   am-btn-lg: lg,
   am-btn-sm: sm,
-  am-btn-xs: xs" v-attr="
+  am-btn-xs: xs,
+  am-btn-block: block" v-attr="
   disabled: disabled || loading
   ">
+  <span class="am-icon-circle-o-notch am-icon-spin" v-if="loading"></span>
   <content>This is a button</content>
 </button>
 
@@ -60,15 +62,11 @@ module.exports = {
     "xs": {
       type: Boolean,
       default: false
+    },
+    "block": {
+      type: Boolean,
+      default: false
     }
-  },
-
-  data: function() {
-    return {
-    };
-  },
-
-  methods: {
   }
 
 };

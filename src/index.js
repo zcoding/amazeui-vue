@@ -9,3 +9,5 @@ exports.modal = require('./modal');
 
 exports.ui = require('./utils/ui');
 exports.pagination = require('./utils/pagination.vue');
+
+exports.alert = require('./alert');

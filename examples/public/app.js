@@ -44,9 +44,9 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Vue = __webpack_require__(21);
-	var VueRouter = __webpack_require__(88);
-	var routes = __webpack_require__(120);
+	var Vue = __webpack_require__(27);
+	var VueRouter = __webpack_require__(94);
+	var routes = __webpack_require__(126);
 
 	Vue.config.debug = true;
 
@@ -82,10 +82,16 @@
 /* 18 */,
 /* 19 */,
 /* 20 */,
-/* 21 */
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 	var extend = _.extend
 
 	/**
@@ -110,7 +116,7 @@
 	 * Mixin global API
 	 */
 
-	extend(Vue, __webpack_require__(31))
+	extend(Vue, __webpack_require__(37))
 
 	/**
 	 * Vue and every constructor that extends Vue has an
@@ -123,9 +129,9 @@
 
 	Vue.options = {
 	  replace: true,
-	  directives: __webpack_require__(47),
-	  elementDirectives: __webpack_require__(69),
-	  filters: __webpack_require__(72),
+	  directives: __webpack_require__(53),
+	  elementDirectives: __webpack_require__(75),
+	  filters: __webpack_require__(78),
 	  transitions: {},
 	  components: {},
 	  partials: {}
@@ -157,42 +163,42 @@
 	 * Mixin internal instance methods
 	 */
 
-	extend(p, __webpack_require__(74))
-	extend(p, __webpack_require__(75))
-	extend(p, __webpack_require__(76))
 	extend(p, __webpack_require__(80))
+	extend(p, __webpack_require__(81))
 	extend(p, __webpack_require__(82))
+	extend(p, __webpack_require__(86))
+	extend(p, __webpack_require__(88))
 
 	/**
 	 * Mixin public API methods
 	 */
 
-	extend(p, __webpack_require__(83))
-	extend(p, __webpack_require__(84))
-	extend(p, __webpack_require__(85))
-	extend(p, __webpack_require__(86))
-	extend(p, __webpack_require__(87))
+	extend(p, __webpack_require__(89))
+	extend(p, __webpack_require__(90))
+	extend(p, __webpack_require__(91))
+	extend(p, __webpack_require__(92))
+	extend(p, __webpack_require__(93))
 
 	module.exports = _.Vue = Vue
 
 
 /***/ },
-/* 22 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var lang = __webpack_require__(23)
+	var lang = __webpack_require__(29)
 	var extend = lang.extend
 
 	extend(exports, lang)
-	extend(exports, __webpack_require__(24))
-	extend(exports, __webpack_require__(25))
-	extend(exports, __webpack_require__(28))
-	extend(exports, __webpack_require__(29))
 	extend(exports, __webpack_require__(30))
+	extend(exports, __webpack_require__(31))
+	extend(exports, __webpack_require__(34))
+	extend(exports, __webpack_require__(35))
+	extend(exports, __webpack_require__(36))
 
 
 /***/ },
-/* 23 */
+/* 29 */
 /***/ function(module, exports) {
 
 	/**
@@ -508,7 +514,7 @@
 
 
 /***/ },
-/* 24 */
+/* 30 */
 /***/ function(module, exports) {
 
 	// can we use __proto__?
@@ -599,11 +605,11 @@
 
 
 /***/ },
-/* 25 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var config = __webpack_require__(27)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var config = __webpack_require__(33)
 
 	/**
 	 * Query an element selector if it's not an element already.
@@ -875,10 +881,10 @@
 	    : document.createTextNode(persist ? ' ' : '')
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 26 */
+/* 32 */
 /***/ function(module, exports) {
 
 	// shim for using process in browser
@@ -975,7 +981,7 @@
 
 
 /***/ },
-/* 27 */
+/* 33 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -1105,11 +1111,11 @@
 
 
 /***/ },
-/* 28 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var config = __webpack_require__(27)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var config = __webpack_require__(33)
 	var extend = _.extend
 
 	/**
@@ -1466,13 +1472,13 @@
 	  return asset
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 29 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
 
 	/**
 	 * Check if an element is a component, if yes return its
@@ -1597,10 +1603,10 @@
 	  return Object.prototype.toString.call(val).slice(8, -1)
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 30 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(process) {/**
@@ -1609,7 +1615,7 @@
 
 	if (process.env.NODE_ENV !== 'production') {
 
-	  var config = __webpack_require__(27)
+	  var config = __webpack_require__(33)
 	  var hasConsole = typeof console !== 'undefined'
 
 	  /**
@@ -1668,14 +1674,14 @@
 	  }
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 31 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
-	var config = __webpack_require__(27)
+	var _ = __webpack_require__(28)
+	var config = __webpack_require__(33)
 
 	/**
 	 * Expose useful internals
@@ -1684,14 +1690,14 @@
 	exports.util = _
 	exports.config = config
 	exports.nextTick = _.nextTick
-	exports.compiler = __webpack_require__(32)
+	exports.compiler = __webpack_require__(38)
 
 	exports.parsers = {
-	  path: __webpack_require__(42),
-	  text: __webpack_require__(35),
-	  template: __webpack_require__(44),
-	  directive: __webpack_require__(37),
-	  expression: __webpack_require__(41)
+	  path: __webpack_require__(48),
+	  text: __webpack_require__(41),
+	  template: __webpack_require__(50),
+	  directive: __webpack_require__(43),
+	  expression: __webpack_require__(47)
 	}
 
 	/**
@@ -1796,27 +1802,27 @@
 
 
 /***/ },
-/* 32 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 
-	_.extend(exports, __webpack_require__(33))
-	_.extend(exports, __webpack_require__(46))
+	_.extend(exports, __webpack_require__(39))
+	_.extend(exports, __webpack_require__(52))
 
 
 /***/ },
-/* 33 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var compileProps = __webpack_require__(34)
-	var config = __webpack_require__(27)
-	var textParser = __webpack_require__(35)
-	var dirParser = __webpack_require__(37)
-	var templateParser = __webpack_require__(44)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var compileProps = __webpack_require__(40)
+	var config = __webpack_require__(33)
+	var textParser = __webpack_require__(41)
+	var dirParser = __webpack_require__(43)
+	var templateParser = __webpack_require__(50)
 	var resolveAsset = _.resolveAsset
-	var componentDef = __webpack_require__(45)
+	var componentDef = __webpack_require__(51)
 
 	// terminal directives
 	var terminalDirectives = [
@@ -2436,19 +2442,19 @@
 	  return a > b ? 1 : -1
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 34 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var textParser = __webpack_require__(35)
-	var propDef = __webpack_require__(38)
-	var propBindingModes = __webpack_require__(27)._propBindingModes
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var textParser = __webpack_require__(41)
+	var propDef = __webpack_require__(44)
+	var propBindingModes = __webpack_require__(33)._propBindingModes
 
 	// regexes
-	var identRE = __webpack_require__(42).identRE
+	var identRE = __webpack_require__(48).identRE
 	var dataAttrRE = /^data-/
 	var settablePathRE = /^[A-Za-z_$][\w$]*(\.[A-Za-z_$][\w$]*|\[[^\[\]]+\])*$/
 	var literalValueRE = /^(true|false)$|^\d.*/
@@ -2626,15 +2632,15 @@
 	    : def
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 35 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Cache = __webpack_require__(36)
-	var config = __webpack_require__(27)
-	var dirParser = __webpack_require__(37)
+	var Cache = __webpack_require__(42)
+	var config = __webpack_require__(33)
+	var dirParser = __webpack_require__(43)
 	var regexEscapeRE = /[-.*+?^${}()|[\]\/\\]/g
 	var cache, tagRE, htmlRE, firstChar, lastChar
 
@@ -2811,7 +2817,7 @@
 
 
 /***/ },
-/* 36 */
+/* 42 */
 /***/ function(module, exports) {
 
 	/**
@@ -2929,11 +2935,11 @@
 
 
 /***/ },
-/* 37 */
+/* 43 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
-	var Cache = __webpack_require__(36)
+	var _ = __webpack_require__(28)
+	var Cache = __webpack_require__(42)
 	var cache = new Cache(1000)
 	var argRE = /^[^\{\?]+$|^'[^']*'$|^"[^"]*"$/
 	var filterTokenRE = /[^\s'"]+|'[^']*'|"[^"]*"/g
@@ -3115,7 +3121,7 @@
 
 
 /***/ },
-/* 38 */
+/* 44 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// NOTE: the prop internal directive is compiled and linked
@@ -3123,9 +3129,9 @@
 	// The purpose is to make the initial prop values available
 	// inside `created` hooks and `data` functions.
 
-	var _ = __webpack_require__(22)
-	var Watcher = __webpack_require__(39)
-	var bindingModes = __webpack_require__(27)._propBindingModes
+	var _ = __webpack_require__(28)
+	var Watcher = __webpack_require__(45)
+	var bindingModes = __webpack_require__(33)._propBindingModes
 
 	module.exports = {
 
@@ -3183,14 +3189,14 @@
 
 
 /***/ },
-/* 39 */
+/* 45 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var config = __webpack_require__(27)
-	var Dep = __webpack_require__(40)
-	var expParser = __webpack_require__(41)
-	var batcher = __webpack_require__(43)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var config = __webpack_require__(33)
+	var Dep = __webpack_require__(46)
+	var expParser = __webpack_require__(47)
+	var batcher = __webpack_require__(49)
 	var uid = 0
 
 	/**
@@ -3500,13 +3506,13 @@
 
 	module.exports = Watcher
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 40 */
+/* 46 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 
 	/**
 	 * A dep is an observable that can have multiple
@@ -3568,12 +3574,12 @@
 
 
 /***/ },
-/* 41 */
+/* 47 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var Path = __webpack_require__(42)
-	var Cache = __webpack_require__(36)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var Path = __webpack_require__(48)
+	var Cache = __webpack_require__(42)
 	var expressionCache = new Cache(1000)
 
 	var allowedKeywords =
@@ -3836,14 +3842,14 @@
 	    exp.slice(0, 5) !== 'Math.'
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 42 */
+/* 48 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var Cache = __webpack_require__(36)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var Cache = __webpack_require__(42)
 	var pathCache = new Cache(1000)
 	var identRE = exports.identRE = /^[$_a-zA-Z]+[\w$]*$/
 
@@ -4191,14 +4197,14 @@
 	  )
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 43 */
+/* 49 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var config = __webpack_require__(27)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var config = __webpack_require__(33)
 
 	// we have two separate queues: one for directive updates
 	// and one for user watcher registered via $watch().
@@ -4296,14 +4302,14 @@
 	  }
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 44 */
+/* 50 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
-	var Cache = __webpack_require__(36)
+	var _ = __webpack_require__(28)
+	var Cache = __webpack_require__(42)
 	var templateCache = new Cache(1000)
 	var idSelectorCache = new Cache(1000)
 
@@ -4587,12 +4593,12 @@
 
 
 /***/ },
-/* 45 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var config = __webpack_require__(27)
-	var templateParser = __webpack_require__(44)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var config = __webpack_require__(33)
+	var templateParser = __webpack_require__(50)
 
 	module.exports = {
 
@@ -4935,15 +4941,15 @@
 	  }
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 46 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var config = __webpack_require__(27)
-	var templateParser = __webpack_require__(44)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var config = __webpack_require__(33)
+	var templateParser = __webpack_require__(50)
 
 	/**
 	 * Process an element or a DocumentFragment based on a
@@ -5086,43 +5092,43 @@
 	  }
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 47 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// manipulation directives
-	exports.text = __webpack_require__(48)
-	exports.html = __webpack_require__(49)
-	exports.attr = __webpack_require__(50)
-	exports.show = __webpack_require__(51)
-	exports['class'] = __webpack_require__(53)
-	exports.el = __webpack_require__(54)
-	exports.ref = __webpack_require__(55)
-	exports.cloak = __webpack_require__(56)
-	exports.style = __webpack_require__(57)
-	exports.transition = __webpack_require__(58)
+	exports.text = __webpack_require__(54)
+	exports.html = __webpack_require__(55)
+	exports.attr = __webpack_require__(56)
+	exports.show = __webpack_require__(57)
+	exports['class'] = __webpack_require__(59)
+	exports.el = __webpack_require__(60)
+	exports.ref = __webpack_require__(61)
+	exports.cloak = __webpack_require__(62)
+	exports.style = __webpack_require__(63)
+	exports.transition = __webpack_require__(64)
 
 	// event listener directives
-	exports.on = __webpack_require__(61)
-	exports.model = __webpack_require__(62)
+	exports.on = __webpack_require__(67)
+	exports.model = __webpack_require__(68)
 
 	// logic control directives
-	exports.repeat = __webpack_require__(67)
-	exports['if'] = __webpack_require__(68)
+	exports.repeat = __webpack_require__(73)
+	exports['if'] = __webpack_require__(74)
 
 	// internal directives that should not be used directly
 	// but we still want to expose them for advanced usage.
-	exports._component = __webpack_require__(45)
-	exports._prop = __webpack_require__(38)
+	exports._component = __webpack_require__(51)
+	exports._prop = __webpack_require__(44)
 
 
 /***/ },
-/* 48 */
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 
 	module.exports = {
 
@@ -5139,11 +5145,11 @@
 
 
 /***/ },
-/* 49 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
-	var templateParser = __webpack_require__(44)
+	var _ = __webpack_require__(28)
+	var templateParser = __webpack_require__(50)
 
 	module.exports = {
 
@@ -5185,7 +5191,7 @@
 
 
 /***/ },
-/* 50 */
+/* 56 */
 /***/ function(module, exports) {
 
 	// xlink
@@ -5250,10 +5256,10 @@
 
 
 /***/ },
-/* 51 */
+/* 57 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var transition = __webpack_require__(52)
+	var transition = __webpack_require__(58)
 
 	module.exports = function (value) {
 	  var el = this.el
@@ -5264,10 +5270,10 @@
 
 
 /***/ },
-/* 52 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 
 	/**
 	 * Append with transition.
@@ -5398,10 +5404,10 @@
 
 
 /***/ },
-/* 53 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 	var addClass = _.addClass
 	var removeClass = _.removeClass
 
@@ -5474,7 +5480,7 @@
 
 
 /***/ },
-/* 54 */
+/* 60 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -5492,10 +5498,10 @@
 
 
 /***/ },
-/* 55 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
 
 	module.exports = {
 
@@ -5518,13 +5524,13 @@
 	  }
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 56 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var config = __webpack_require__(27)
+	var config = __webpack_require__(33)
 
 	module.exports = {
 	  bind: function () {
@@ -5537,10 +5543,10 @@
 
 
 /***/ },
-/* 57 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 	var prefixes = ['-webkit-', '-moz-', '-ms-']
 	var camelPrefixes = ['Webkit', 'Moz', 'ms']
 	var importantRE = /!important;?$/
@@ -5653,11 +5659,11 @@
 
 
 /***/ },
-/* 58 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
-	var Transition = __webpack_require__(59)
+	var _ = __webpack_require__(28)
+	var Transition = __webpack_require__(65)
 
 	module.exports = {
 
@@ -5685,11 +5691,11 @@
 
 
 /***/ },
-/* 59 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
-	var queue = __webpack_require__(60)
+	var _ = __webpack_require__(28)
+	var queue = __webpack_require__(66)
 	var addClass = _.addClass
 	var removeClass = _.removeClass
 	var transitionEndEvent = _.transitionEndEvent
@@ -6048,10 +6054,10 @@
 
 
 /***/ },
-/* 60 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 	var queue = []
 	var queued = false
 
@@ -6089,10 +6095,10 @@
 
 
 /***/ },
-/* 61 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
 
 	module.exports = {
 
@@ -6152,19 +6158,19 @@
 	  }
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 62 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
 
 	var handlers = {
-	  text: __webpack_require__(63),
-	  radio: __webpack_require__(64),
-	  select: __webpack_require__(65),
-	  checkbox: __webpack_require__(66)
+	  text: __webpack_require__(69),
+	  radio: __webpack_require__(70),
+	  select: __webpack_require__(71),
+	  checkbox: __webpack_require__(72)
 	}
 
 	module.exports = {
@@ -6241,13 +6247,13 @@
 	  }
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 63 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 
 	module.exports = {
 
@@ -6382,10 +6388,10 @@
 
 
 /***/ },
-/* 64 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 
 	module.exports = {
 
@@ -6421,12 +6427,12 @@
 
 
 /***/ },
-/* 65 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var Watcher = __webpack_require__(39)
-	var dirParser = __webpack_require__(37)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var Watcher = __webpack_require__(45)
+	var dirParser = __webpack_require__(43)
 
 	module.exports = {
 
@@ -6661,13 +6667,13 @@
 	  return -1
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 66 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 
 	module.exports = {
 
@@ -6712,17 +6718,17 @@
 
 
 /***/ },
-/* 67 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var config = __webpack_require__(27)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var config = __webpack_require__(33)
 	var isObject = _.isObject
 	var isPlainObject = _.isPlainObject
-	var textParser = __webpack_require__(35)
-	var expParser = __webpack_require__(41)
-	var templateParser = __webpack_require__(44)
-	var compiler = __webpack_require__(32)
+	var textParser = __webpack_require__(41)
+	var expParser = __webpack_require__(47)
+	var templateParser = __webpack_require__(50)
+	var compiler = __webpack_require__(38)
 	var uid = 0
 
 	// async component resolution states
@@ -7486,17 +7492,17 @@
 	    type === 'boolean'
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 68 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var compiler = __webpack_require__(32)
-	var templateParser = __webpack_require__(44)
-	var transition = __webpack_require__(52)
-	var Cache = __webpack_require__(36)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var compiler = __webpack_require__(38)
+	var templateParser = __webpack_require__(50)
+	var transition = __webpack_require__(58)
+	var Cache = __webpack_require__(42)
 	var cache = new Cache(1000)
 
 	module.exports = {
@@ -7618,22 +7624,22 @@
 	  }
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 69 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports.content = __webpack_require__(70)
-	exports.partial = __webpack_require__(71)
+	exports.content = __webpack_require__(76)
+	exports.partial = __webpack_require__(77)
 
 
 /***/ },
-/* 70 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
-	var clone = __webpack_require__(44).clone
+	var _ = __webpack_require__(28)
+	var clone = __webpack_require__(50).clone
 
 	// This is the elementDirective that handles <content>
 	// transclusions. It relies on the raw content of an
@@ -7746,18 +7752,18 @@
 
 
 /***/ },
-/* 71 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var templateParser = __webpack_require__(44)
-	var textParser = __webpack_require__(35)
-	var compiler = __webpack_require__(32)
-	var Cache = __webpack_require__(36)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var templateParser = __webpack_require__(50)
+	var textParser = __webpack_require__(41)
+	var compiler = __webpack_require__(38)
+	var Cache = __webpack_require__(42)
 	var cache = new Cache(1000)
 
 	// v-partial reuses logic from v-if
-	var vIf = __webpack_require__(68)
+	var vIf = __webpack_require__(74)
 
 	module.exports = {
 
@@ -7823,13 +7829,13 @@
 	  }
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 72 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 
 	/**
 	 * Stringify value.
@@ -7974,15 +7980,15 @@
 	 * Install special array filters
 	 */
 
-	_.extend(exports, __webpack_require__(73))
+	_.extend(exports, __webpack_require__(79))
 
 
 /***/ },
-/* 73 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
-	var Path = __webpack_require__(42)
+	var _ = __webpack_require__(28)
+	var Path = __webpack_require__(48)
 
 	/**
 	 * Filter filter for v-repeat
@@ -8076,10 +8082,10 @@
 
 
 /***/ },
-/* 74 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var mergeOptions = __webpack_require__(22).mergeOptions
+	var mergeOptions = __webpack_require__(28).mergeOptions
 
 	/**
 	 * The main init sequence. This is called for every
@@ -8171,10 +8177,10 @@
 
 
 /***/ },
-/* 75 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
 	var inDoc = _.inDoc
 
 	/**
@@ -8314,17 +8320,17 @@
 	  this.$emit('hook:' + hook)
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 76 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var compiler = __webpack_require__(32)
-	var Observer = __webpack_require__(77)
-	var Dep = __webpack_require__(40)
-	var Watcher = __webpack_require__(39)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var compiler = __webpack_require__(38)
+	var Observer = __webpack_require__(83)
+	var Dep = __webpack_require__(46)
+	var Watcher = __webpack_require__(45)
 
 	/**
 	 * Setup the scope of an instance, which contains:
@@ -8603,18 +8609,18 @@
 	  })
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 77 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
-	var config = __webpack_require__(27)
-	var Dep = __webpack_require__(40)
-	var arrayMethods = __webpack_require__(78)
+	var _ = __webpack_require__(28)
+	var config = __webpack_require__(33)
+	var Dep = __webpack_require__(46)
+	var arrayMethods = __webpack_require__(84)
 	var arrayKeys = Object.getOwnPropertyNames(arrayMethods)
-	__webpack_require__(79)
+	__webpack_require__(85)
 
 	/**
 	 * Observer class that are attached to each observed
@@ -8846,10 +8852,10 @@
 
 
 /***/ },
-/* 78 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 	var arrayProto = Array.prototype
 	var arrayMethods = Object.create(arrayProto)
 
@@ -8950,10 +8956,10 @@
 
 
 /***/ },
-/* 79 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 	var objProto = Object.prototype
 
 	/**
@@ -9038,12 +9044,12 @@
 
 
 /***/ },
-/* 80 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
-	var Directive = __webpack_require__(81)
-	var compiler = __webpack_require__(32)
+	var _ = __webpack_require__(28)
+	var Directive = __webpack_require__(87)
+	var compiler = __webpack_require__(38)
 
 	/**
 	 * Transclude, compile and link element.
@@ -9244,14 +9250,14 @@
 
 
 /***/ },
-/* 81 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var config = __webpack_require__(27)
-	var Watcher = __webpack_require__(39)
-	var textParser = __webpack_require__(35)
-	var expParser = __webpack_require__(41)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var config = __webpack_require__(33)
+	var Watcher = __webpack_require__(45)
+	var textParser = __webpack_require__(41)
+	var expParser = __webpack_require__(47)
 
 	/**
 	 * A directive links a DOM element with a piece of data,
@@ -9499,13 +9505,13 @@
 
 	module.exports = Directive
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 82 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
 
 	/**
 	 * Apply a list of filter (descriptors) to a value.
@@ -9599,17 +9605,17 @@
 	  }
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 83 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Watcher = __webpack_require__(39)
-	var Path = __webpack_require__(42)
-	var textParser = __webpack_require__(35)
-	var dirParser = __webpack_require__(37)
-	var expParser = __webpack_require__(41)
+	var Watcher = __webpack_require__(45)
+	var Path = __webpack_require__(48)
+	var textParser = __webpack_require__(41)
+	var dirParser = __webpack_require__(43)
+	var expParser = __webpack_require__(47)
 	var filterRE = /[^|]\|[^|]/
 
 	/**
@@ -9759,11 +9765,11 @@
 
 
 /***/ },
-/* 84 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
-	var transition = __webpack_require__(52)
+	var _ = __webpack_require__(28)
+	var transition = __webpack_require__(58)
 
 	/**
 	 * Convenience on-instance nextTick. The callback is
@@ -9991,10 +9997,10 @@
 
 
 /***/ },
-/* 85 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 
 	/**
 	 * Listen on the given `event` with `fn`.
@@ -10171,10 +10177,10 @@
 
 
 /***/ },
-/* 86 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var _ = __webpack_require__(22)
+	var _ = __webpack_require__(28)
 
 	/**
 	 * Create a child instance that prototypally inherits
@@ -10226,11 +10232,11 @@
 
 
 /***/ },
-/* 87 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(22)
-	var compiler = __webpack_require__(32)
+	/* WEBPACK VAR INJECTION */(function(process) {var _ = __webpack_require__(28)
+	var compiler = __webpack_require__(38)
 
 	/**
 	 * Set instance target element and kick off the compilation
@@ -10298,59 +10304,59 @@
 	  return compiler.compile(el, this.$options, true)(this, el, host)
 	}
 
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(26)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(32)))
 
 /***/ },
-/* 88 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _classCallCheck = __webpack_require__(89)['default'];
+	var _classCallCheck = __webpack_require__(95)['default'];
 
-	var _interopRequireDefault = __webpack_require__(90)['default'];
+	var _interopRequireDefault = __webpack_require__(96)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _util = __webpack_require__(91);
+	var _util = __webpack_require__(97);
 
 	var _util2 = _interopRequireDefault(_util);
 
-	var _routeRecognizer = __webpack_require__(92);
+	var _routeRecognizer = __webpack_require__(98);
 
 	var _routeRecognizer2 = _interopRequireDefault(_routeRecognizer);
 
-	var _routerApi = __webpack_require__(95);
+	var _routerApi = __webpack_require__(101);
 
 	var _routerApi2 = _interopRequireDefault(_routerApi);
 
-	var _routerInternal = __webpack_require__(96);
+	var _routerInternal = __webpack_require__(102);
 
 	var _routerInternal2 = _interopRequireDefault(_routerInternal);
 
-	var _directivesView = __webpack_require__(114);
+	var _directivesView = __webpack_require__(120);
 
 	var _directivesView2 = _interopRequireDefault(_directivesView);
 
-	var _directivesLink = __webpack_require__(115);
+	var _directivesLink = __webpack_require__(121);
 
 	var _directivesLink2 = _interopRequireDefault(_directivesLink);
 
-	var _override = __webpack_require__(116);
+	var _override = __webpack_require__(122);
 
 	var _override2 = _interopRequireDefault(_override);
 
-	var _historyAbstract = __webpack_require__(117);
+	var _historyAbstract = __webpack_require__(123);
 
 	var _historyAbstract2 = _interopRequireDefault(_historyAbstract);
 
-	var _historyHash = __webpack_require__(118);
+	var _historyHash = __webpack_require__(124);
 
 	var _historyHash2 = _interopRequireDefault(_historyHash);
 
-	var _historyHtml5 = __webpack_require__(119);
+	var _historyHtml5 = __webpack_require__(125);
 
 	var _historyHtml52 = _interopRequireDefault(_historyHtml5);
 
@@ -10481,7 +10487,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 89 */
+/* 95 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -10495,7 +10501,7 @@
 	exports.__esModule = true;
 
 /***/ },
-/* 90 */
+/* 96 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -10509,12 +10515,12 @@
 	exports.__esModule = true;
 
 /***/ },
-/* 91 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(90)['default'];
+	var _interopRequireDefault = __webpack_require__(96)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
@@ -10526,7 +10532,7 @@
 	exports.resolveAsyncComponent = resolveAsyncComponent;
 	exports.mapParams = mapParams;
 
-	var _routeRecognizer = __webpack_require__(92);
+	var _routeRecognizer = __webpack_require__(98);
 
 	var _routeRecognizer2 = _interopRequireDefault(_routeRecognizer);
 
@@ -10685,7 +10691,7 @@
 	}
 
 /***/ },
-/* 92 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {(function() {
@@ -11331,7 +11337,7 @@
 	    var $$route$recognizer$$default = $$route$recognizer$$RouteRecognizer;
 
 	    /* global define:true module:true window: true */
-	    if ("function" === 'function' && __webpack_require__(94)['amd']) {
+	    if ("function" === 'function' && __webpack_require__(100)['amd']) {
 	      !(__WEBPACK_AMD_DEFINE_RESULT__ = function() { return $$route$recognizer$$default; }.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 	    } else if (typeof module !== 'undefined' && module['exports']) {
 	      module['exports'] = $$route$recognizer$$default;
@@ -11341,10 +11347,10 @@
 	}).call(this);
 
 	//# sourceMappingURL=route-recognizer.js.map
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(93)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(99)(module)))
 
 /***/ },
-/* 93 */
+/* 99 */
 /***/ function(module, exports) {
 
 	module.exports = function(module) {
@@ -11360,14 +11366,14 @@
 
 
 /***/ },
-/* 94 */
+/* 100 */
 /***/ function(module, exports) {
 
 	module.exports = function() { throw new Error("define cannot be used indirect"); };
 
 
 /***/ },
-/* 95 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11376,7 +11382,7 @@
 	  value: true
 	});
 
-	var _util = __webpack_require__(91);
+	var _util = __webpack_require__(97);
 
 	exports['default'] = function (Vue, Router) {
 
@@ -11520,24 +11526,24 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 96 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _interopRequireDefault = __webpack_require__(90)['default'];
+	var _interopRequireDefault = __webpack_require__(96)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _util = __webpack_require__(91);
+	var _util = __webpack_require__(97);
 
-	var _route = __webpack_require__(97);
+	var _route = __webpack_require__(103);
 
 	var _route2 = _interopRequireDefault(_route);
 
-	var _transition = __webpack_require__(98);
+	var _transition = __webpack_require__(104);
 
 	var _transition2 = _interopRequireDefault(_transition);
 
@@ -11825,12 +11831,12 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 97 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _classCallCheck = __webpack_require__(89)["default"];
+	var _classCallCheck = __webpack_require__(95)["default"];
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -11881,22 +11887,22 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 98 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _createClass = __webpack_require__(99)['default'];
+	var _createClass = __webpack_require__(105)['default'];
 
-	var _classCallCheck = __webpack_require__(89)['default'];
+	var _classCallCheck = __webpack_require__(95)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _util = __webpack_require__(91);
+	var _util = __webpack_require__(97);
 
-	var _pipeline = __webpack_require__(103);
+	var _pipeline = __webpack_require__(109);
 
 	/**
 	 * A RouteTransition object manages the pipeline of a
@@ -12189,12 +12195,12 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 99 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
-	var _Object$defineProperty = __webpack_require__(100)["default"];
+	var _Object$defineProperty = __webpack_require__(106)["default"];
 
 	exports["default"] = (function () {
 	  function defineProperties(target, props) {
@@ -12218,22 +12224,22 @@
 	exports.__esModule = true;
 
 /***/ },
-/* 100 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(101), __esModule: true };
+	module.exports = { "default": __webpack_require__(107), __esModule: true };
 
 /***/ },
-/* 101 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(102);
+	var $ = __webpack_require__(108);
 	module.exports = function defineProperty(it, key, desc){
 	  return $.setDesc(it, key, desc);
 	};
 
 /***/ },
-/* 102 */
+/* 108 */
 /***/ function(module, exports) {
 
 	var $Object = Object;
@@ -12251,12 +12257,12 @@
 	};
 
 /***/ },
-/* 103 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _Object$keys = __webpack_require__(104)['default'];
+	var _Object$keys = __webpack_require__(110)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
@@ -12268,7 +12274,7 @@
 	exports.activate = activate;
 	exports.reuse = reuse;
 
-	var _util = __webpack_require__(91);
+	var _util = __webpack_require__(97);
 
 	/**
 	 * Determine the reusability of an existing router view.
@@ -12506,43 +12512,43 @@
 	}
 
 /***/ },
-/* 104 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(105), __esModule: true };
+	module.exports = { "default": __webpack_require__(111), __esModule: true };
 
 /***/ },
-/* 105 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(106);
-	module.exports = __webpack_require__(112).Object.keys;
+	__webpack_require__(112);
+	module.exports = __webpack_require__(118).Object.keys;
 
 /***/ },
-/* 106 */
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 19.1.2.14 Object.keys(O)
-	var toObject = __webpack_require__(107);
+	var toObject = __webpack_require__(113);
 
-	__webpack_require__(109)('keys', function($keys){
+	__webpack_require__(115)('keys', function($keys){
 	  return function keys(it){
 	    return $keys(toObject(it));
 	  };
 	});
 
 /***/ },
-/* 107 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// 7.1.13 ToObject(argument)
-	var defined = __webpack_require__(108);
+	var defined = __webpack_require__(114);
 	module.exports = function(it){
 	  return Object(defined(it));
 	};
 
 /***/ },
-/* 108 */
+/* 114 */
 /***/ function(module, exports) {
 
 	// 7.2.1 RequireObjectCoercible(argument)
@@ -12552,24 +12558,24 @@
 	};
 
 /***/ },
-/* 109 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// most Object methods by ES6 should accept primitives
 	module.exports = function(KEY, exec){
-	  var $def = __webpack_require__(110)
-	    , fn   = (__webpack_require__(112).Object || {})[KEY] || Object[KEY]
+	  var $def = __webpack_require__(116)
+	    , fn   = (__webpack_require__(118).Object || {})[KEY] || Object[KEY]
 	    , exp  = {};
 	  exp[KEY] = exec(fn);
-	  $def($def.S + $def.F * __webpack_require__(113)(function(){ fn(1); }), 'Object', exp);
+	  $def($def.S + $def.F * __webpack_require__(119)(function(){ fn(1); }), 'Object', exp);
 	};
 
 /***/ },
-/* 110 */
+/* 116 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var global    = __webpack_require__(111)
-	  , core      = __webpack_require__(112)
+	var global    = __webpack_require__(117)
+	  , core      = __webpack_require__(118)
 	  , PROTOTYPE = 'prototype';
 	var ctx = function(fn, that){
 	  return function(){
@@ -12617,7 +12623,7 @@
 	module.exports = $def;
 
 /***/ },
-/* 111 */
+/* 117 */
 /***/ function(module, exports) {
 
 	// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
@@ -12627,14 +12633,14 @@
 	if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
 
 /***/ },
-/* 112 */
+/* 118 */
 /***/ function(module, exports) {
 
 	var core = module.exports = {};
 	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 
 /***/ },
-/* 113 */
+/* 119 */
 /***/ function(module, exports) {
 
 	module.exports = function(exec){
@@ -12646,7 +12652,7 @@
 	};
 
 /***/ },
-/* 114 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12655,9 +12661,9 @@
 	  value: true
 	});
 
-	var _util = __webpack_require__(91);
+	var _util = __webpack_require__(97);
 
-	var _pipeline = __webpack_require__(103);
+	var _pipeline = __webpack_require__(109);
 
 	exports['default'] = function (Vue) {
 
@@ -12737,7 +12743,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 115 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12746,7 +12752,7 @@
 	  value: true
 	});
 
-	var _util = __webpack_require__(91);
+	var _util = __webpack_require__(97);
 
 	var regexEscapeRE = /[-.*+?^${}()|[\]\/\\]/g;
 
@@ -12828,7 +12834,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 116 */
+/* 122 */
 /***/ function(module, exports) {
 
 	// overriding Vue's $addChild method, so that every child
@@ -12876,20 +12882,20 @@
 	// instance inherits the route data
 
 /***/ },
-/* 117 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _createClass = __webpack_require__(99)['default'];
+	var _createClass = __webpack_require__(105)['default'];
 
-	var _classCallCheck = __webpack_require__(89)['default'];
+	var _classCallCheck = __webpack_require__(95)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _util = __webpack_require__(91);
+	var _util = __webpack_require__(97);
 
 	var AbstractHistory = (function () {
 	  function AbstractHistory(_ref) {
@@ -12931,20 +12937,20 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 118 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _createClass = __webpack_require__(99)['default'];
+	var _createClass = __webpack_require__(105)['default'];
 
-	var _classCallCheck = __webpack_require__(89)['default'];
+	var _classCallCheck = __webpack_require__(95)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _util = __webpack_require__(91);
+	var _util = __webpack_require__(97);
 
 	var HashHistory = (function () {
 	  function HashHistory(_ref) {
@@ -13009,20 +13015,20 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 119 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
-	var _createClass = __webpack_require__(99)['default'];
+	var _createClass = __webpack_require__(105)['default'];
 
-	var _classCallCheck = __webpack_require__(89)['default'];
+	var _classCallCheck = __webpack_require__(95)['default'];
 
 	Object.defineProperty(exports, '__esModule', {
 	  value: true
 	});
 
-	var _util = __webpack_require__(91);
+	var _util = __webpack_require__(97);
 
 	var hashRE = /#.*$/;
 
@@ -13113,44 +13119,44 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 120 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
 	  "/": {
-	    component: __webpack_require__(121)
+	    component: __webpack_require__(127)
 	  },
 	  "/buttons": {
-	    component: __webpack_require__(124)
+	    component: __webpack_require__(130)
 	  },
 	  "/forms": {
-	    component: __webpack_require__(139)
+	    component: __webpack_require__(203)
 	  },
 	  "/list": {
-	    component: __webpack_require__(167)
+	    component: __webpack_require__(206)
 	  },
 	  "/panels": {
-	    component: __webpack_require__(173)
+	    component: __webpack_require__(209)
 	  },
 	  "/modals": {
-	    component: __webpack_require__(179)
+	    component: __webpack_require__(212)
 	  },
 	  "/paginations": {
-	    component: __webpack_require__(218)
+	    component: __webpack_require__(215)
 	  }
 	};
 
 
 /***/ },
-/* 121 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(122)
-	module.exports.template = __webpack_require__(123)
+	module.exports = __webpack_require__(128)
+	module.exports.template = __webpack_require__(129)
 
 
 /***/ },
-/* 122 */
+/* 128 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -13158,24 +13164,24 @@
 	};
 
 /***/ },
-/* 123 */
+/* 129 */
 /***/ function(module, exports) {
 
 	module.exports = "<ul>\r\n    <li><a v-link=\"{ path: '/buttons' }\">按钮组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/forms' }\">表单组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/list' }\">列表组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/panels' }\">面板组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/modals' }\">模态框组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/paginations'}\">分页组件</a></li>\r\n  </ul>";
 
 /***/ },
-/* 124 */
+/* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(125)
-	module.exports.template = __webpack_require__(138)
+	module.exports = __webpack_require__(131)
+	module.exports.template = __webpack_require__(202)
 
 
 /***/ },
-/* 125 */
+/* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var amaze = __webpack_require__(141);
+	var amaze = __webpack_require__(132);
 
 	module.exports = {
 
@@ -13208,77 +13214,42 @@
 	};
 
 /***/ },
-/* 126 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(127)
-	module.exports.template = __webpack_require__(128)
-
-
-/***/ },
-/* 127 */
-/***/ function(module, exports) {
-
-	module.exports = {};
-
-/***/ },
-/* 128 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"am-g\">\r\n  <content></content>\r\n</div>";
-
-/***/ },
-/* 129 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(130)
-	module.exports.template = __webpack_require__(131)
-
-
-/***/ },
-/* 130 */
-/***/ function(module, exports) {
-
-	module.exports = {
-	  
-	  props: {
-	    "sm": {
-	      type: Number,
-	      default: 0
-	    },
-	    "md": {
-	      type: Number,
-	      default: 0
-	    },
-	    "lg": {
-	      type: Number,
-	      default: 0
-	    }
-	  },
-	  
-	  data: function() {
-	    return {
-	    };
-	  }
-	  
-	};
-
-/***/ },
-/* 131 */
-/***/ function(module, exports) {
-
-	module.exports = "<div v-class=\"\r\n  am-u-sm-1: sm === 1,\r\n  am-u-sm-2: sm === 2,\r\n  am-u-sm-3: sm === 3,\r\n  am-u-sm-4: sm === 4,\r\n  am-u-sm-5: sm === 5,\r\n  am-u-sm-6: sm === 6,\r\n  am-u-sm-7: sm === 7,\r\n  am-u-sm-8: sm === 8,\r\n  am-u-sm-9: sm === 9,\r\n  am-u-sm-10: sm === 10,\r\n  am-u-sm-11: sm === 11,\r\n  am-u-sm-12: sm === 12,\r\n  am-u-md-1: md === 1,\r\n  am-u-md-2: md === 2,\r\n  am-u-md-3: md === 3,\r\n  am-u-md-4: md === 4,\r\n  am-u-md-5: md === 5,\r\n  am-u-md-6: md === 6,\r\n  am-u-md-7: md === 7,\r\n  am-u-md-8: md === 8,\r\n  am-u-md-9: md === 9,\r\n  am-u-md-10: md === 10,\r\n  am-u-md-11: md === 11,\r\n  am-u-md-12: md === 12,\r\n  am-u-lg-1: lg === 1,\r\n  am-u-lg-2: lg === 2,\r\n  am-u-lg-3: lg === 3,\r\n  am-u-lg-4: lg === 4,\r\n  am-u-lg-5: lg === 5,\r\n  am-u-lg-6: lg === 6,\r\n  am-u-lg-7: lg === 7,\r\n  am-u-lg-8: lg === 8,\r\n  am-u-lg-9: lg === 9,\r\n  am-u-lg-10: lg === 10,\r\n  am-u-lg-11: lg === 11,\r\n  am-u-lg-12: lg === 12\r\n\">\r\n  <content></content>\r\n</div>";
-
-/***/ },
 /* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(133)
-	module.exports.template = __webpack_require__(134)
+	exports.button = __webpack_require__(133);
+	exports.form = __webpack_require__(140);
+	exports.grid = __webpack_require__(156);
+	exports.panel = __webpack_require__(163);
+	exports.list = __webpack_require__(166);
+	exports.badge = __webpack_require__(169);
+	exports.icon = __webpack_require__(173);
+	exports.modal = __webpack_require__(177);
+
+	exports.ui = __webpack_require__(194);
+	exports.pagination = __webpack_require__(195);
+
+	exports.alert = __webpack_require__(198);
 
 
 /***/ },
 /* 133 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports.button = __webpack_require__(134);
+	exports.buttonGroup = __webpack_require__(137);
+
+
+/***/ },
+/* 134 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(135)
+	module.exports.template = __webpack_require__(136)
+
+
+/***/ },
+/* 135 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -13324,150 +13295,62 @@
 	    "xs": {
 	      type: Boolean,
 	      default: false
+	    },
+	    "block": {
+	      type: Boolean,
+	      default: false
 	    }
-	  },
-
-	  data: function() {
-	    return {
-	    };
-	  },
-
-	  methods: {
 	  }
 
 	};
-
-/***/ },
-/* 134 */
-/***/ function(module, exports) {
-
-	module.exports = "<button type=\"button\" class=\"am-btn am-btn-{{ type }}\" v-class=\"\r\n  am-radius: radius,\r\n  am-round: round,\r\n  am-active: active,\r\n  am-btn-xl: xl,\r\n  am-btn-lg: lg,\r\n  am-btn-sm: sm,\r\n  am-btn-xs: xs\" v-attr=\"\r\n  disabled: disabled || loading\r\n  \">\r\n  <content>This is a button</content>\r\n</button>";
-
-/***/ },
-/* 135 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(136)
-	module.exports.template = __webpack_require__(137)
-
 
 /***/ },
 /* 136 */
 /***/ function(module, exports) {
 
-	module.exports = {};
+	module.exports = "<button type=\"button\" class=\"am-btn am-btn-{{ type }}\" v-class=\"\r\n  am-radius: radius,\r\n  am-round: round,\r\n  am-active: active,\r\n  am-btn-xl: xl,\r\n  am-btn-lg: lg,\r\n  am-btn-sm: sm,\r\n  am-btn-xs: xs,\r\n  am-btn-block: block\" v-attr=\"\r\n  disabled: disabled || loading\r\n  \">\r\n  <span class=\"am-icon-circle-o-notch am-icon-spin\" v-if=\"loading\"></span>\r\n  <content>This is a button</content>\r\n</button>";
 
 /***/ },
 /* 137 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	module.exports = "<div class=\"am-btn-group\">\r\n  <content></content>\r\n</div>";
+	module.exports = __webpack_require__(138)
+	module.exports.template = __webpack_require__(139)
+
 
 /***/ },
 /* 138 */
 /***/ function(module, exports) {
 
-	module.exports = "<grid>\r\n  <am-col ssm=\"12\" md=\"12\" lg=\"12\">\r\n    <ambutton></ambutton>\r\n    <ambutton type=\"primary\" v-on=\"click: alert\" lg>主色按钮</ambutton>\r\n    <ambutton type=\"secondary\" radius xs>次色小圆角按钮</ambutton>\r\n    <ambutton type=\"success\" disabled round sm>绿色禁用椭圆按钮</ambutton>\r\n    <ambutton type=\"warning\" round loading=\"{{@ isLoading }}\" v-on=\"click: submitNow\">橙色椭圆按钮</ambutton>\r\n    <ambutton type=\"danger\" active xl>红色大激活按钮</ambutton>\r\n  </am-col>\r\n  <am-col sm=\"12\" md=\"12\" lg=\"12\">\r\n    <ambutton-group>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n    </ambutton-group>\r\n  </am-col>\r\n  <am-col sm=\"12\" md=\"12\" lg=\"12\">\r\n    <a v-link=\"{ path: '/' }\">返回首页</a>\r\n  </am-col>\r\n</grid>";
+	module.exports = {};
 
 /***/ },
 /* 139 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	module.exports = __webpack_require__(140)
-	module.exports.template = __webpack_require__(160)
-
+	module.exports = "<div class=\"am-btn-group\">\r\n  <content></content>\r\n</div>";
 
 /***/ },
 /* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var amaze = __webpack_require__(141);
+	exports.form = __webpack_require__(141);
+	exports.input = __webpack_require__(144);
+	exports.checkbox = __webpack_require__(147);
+	exports.radio = __webpack_require__(150);
+	exports.select = __webpack_require__(153);
 
-	module.exports = {
-
-	  components: {
-	    "amGrid": amaze.grid.grid,
-	    "amCol": amaze.grid.col,
-	    "amForm": amaze.form.form,
-	    "amInput": amaze.form.input,
-	    "amCheckbox": amaze.form.checkbox,
-	    "amRadio": amaze.form.radio,
-	    "amSelect": amaze.form.select
-	  },
-
-	  data: function() {
-	    return {
-	      "checkboxes": [{label: '加蛋', value: 1}, {label: '加饭', value: 2}, {label: '加汤', value: 3}],
-	      "radios": [{label: '中通', value: 1}, {label: '圆通', value: 2}, {label: '申通', value: 3}],
-	      "options": [{label: '上午', value: 1}, {label: '中午', value: 2}, {label: '下午', value: 3}],
-	      form: {
-	        email: '',
-	        nick: '',
-	        nick2: '',
-	        passwd: '',
-	        when: '',
-	        type: '',
-	        when2: ''
-	      }
-	    };
-	  },
-
-	  methods: {
-	    submit: function(event) {
-	      event.preventDefault();
-	      console.log(this.form.email);
-	      return false;
-	    }
-	  }
-
-	};
 
 /***/ },
 /* 141 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports.button = __webpack_require__(142);
-	exports.form = __webpack_require__(143);
-	exports.grid = __webpack_require__(159);
-	exports.panel = __webpack_require__(175);
-	exports.list = __webpack_require__(169);
-	exports.badge = __webpack_require__(185);
-	exports.icon = __webpack_require__(191);
-	exports.modal = __webpack_require__(198);
-
-	exports.ui = __webpack_require__(212);
-	exports.pagination = __webpack_require__(214);
+	module.exports = __webpack_require__(142)
+	module.exports.template = __webpack_require__(143)
 
 
 /***/ },
 /* 142 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports.button = __webpack_require__(132);
-	exports.buttonGroup = __webpack_require__(135);
-
-
-/***/ },
-/* 143 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports.form = __webpack_require__(144);
-	exports.input = __webpack_require__(147);
-	exports.checkbox = __webpack_require__(150);
-	exports.radio = __webpack_require__(153);
-	exports.select = __webpack_require__(156);
-
-
-/***/ },
-/* 144 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(145)
-	module.exports.template = __webpack_require__(146)
-
-
-/***/ },
-/* 145 */
 /***/ function(module, exports) {
 
 	// Form组件不能单独使用
@@ -13506,21 +13389,21 @@
 	};
 
 /***/ },
-/* 146 */
+/* 143 */
 /***/ function(module, exports) {
 
 	module.exports = "<form class=\"am-form\" v-el=\"form\" v-attr=\"action: action, method: method\">\r\n  <fieldset>\r\n    <content></content>\r\n    <p><button type=\"submit\" class=\"am-btn am-btn-default\" v-on=\"click: submit($event)\">提交</button></p>\r\n  </fieldset>\r\n</form>";
 
 /***/ },
-/* 147 */
+/* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(148)
-	module.exports.template = __webpack_require__(149)
+	module.exports = __webpack_require__(145)
+	module.exports.template = __webpack_require__(146)
 
 
 /***/ },
-/* 148 */
+/* 145 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -13557,10 +13440,48 @@
 	};
 
 /***/ },
-/* 149 */
+/* 146 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"am-form-group\">\r\n  <label for=\"f-{{ name }}\"><content></content></label>\r\n  <input id=\"f-{{ name }}\" v-attr=\"type: type, name: name, placeholder: placeholder, disabled: disabled\" v-model=\"model\">\r\n</div>";
+
+/***/ },
+/* 147 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(148)
+	module.exports.template = __webpack_require__(149)
+
+
+/***/ },
+/* 148 */
+/***/ function(module, exports) {
+
+	module.exports = {
+	  
+	  props: {
+	    "name": {
+	      type: String,
+	      required: true
+	    },
+	    "items": {
+	      type: Array,
+	      required: true
+	    }
+	  },
+	  
+	  data: function() {
+	    return {
+	    };
+	  }
+	  
+	};
+
+/***/ },
+/* 149 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"am-form-group\">\r\n  <label class=\"am-checkbox-inline\" v-repeat=\"item in items\">\r\n    <input type=\"checkbox\" name=\"{{ name }}\" value=\"{{ item.value }}\"> {{ item.label }}\r\n  </label>\r\n</div>";
 
 /***/ },
 /* 150 */
@@ -13598,7 +13519,7 @@
 /* 152 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"am-form-group\">\r\n  <label class=\"am-checkbox-inline\" v-repeat=\"item in items\">\r\n    <input type=\"checkbox\" name=\"{{ name }}\" value=\"{{ item.value }}\"> {{ item.label }}\r\n  </label>\r\n</div>";
+	module.exports = "<div class=\"am-form-group\">\r\n  <label class=\"am-radio-inline\" v-repeat=\"item in items\">\r\n    <input type=\"radio\" name=\"{{ name }}\" value=\"{{ item.value }}\"> {{ item.label }}\r\n  </label>\r\n</div>";
 
 /***/ },
 /* 153 */
@@ -13610,44 +13531,6 @@
 
 /***/ },
 /* 154 */
-/***/ function(module, exports) {
-
-	module.exports = {
-	  
-	  props: {
-	    "name": {
-	      type: String,
-	      required: true
-	    },
-	    "items": {
-	      type: Array,
-	      required: true
-	    }
-	  },
-	  
-	  data: function() {
-	    return {
-	    };
-	  }
-	  
-	};
-
-/***/ },
-/* 155 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"am-form-group\">\r\n  <label class=\"am-radio-inline\" v-repeat=\"item in items\">\r\n    <input type=\"radio\" name=\"{{ name }}\" value=\"{{ item.value }}\"> {{ item.label }}\r\n  </label>\r\n</div>";
-
-/***/ },
-/* 156 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(157)
-	module.exports.template = __webpack_require__(158)
-
-
-/***/ },
-/* 157 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -13675,137 +13558,91 @@
 	};
 
 /***/ },
-/* 158 */
+/* 155 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"am-form-group\">\r\n  <label for=\"f-{{ name }}\" v-if=\"label !== ''\">{{ label }}</label>\r\n  <select id=\"f-{{ name }}\" name=\"{{ name }}\">\r\n    <option value=\"{{ item.value }}\" v-repeat=\"item in items\">{{ item.label }}</option>\r\n  </select>\r\n  <span class=\"am-form-caret\"></span>\r\n</div>";
 
 /***/ },
-/* 159 */
+/* 156 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports.grid = __webpack_require__(126);
-	exports.column = __webpack_require__(129);
+	exports.grid = __webpack_require__(157);
+	exports.column = __webpack_require__(160);
 
+
+/***/ },
+/* 157 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(158)
+	module.exports.template = __webpack_require__(159)
+
+
+/***/ },
+/* 158 */
+/***/ function(module, exports) {
+
+	module.exports = {};
+
+/***/ },
+/* 159 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"am-g\">\r\n  <content></content>\r\n</div>";
 
 /***/ },
 /* 160 */
-/***/ function(module, exports) {
-
-	module.exports = "<am-grid>\r\n  <am-col sm=\"12\" md=\"6\" lg=\"8\">\r\n    <am-form submit=\"{{submit}}\">\r\n      <am-input type=\"email\" name=\"email\" placeholder=\"请输入邮箱\" model=\"{{@ form.email }}\">邮箱</am-input>\r\n      <am-input name=\"nick\" placeholder=\"请输入昵称\" model=\"{{@ form.nick }}\">昵称</am-input>\r\n      <am-input name=\"nick2\" placeholder=\"请输入昵称\" disabled model=\"{{@ form.nick2 }}\">被禁用</am-input>\r\n      <am-input type=\"password\" name=\"passwd\" placeholder=\"请输入密码\" model=\"{{@ form.passwd }}\">密码</am-input>\r\n      <am-checkbox name=\"when\" items=\"{{ checkboxes }}\" model=\"{{@ form.when }}\"></am-checkbox>\r\n      <am-radio name=\"type\" items=\"{{ radios }}\" model=\"{{@ form.type }}\"></am-radio>\r\n      <am-select label=\"时间\" name=\"when2\" items=\"{{ options }}\" model=\"{{@ form.when2 }}\"></am-select>\r\n    </am-form>\r\n  </am-col>\r\n  <am-col sm=\"12\" md=\"6\" lg=\"4\">\r\n    <a v-link=\"{path: '/'}\">返回首页</a>\r\n  </am-col>\r\n</am-grid>";
-
-/***/ },
-/* 161 */,
-/* 162 */,
-/* 163 */,
-/* 164 */,
-/* 165 */,
-/* 166 */,
-/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(168)
-	module.exports.template = __webpack_require__(172)
+	module.exports = __webpack_require__(161)
+	module.exports.template = __webpack_require__(162)
 
 
 /***/ },
-/* 168 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var amaze = __webpack_require__(141);
-
-	module.exports = {
-	  components: {
-	    "list": amaze.list,
-	    "grid": amaze.grid.grid,
-	    "column": amaze.grid.column,
-	    "badge": amaze.badge,
-	    "icon": amaze.icon
-	  }
-	};
-
-/***/ },
-/* 169 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(170)
-	module.exports.template = __webpack_require__(171)
-
-
-/***/ },
-/* 170 */
+/* 161 */
 /***/ function(module, exports) {
 
 	module.exports = {
+	  
 	  props: {
-	    static: {
-	      type: Boolean,
-	      default: false
+	    "sm": {
+	      type: Number,
+	      default: 0
 	    },
-	    border: {
-	      type: Boolean,
-	      default: false
+	    "md": {
+	      type: Number,
+	      default: 0
 	    },
-	    striped: {
-	      type: Boolean,
-	      default: false
+	    "lg": {
+	      type: Number,
+	      default: 0
 	    }
-	  }
-	};
-
-/***/ },
-/* 171 */
-/***/ function(module, exports) {
-
-	module.exports = "<ul class=\"am-list\" v-class=\"am-list-static: static,am-list-border: border, am-list-striped: striped\">\r\n  <content></content>\r\n</ul>";
-
-/***/ },
-/* 172 */
-/***/ function(module, exports) {
-
-	module.exports = "<grid>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <list striped border>\r\n      <li><a v-link=\"{ path: '/' }\">首页</a></li>\r\n      <li><a v-link=\"{ path: '/buttons' }\">按钮</a></li>\r\n      <li><a v-link=\"{ path: '/forms' }\">表单</a></li>\r\n      <li><a v-link=\"{ path: '/tables' }\">表格</a></li>\r\n    </list>\r\n  </column>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <list striped border static>\r\n      <li><badge type=\"success\">Yes</badge> static, border and striped</li>\r\n      <li><badge type=\"danger\">Yes</badge> static, border and striped</li>\r\n      <li><badge type=\"primary\">Yes</badge> static, border and striped</li>\r\n      <li><badge>Yes</badge> static, border and striped</li>\r\n    </list>\r\n  </column>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <list border static>\r\n      <li><badge type=\"success\">Yes</badge> static, border</li>\r\n      <li><badge type=\"danger\">Yes</badge> static, border</li>\r\n      <li><badge type=\"primary\">Yes</badge> static, border</li>\r\n      <li><badge>Yes</badge> static, border</li>\r\n    </list>\r\n  </column>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <list striped border static>\r\n      <li><icon name=\"home\"></icon> static, border and striped</li>\r\n      <li><icon name=\"spinner\" pulse></icon> static, border and striped</li>\r\n      <li><icon name=\"gear\" spin></icon> static, border and striped</li>\r\n      <li><icon name=\"github\"></icon> static, border and striped</li>\r\n    </list>\r\n  </column>\r\n</grid>";
-
-/***/ },
-/* 173 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(174)
-	module.exports.template = __webpack_require__(178)
-
-
-/***/ },
-/* 174 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var amaze = __webpack_require__(141);
-
-	module.exports = {
-
-	  components: {
-	    "grid": amaze.grid.grid,
-	    "column": amaze.grid.column,
-	    "panel": amaze.panel,
-	    "list": amaze.list
 	  },
-
+	  
 	  data: function() {
 	    return {
-	      items: [[1, 2, 3, 4, 5], [3, 4, 5, 6, 7]]
 	    };
 	  }
-
+	  
 	};
 
 /***/ },
-/* 175 */
+/* 162 */
+/***/ function(module, exports) {
+
+	module.exports = "<div v-class=\"\r\n  am-u-sm-1: sm === 1,\r\n  am-u-sm-2: sm === 2,\r\n  am-u-sm-3: sm === 3,\r\n  am-u-sm-4: sm === 4,\r\n  am-u-sm-5: sm === 5,\r\n  am-u-sm-6: sm === 6,\r\n  am-u-sm-7: sm === 7,\r\n  am-u-sm-8: sm === 8,\r\n  am-u-sm-9: sm === 9,\r\n  am-u-sm-10: sm === 10,\r\n  am-u-sm-11: sm === 11,\r\n  am-u-sm-12: sm === 12,\r\n  am-u-md-1: md === 1,\r\n  am-u-md-2: md === 2,\r\n  am-u-md-3: md === 3,\r\n  am-u-md-4: md === 4,\r\n  am-u-md-5: md === 5,\r\n  am-u-md-6: md === 6,\r\n  am-u-md-7: md === 7,\r\n  am-u-md-8: md === 8,\r\n  am-u-md-9: md === 9,\r\n  am-u-md-10: md === 10,\r\n  am-u-md-11: md === 11,\r\n  am-u-md-12: md === 12,\r\n  am-u-lg-1: lg === 1,\r\n  am-u-lg-2: lg === 2,\r\n  am-u-lg-3: lg === 3,\r\n  am-u-lg-4: lg === 4,\r\n  am-u-lg-5: lg === 5,\r\n  am-u-lg-6: lg === 6,\r\n  am-u-lg-7: lg === 7,\r\n  am-u-lg-8: lg === 8,\r\n  am-u-lg-9: lg === 9,\r\n  am-u-lg-10: lg === 10,\r\n  am-u-lg-11: lg === 11,\r\n  am-u-lg-12: lg === 12\r\n\">\r\n  <content></content>\r\n</div>";
+
+/***/ },
+/* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(176)
-	module.exports.template = __webpack_require__(177)
+	module.exports = __webpack_require__(164)
+	module.exports.template = __webpack_require__(165)
 
 
 /***/ },
-/* 176 */
+/* 164 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -13830,141 +13667,63 @@
 	};
 
 /***/ },
-/* 177 */
+/* 165 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"am-panel am-panel-{{ style }}\">\r\n  <div class=\"am-panel-hd\" v-if=\"header !== ''\">{{ header }}</div>\r\n  <content></content>\r\n</div>";
 
 /***/ },
-/* 178 */
-/***/ function(module, exports) {
-
-	module.exports = "<grid>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n\r\n    <panel header=\"面板标题\" style=\"success\">\r\n      <div class=\"am-panel-bd\">面板内容</div>\r\n    </panel>\r\n\r\n    <panel header=\"面板+表格\" style=\"primary\">\r\n      <table class=\"am-table am-table-bordered\">\r\n        <thead>\r\n          <tr>\r\n            <th>1</th>\r\n            <th>2</th>\r\n            <th>3</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr>\r\n            <td>4</td>\r\n            <td>5</td>\r\n            <td>6</td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n    </panel>\r\n\r\n    <panel header=\"面板+列表\" style=\"warning\">\r\n      <list>\r\n        <li><a v-link=\"{ path: '/' }\">首页</a></li>\r\n        <li><a v-link=\"{ path: '/buttons' }\">按钮</a></li>\r\n        <li><a v-link=\"{ path: '/forms' }\">表单</a></li>\r\n      </list>\r\n    </panel>\r\n\r\n  </column>\r\n</grid>";
-
-/***/ },
-/* 179 */
+/* 166 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(180)
-	module.exports.template = __webpack_require__(184)
+	module.exports = __webpack_require__(167)
+	module.exports.template = __webpack_require__(168)
 
 
 /***/ },
-/* 180 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var amaze = __webpack_require__(141);
-
-	module.exports = {
-
-	  components: {
-	    "modal": amaze.modal.modal,
-	    "alert": amaze.modal.alert,
-	    "confirm": amaze.modal.confirm,
-	    "prompt": amaze.modal.prompt,
-	    "grid": amaze.grid.grid,
-	    "column": amaze.grid.column
-	  },
-
-	  data: function() {
-	    return {
-	      showModal: false,
-	      showAlert: false,
-	      showConfirm: false,
-	      showPrompt: false
-	    };
-	  },
-
-	  methods: {
-	    clickAlertOK: function() {
-	      this.showAlert = false;
-	    },
-	    clickConfirmOK: function() {
-	      console.log('yeah');
-	      this.showConfirm = false;
-	    },
-	    clickConfirmCancel: function() {
-	      console.log('no');
-	      this.showConfirm = false;
-	    },
-	    clickPromptOK: function(msg) {
-	      console.log(msg);
-	      this.showPrompt = false;
-	    },
-	    clickPromptCancel: function() {
-	      this.showPrompt = false;
-	    }
-	  }
-
-	};
-
-/***/ },
-/* 181 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(208)
-	module.exports = __webpack_require__(182)
-	module.exports.template = __webpack_require__(183)
-
-
-/***/ },
-/* 182 */
+/* 167 */
 /***/ function(module, exports) {
 
 	module.exports = {
-	  ready: function() {
-	  },
 	  props: {
-	    show: {
+	    static: {
 	      type: Boolean,
-	      default: false,
-	      twoWay: true
+	      default: false
 	    },
-	    closeViaDimmer: { // 是否通过点击遮罩层关闭模态框，默认为true
+	    border: {
 	      type: Boolean,
-	      default: true
-	    }
-	  },
-
-	  methods: {
-	    close: function() {
-	      if (this.closeViaDimmer) {
-	        this.show = false;
-	      }
+	      default: false
+	    },
+	    striped: {
+	      type: Boolean,
+	      default: false
 	    }
 	  }
 	};
 
 /***/ },
-/* 183 */
+/* 168 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"am-modal\" tabindex=\"-1\" v-class=\"am-modal-active: show\" v-show=\"show\">\r\n  <div class=\"am-modal-dialog\">\r\n    <content select=\".am-modal-hd\"></content>\r\n    <content select=\".am-modal-bd\"></content>\r\n    <content select=\".am-modal-footer\"></content>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"am-dimmer\" v-class=\"am-active: show\" v-show=\"show\" v-on=\"click: close()\"></div>";
+	module.exports = "<ul class=\"am-list\" v-class=\"am-list-static: static,am-list-border: border, am-list-striped: striped\">\r\n  <content></content>\r\n</ul>";
 
 /***/ },
-/* 184 */
-/***/ function(module, exports) {
-
-	module.exports = "<grid>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <button class=\"am-btn am-btn-default\" type=\"button\" v-on=\"click: showModal = true\">打开modal</button>\r\n    <button class=\"am-btn am-btn-primary\" type=\"button\" v-on=\"click: showAlert = true\">打开alert</button>\r\n    <button class=\"am-btn am-btn-secondary\" type=\"button\" v-on=\"click: showConfirm = true\">打开confirm</button>\r\n    <button class=\"am-btn am-btn-success\" type=\"button\" v-on=\"click: showPrompt = true\">打开prompt</button>\r\n  </column>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n  <a v-link=\"{path: '/'}\">返回首页</a>\r\n  </column>\r\n</grid>\r\n\r\n<modal show=\"{{@ showModal }}\">\r\n  <div class=\"am-modal-hd\">yeah</div>\r\n</modal>\r\n\r\n<alert show=\"{{@ showAlert }}\" show=\"{{@ showAlert }}\" close-via-dimmer=\"false\" ok=\"{{ clickAlertOK }}\">好好好</alert>\r\n\r\n<confirm show=\"{{@ showConfirm }}\" ok=\"{{ clickConfirmOK }}\" cancel=\"{{ clickConfirmCancel }}\">没问题？</confirm>\r\n\r\n<prompt show=\"{{@ showPrompt }}\" ok=\"{{ clickPromptOK }}\" cancel=\"{{ clickPromptCancel }}\">输入你的名字</prompt>";
-
-/***/ },
-/* 185 */
+/* 169 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(187);
+	module.exports = __webpack_require__(170);
 
 
 /***/ },
-/* 186 */,
-/* 187 */
+/* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(188)
-	module.exports.template = __webpack_require__(189)
+	module.exports = __webpack_require__(171)
+	module.exports.template = __webpack_require__(172)
 
 
 /***/ },
-/* 188 */
+/* 171 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -13985,29 +13744,28 @@
 	};
 
 /***/ },
-/* 189 */
+/* 172 */
 /***/ function(module, exports) {
 
 	module.exports = "<span class=\"am-badge am-badge-{{ type }}\" v-class=\"am-radius: radius, am-round: round\"><content><content></span>";
 
 /***/ },
-/* 190 */,
-/* 191 */
+/* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(192);
+	module.exports = __webpack_require__(174);
 
 
 /***/ },
-/* 192 */
+/* 174 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(193)
-	module.exports.template = __webpack_require__(194)
+	module.exports = __webpack_require__(175)
+	module.exports.template = __webpack_require__(176)
 
 
 /***/ },
-/* 193 */
+/* 175 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -14028,189 +13786,41 @@
 	};
 
 /***/ },
-/* 194 */
+/* 176 */
 /***/ function(module, exports) {
 
 	module.exports = "<i class=\"am-icon-{{ name }} am-icon-fw\" v-class=\"am-icon-spin: spin, am-icon-pulse: pulse\"></i>";
 
 /***/ },
-/* 195 */,
-/* 196 */,
-/* 197 */,
-/* 198 */
+/* 177 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports.modal = __webpack_require__(181);
-	exports.alert = __webpack_require__(199);
-	exports.confirm = __webpack_require__(202);
-	exports.prompt = __webpack_require__(205);
+	exports.modal = __webpack_require__(178);
+	exports.alert = __webpack_require__(185);
+	exports.confirm = __webpack_require__(188);
+	exports.prompt = __webpack_require__(191);
 
 
 /***/ },
-/* 199 */
+/* 178 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(200)
-	module.exports.template = __webpack_require__(201)
+	__webpack_require__(179)
+	module.exports = __webpack_require__(183)
+	module.exports.template = __webpack_require__(184)
 
 
 /***/ },
-/* 200 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = {
-
-	  props: {
-	    title: {
-	      type: String,
-	      default: ''
-	    },
-	    show: {
-	      type: Boolean,
-	      default: false,
-	      twoWay: true
-	    },
-	    closeViaDimmer: { // 是否通过点击遮罩层关闭模态框，默认为true
-	      type: Boolean,
-	      default: true
-	    },
-	    ok: {
-	      type: Function,
-	      default: function() {
-	        return false;
-	      }
-	    }
-	  },
-
-	  components: {
-	    "modal": __webpack_require__(181)
-	  }
-
-	};
-
-/***/ },
-/* 201 */
-/***/ function(module, exports) {
-
-	module.exports = "<modal show=\"{{@ show }}\" close-via-dimmer=\"{{* closeViaDimmer }}\">\r\n  <div class=\"am-modal-hd\" v-if=\"title !== ''\">{{ title }}</div>\r\n  <div class=\"am-modal-bd\"><content>default alert</content></div>\r\n  <div class=\"am-modal-footer\">\r\n    <span class=\"am-modal-btn\" v-on=\"click: ok\">确定</span>\r\n  </div>\r\n</modal>";
-
-/***/ },
-/* 202 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(203)
-	module.exports.template = __webpack_require__(204)
-
-
-/***/ },
-/* 203 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = {
-
-	  props: {
-	    title: {
-	      type: String,
-	      default: ''
-	    },
-	    show: {
-	      type: Boolean,
-	      default: false,
-	      twoWay: true
-	    },
-	    ok: {
-	      type: Function,
-	      default: function() {
-	        return false;
-	      }
-	    },
-	    cancel: {
-	      type: Function,
-	      default: function() {
-	        return false;
-	      }
-	    }
-	  },
-
-	  components: {
-	    "modal": __webpack_require__(181)
-	  }
-
-	};
-
-/***/ },
-/* 204 */
-/***/ function(module, exports) {
-
-	module.exports = "<modal show=\"{{@ show }}\" close-via-dimmer=\"false\">\r\n  <div class=\"am-modal-hd\" v-if=\"title !== ''\">{{ title }}</div>\r\n  <div class=\"am-modal-bd\"><content>Are you sure ?</content></div>\r\n  <div class=\"am-modal-footer\">\r\n    <span class=\"am-modal-btn\" v-on=\"click: cancel\">取消</span>\r\n    <span class=\"am-modal-btn\" v-on=\"click: ok\">确定</span>\r\n  </div>\r\n</modal>";
-
-/***/ },
-/* 205 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(206)
-	module.exports.template = __webpack_require__(207)
-
-
-/***/ },
-/* 206 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = {
-
-	  props: {
-	    title: {
-	      type: String,
-	      default: ''
-	    },
-	    show: {
-	      type: Boolean,
-	      default: false,
-	      twoWay: true
-	    },
-	    ok: {
-	      type: Function,
-	      default: function() {
-	        return false;
-	      }
-	    },
-	    cancel: {
-	      type: Function,
-	      default: function() {
-	        return false;
-	      }
-	    }
-	  },
-
-	  components: {
-	    "modal": __webpack_require__(181)
-	  },
-
-	  data: function() {
-	    return {
-	      message: ''
-	    };
-	  }
-
-	};
-
-/***/ },
-/* 207 */
-/***/ function(module, exports) {
-
-	module.exports = "<modal show=\"{{@ show }}\" close-via-dimmer=\"false\">\r\n  <div class=\"am-modal-hd\" v-if=\"title !== ''\">{{ title }}</div>\r\n  <div class=\"am-modal-bd\">\r\n    <content>输入</content>\r\n    <input type=\"text\" class=\"am-modal-prompt-input\" v-model=\"message\">\r\n  </div>\r\n  <div class=\"am-modal-footer\">\r\n    <span class=\"am-modal-btn\" v-on=\"click: cancel\">取消</span>\r\n    <span class=\"am-modal-btn\" v-on=\"click: ok(message)\">确定</span>\r\n  </div>\r\n</modal>";
-
-/***/ },
-/* 208 */
+/* 179 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(209);
+	var content = __webpack_require__(180);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(211)(content, {});
+	var update = __webpack_require__(182)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -14227,10 +13837,10 @@
 	}
 
 /***/ },
-/* 209 */
+/* 180 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(210)();
+	exports = module.exports = __webpack_require__(181)();
 	// imports
 
 
@@ -14241,7 +13851,7 @@
 
 
 /***/ },
-/* 210 */
+/* 181 */
 /***/ function(module, exports) {
 
 	/*
@@ -14297,7 +13907,7 @@
 
 
 /***/ },
-/* 211 */
+/* 182 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -14522,22 +14132,209 @@
 
 
 /***/ },
-/* 212 */
+/* 183 */
+/***/ function(module, exports) {
+
+	module.exports = {
+	  ready: function() {
+	  },
+	  props: {
+	    show: {
+	      type: Boolean,
+	      default: false,
+	      twoWay: true
+	    },
+	    closeViaDimmer: { // 是否通过点击遮罩层关闭模态框，默认为true
+	      type: Boolean,
+	      default: true
+	    }
+	  },
+
+	  methods: {
+	    close: function() {
+	      if (this.closeViaDimmer) {
+	        this.show = false;
+	      }
+	    }
+	  }
+	};
+
+/***/ },
+/* 184 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"am-modal\" tabindex=\"-1\" v-class=\"am-modal-active: show\" v-show=\"show\">\r\n  <div class=\"am-modal-dialog\">\r\n    <content select=\".am-modal-hd\"></content>\r\n    <content select=\".am-modal-bd\"></content>\r\n    <content select=\".am-modal-footer\"></content>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"am-dimmer\" v-class=\"am-active: show\" v-show=\"show\" v-on=\"click: close()\"></div>";
+
+/***/ },
+/* 185 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(186)
+	module.exports.template = __webpack_require__(187)
+
+
+/***/ },
+/* 186 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = {
+
+	  props: {
+	    title: {
+	      type: String,
+	      default: ''
+	    },
+	    show: {
+	      type: Boolean,
+	      default: false,
+	      twoWay: true
+	    },
+	    closeViaDimmer: { // 是否通过点击遮罩层关闭模态框，默认为true
+	      type: Boolean,
+	      default: true
+	    },
+	    ok: {
+	      type: Function,
+	      default: function() {
+	        return false;
+	      }
+	    }
+	  },
+
+	  components: {
+	    "modal": __webpack_require__(178)
+	  }
+
+	};
+
+/***/ },
+/* 187 */
+/***/ function(module, exports) {
+
+	module.exports = "<modal show=\"{{@ show }}\" close-via-dimmer=\"{{* closeViaDimmer }}\">\r\n  <div class=\"am-modal-hd\" v-if=\"title !== ''\">{{ title }}</div>\r\n  <div class=\"am-modal-bd\"><content>default alert</content></div>\r\n  <div class=\"am-modal-footer\">\r\n    <span class=\"am-modal-btn\" v-on=\"click: ok\">确定</span>\r\n  </div>\r\n</modal>";
+
+/***/ },
+/* 188 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(189)
+	module.exports.template = __webpack_require__(190)
+
+
+/***/ },
+/* 189 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = {
+
+	  props: {
+	    title: {
+	      type: String,
+	      default: ''
+	    },
+	    show: {
+	      type: Boolean,
+	      default: false,
+	      twoWay: true
+	    },
+	    ok: {
+	      type: Function,
+	      default: function() {
+	        return false;
+	      }
+	    },
+	    cancel: {
+	      type: Function,
+	      default: function() {
+	        return false;
+	      }
+	    }
+	  },
+
+	  components: {
+	    "modal": __webpack_require__(178)
+	  }
+
+	};
+
+/***/ },
+/* 190 */
+/***/ function(module, exports) {
+
+	module.exports = "<modal show=\"{{@ show }}\" close-via-dimmer=\"false\">\r\n  <div class=\"am-modal-hd\" v-if=\"title !== ''\">{{ title }}</div>\r\n  <div class=\"am-modal-bd\"><content>Are you sure ?</content></div>\r\n  <div class=\"am-modal-footer\">\r\n    <span class=\"am-modal-btn\" v-on=\"click: cancel\">取消</span>\r\n    <span class=\"am-modal-btn\" v-on=\"click: ok\">确定</span>\r\n  </div>\r\n</modal>";
+
+/***/ },
+/* 191 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(192)
+	module.exports.template = __webpack_require__(193)
+
+
+/***/ },
+/* 192 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = {
+
+	  props: {
+	    title: {
+	      type: String,
+	      default: ''
+	    },
+	    show: {
+	      type: Boolean,
+	      default: false,
+	      twoWay: true
+	    },
+	    ok: {
+	      type: Function,
+	      default: function() {
+	        return false;
+	      }
+	    },
+	    cancel: {
+	      type: Function,
+	      default: function() {
+	        return false;
+	      }
+	    }
+	  },
+
+	  components: {
+	    "modal": __webpack_require__(178)
+	  },
+
+	  data: function() {
+	    return {
+	      message: ''
+	    };
+	  }
+
+	};
+
+/***/ },
+/* 193 */
+/***/ function(module, exports) {
+
+	module.exports = "<modal show=\"{{@ show }}\" close-via-dimmer=\"false\">\r\n  <div class=\"am-modal-hd\" v-if=\"title !== ''\">{{ title }}</div>\r\n  <div class=\"am-modal-bd\">\r\n    <content>输入</content>\r\n    <input type=\"text\" class=\"am-modal-prompt-input\" v-model=\"message\">\r\n  </div>\r\n  <div class=\"am-modal-footer\">\r\n    <span class=\"am-modal-btn\" v-on=\"click: cancel\">取消</span>\r\n    <span class=\"am-modal-btn\" v-on=\"click: ok(message)\">确定</span>\r\n  </div>\r\n</modal>";
+
+/***/ },
+/* 194 */
 /***/ function(module, exports) {
 
 	
 
 /***/ },
-/* 213 */,
-/* 214 */
+/* 195 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(215)
-	module.exports.template = __webpack_require__(216)
+	module.exports = __webpack_require__(196)
+	module.exports.template = __webpack_require__(197)
 
 
 /***/ },
-/* 215 */
+/* 196 */
 /***/ function(module, exports) {
 
 	/**
@@ -14633,25 +14430,291 @@
 	};
 
 /***/ },
-/* 216 */
+/* 197 */
 /***/ function(module, exports) {
 
 	module.exports = "<ul class=\"am-pagination\" v-class=\"am-pagination-centered: centered, am-pagination-right: right\">\r\n  <li v-class=\"am-disabled: page === 1\"><a v-link=\"link(page-1)\">&laquo;</a></li>\r\n  <li v-repeat=\"p in pages\" v-class=\"am-active: p === page\">\r\n    <a v-link=\"link(p)\" v-if=\"p !== -1\">{{ p }}</a>\r\n    <a href=\"javascript:;\" v-if=\"p === -1\">...</a>\r\n  </li>\r\n  <li v-class=\"am-disabled: page === total\"><a v-link=\"link(page+1)\">&raquo;</a></li>\r\n</ul>";
 
 /***/ },
-/* 217 */,
-/* 218 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(219)
-	module.exports.template = __webpack_require__(220)
+	module.exports = __webpack_require__(199);
 
 
 /***/ },
-/* 219 */
+/* 199 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var amaze = __webpack_require__(141);
+	__webpack_require__(221)
+	module.exports = __webpack_require__(200)
+	module.exports.template = __webpack_require__(201)
+
+
+/***/ },
+/* 200 */
+/***/ function(module, exports) {
+
+	module.exports = {
+
+	  props: {
+	    closeable: {
+	      type: Boolean,
+	      default: true
+	    },
+	    closed: {
+	      type: Function,
+	      default: function() {
+	        return false;
+	      }
+	    },
+	    style: {
+	      type: String,
+	      default: 'success'
+	    }
+	  },
+
+	  transitions: {
+	    fadeout: {
+	      afterLeave: function (el) {
+	        // 此时还没有完全销毁
+	        return this.closed();
+	      }
+	    }
+	  },
+
+	  methods: {
+	    close: function(event) {
+	      event && event.preventDefault();
+	      this.$destroy(true);
+	      return false;
+	    }
+	  }
+
+	};
+
+/***/ },
+/* 201 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"am-alert am-alert-{{ style }}\" v-transition=\"fadeout\">\r\n  <button type=\"button\" class=\"am-close\" v-if=\"closeable\" v-on=\"click: close($event)\">&times;</button>\r\n  <content></content>\r\n</div>";
+
+/***/ },
+/* 202 */
+/***/ function(module, exports) {
+
+	module.exports = "<grid>\r\n  <am-col sm=\"12\" md=\"12\" lg=\"12\">\r\n  <h1>button组件总是使用button标签，而且type总是为button，如果要使用a标签的button，需要自定义</h1>\r\n  </am-col>\r\n  <am-col sm=\"12\" md=\"12\" lg=\"12\">\r\n    <ambutton></ambutton>\r\n    <ambutton type=\"primary\" v-on=\"click: alert\" lg>主色按钮</ambutton>\r\n    <ambutton type=\"secondary\" radius xs>次色小圆角按钮</ambutton>\r\n    <ambutton type=\"success\" disabled round sm>绿色禁用椭圆按钮</ambutton>\r\n    <ambutton type=\"warning\" round loading=\"{{@ isLoading }}\" v-on=\"click: submitNow\">{{ isLoading ? '正在提交……' : '橙色椭圆按钮' }}</ambutton>\r\n    <ambutton type=\"danger\" active xl>红色大激活按钮</ambutton>\r\n    <ambutton block type=\"primary\">块状按钮</ambutton>\r\n  </am-col>\r\n  <am-col sm=\"12\" md=\"12\" lg=\"12\">\r\n    <ambutton-group>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n    </ambutton-group>\r\n  </am-col>\r\n  <am-col sm=\"12\" md=\"12\" lg=\"12\">\r\n    <a v-link=\"{ path: '/' }\">返回首页</a>\r\n  </am-col>\r\n</grid>";
+
+/***/ },
+/* 203 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(204)
+	module.exports.template = __webpack_require__(205)
+
+
+/***/ },
+/* 204 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var amaze = __webpack_require__(132);
+
+	module.exports = {
+
+	  ready: function() {
+	    // var alert = this.$.alert;
+	    // setTimeout(function() {
+	    //   alert.close();
+	    // }, 3000);
+	  },
+
+	  components: {
+	    "amGrid": amaze.grid.grid,
+	    "amCol": amaze.grid.col,
+	    "amForm": amaze.form.form,
+	    "amInput": amaze.form.input,
+	    "amCheckbox": amaze.form.checkbox,
+	    "amRadio": amaze.form.radio,
+	    "amSelect": amaze.form.select,
+	    "alert": amaze.alert
+	  },
+
+	  data: function() {
+	    return {
+	      form: {
+	        email: '',
+	        nick: '',
+	        nick2: '',
+	        passwd: '',
+	        when: '',
+	        type: '',
+	        when2: ''
+	      }
+	    };
+	  },
+
+	  methods: {
+	    submit: function(event) {
+	      event.preventDefault();
+	      console.log(this.form);
+	      return false;
+	    },
+	    alertClosed: function() {
+	      alert('调用closed的时候还没有完全销毁');
+	    }
+	  }
+
+	};
+
+/***/ },
+/* 205 */
+/***/ function(module, exports) {
+
+	module.exports = "<am-grid>\r\n  <am-col sm=\"12\" md=\"6\" lg=\"8\">\r\n    <am-form submit=\"{{submit}}\">\r\n      <alert closed=\"{{ alertClosed }}\" style=\"warning\" closeable v-ref=\"alert\">我是提示，只显示一次，关了就没了</alert>\r\n      <am-input type=\"email\" name=\"email\" placeholder=\"请输入邮箱\" model=\"{{@ form.email }}\">邮箱</am-input>\r\n      <am-input name=\"nick\" placeholder=\"请输入昵称\" model=\"{{@ form.nick }}\">昵称</am-input>\r\n      <am-input name=\"nick2\" placeholder=\"请输入昵称\" disabled model=\"{{@ form.nick2 }}\">被禁用</am-input>\r\n      <am-input type=\"password\" name=\"passwd\" placeholder=\"请输入密码\" model=\"{{@ form.passwd }}\">密码</am-input>\r\n      <am-checkbox\r\n        name=\"when\"\r\n        items=\"{{[{label: '加蛋', value: 1}, {label: '加饭', value: 2}, {label: '加汤', value: 3}]}}\"\r\n        model=\"{{@ form.when }}\">\r\n      </am-checkbox>\r\n      <am-radio name=\"type\" items=\"{{ [{label: '中通', value: 1}, {label: '圆通', value: 2}, {label: '申通', value: 3}] }}\" model=\"{{@ form.type }}\"></am-radio>\r\n      <am-select label=\"时间\" name=\"when2\" items=\"{{ [{label: '上午', value: 1}, {label: '中午', value: 2}, {label: '下午', value: 3}] }}\" model=\"{{@ form.when2 }}\"></am-select>\r\n    </am-form>\r\n  </am-col>\r\n  <am-col sm=\"12\" md=\"6\" lg=\"4\">\r\n    <a v-link=\"{path: '/'}\">返回首页</a>\r\n  </am-col>\r\n</am-grid>";
+
+/***/ },
+/* 206 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(207)
+	module.exports.template = __webpack_require__(208)
+
+
+/***/ },
+/* 207 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var amaze = __webpack_require__(132);
+
+	module.exports = {
+	  components: {
+	    "list": amaze.list,
+	    "grid": amaze.grid.grid,
+	    "column": amaze.grid.column,
+	    "badge": amaze.badge,
+	    "icon": amaze.icon
+	  }
+	};
+
+/***/ },
+/* 208 */
+/***/ function(module, exports) {
+
+	module.exports = "<grid>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <list striped border>\r\n      <li><a v-link=\"{ path: '/' }\">首页</a></li>\r\n      <li><a v-link=\"{ path: '/buttons' }\">按钮</a></li>\r\n      <li><a v-link=\"{ path: '/forms' }\">表单</a></li>\r\n      <li><a v-link=\"{ path: '/tables' }\">表格</a></li>\r\n    </list>\r\n  </column>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <list striped border static>\r\n      <li><badge type=\"success\">Yes</badge> static, border and striped</li>\r\n      <li><badge type=\"danger\">Yes</badge> static, border and striped</li>\r\n      <li><badge type=\"primary\">Yes</badge> static, border and striped</li>\r\n      <li><badge>Yes</badge> static, border and striped</li>\r\n    </list>\r\n  </column>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <list border static>\r\n      <li><badge type=\"success\">Yes</badge> static, border</li>\r\n      <li><badge type=\"danger\">Yes</badge> static, border</li>\r\n      <li><badge type=\"primary\">Yes</badge> static, border</li>\r\n      <li><badge>Yes</badge> static, border</li>\r\n    </list>\r\n  </column>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <list striped border static>\r\n      <li><icon name=\"home\"></icon> static, border and striped</li>\r\n      <li><icon name=\"spinner\" pulse></icon> static, border and striped</li>\r\n      <li><icon name=\"gear\" spin></icon> static, border and striped</li>\r\n      <li><icon name=\"github\"></icon> static, border and striped</li>\r\n    </list>\r\n  </column>\r\n</grid>";
+
+/***/ },
+/* 209 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(210)
+	module.exports.template = __webpack_require__(211)
+
+
+/***/ },
+/* 210 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var amaze = __webpack_require__(132);
+
+	module.exports = {
+
+	  components: {
+	    "grid": amaze.grid.grid,
+	    "column": amaze.grid.column,
+	    "panel": amaze.panel,
+	    "list": amaze.list
+	  },
+
+	  data: function() {
+	    return {
+	      items: [[1, 2, 3, 4, 5], [3, 4, 5, 6, 7]]
+	    };
+	  }
+
+	};
+
+/***/ },
+/* 211 */
+/***/ function(module, exports) {
+
+	module.exports = "<grid>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n\r\n    <panel header=\"面板标题\" style=\"success\">\r\n      <div class=\"am-panel-bd\">面板内容</div>\r\n    </panel>\r\n\r\n    <panel header=\"面板+表格\" style=\"primary\">\r\n      <table class=\"am-table am-table-bordered\">\r\n        <thead>\r\n          <tr>\r\n            <th>1</th>\r\n            <th>2</th>\r\n            <th>3</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr>\r\n            <td>4</td>\r\n            <td>5</td>\r\n            <td>6</td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n    </panel>\r\n\r\n    <panel header=\"面板+列表\" style=\"warning\">\r\n      <list>\r\n        <li><a v-link=\"{ path: '/' }\">首页</a></li>\r\n        <li><a v-link=\"{ path: '/buttons' }\">按钮</a></li>\r\n        <li><a v-link=\"{ path: '/forms' }\">表单</a></li>\r\n      </list>\r\n    </panel>\r\n\r\n  </column>\r\n</grid>";
+
+/***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(213)
+	module.exports.template = __webpack_require__(214)
+
+
+/***/ },
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var amaze = __webpack_require__(132);
+
+	module.exports = {
+
+	  components: {
+	    "modal": amaze.modal.modal,
+	    "alert": amaze.modal.alert,
+	    "confirm": amaze.modal.confirm,
+	    "prompt": amaze.modal.prompt,
+	    "grid": amaze.grid.grid,
+	    "column": amaze.grid.column
+	  },
+
+	  data: function() {
+	    return {
+	      showModal: false,
+	      showAlert: false,
+	      showConfirm: false,
+	      showPrompt: false
+	    };
+	  },
+
+	  methods: {
+	    clickAlertOK: function() {
+	      this.showAlert = false;
+	    },
+	    clickConfirmOK: function() {
+	      console.log('yeah');
+	      this.showConfirm = false;
+	    },
+	    clickConfirmCancel: function() {
+	      console.log('no');
+	      this.showConfirm = false;
+	    },
+	    clickPromptOK: function(msg) {
+	      console.log(msg);
+	      this.showPrompt = false;
+	    },
+	    clickPromptCancel: function() {
+	      this.showPrompt = false;
+	    }
+	  }
+
+	};
+
+/***/ },
+/* 214 */
+/***/ function(module, exports) {
+
+	module.exports = "<grid>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <button class=\"am-btn am-btn-default\" type=\"button\" v-on=\"click: showModal = true\">打开modal</button>\r\n    <button class=\"am-btn am-btn-primary\" type=\"button\" v-on=\"click: showAlert = true\">打开alert</button>\r\n    <button class=\"am-btn am-btn-secondary\" type=\"button\" v-on=\"click: showConfirm = true\">打开confirm</button>\r\n    <button class=\"am-btn am-btn-success\" type=\"button\" v-on=\"click: showPrompt = true\">打开prompt</button>\r\n  </column>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n  <a v-link=\"{path: '/'}\">返回首页</a>\r\n  </column>\r\n</grid>\r\n\r\n<modal show=\"{{@ showModal }}\">\r\n  <div class=\"am-modal-hd\">yeah</div>\r\n</modal>\r\n\r\n<alert show=\"{{@ showAlert }}\" show=\"{{@ showAlert }}\" close-via-dimmer=\"false\" ok=\"{{ clickAlertOK }}\">好好好</alert>\r\n\r\n<confirm show=\"{{@ showConfirm }}\" ok=\"{{ clickConfirmOK }}\" cancel=\"{{ clickConfirmCancel }}\">没问题？</confirm>\r\n\r\n<prompt show=\"{{@ showPrompt }}\" ok=\"{{ clickPromptOK }}\" cancel=\"{{ clickPromptCancel }}\">输入你的名字</prompt>";
+
+/***/ },
+/* 215 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(216)
+	module.exports.template = __webpack_require__(217)
+
+
+/***/ },
+/* 216 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var amaze = __webpack_require__(132);
 
 	module.exports = {
 	  components: {
@@ -14668,10 +14731,53 @@
 	};
 
 /***/ },
-/* 220 */
+/* 217 */
 /***/ function(module, exports) {
 
 	module.exports = "<grid>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <pagination page=\"2\" total=\"10\" link=\"{{ createLink }}\" centered></pagination>\r\n  </column>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <a v-link=\"'/'\">返回首页</a>\r\n  </column>\r\n</grid>";
+
+/***/ },
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(222);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(182)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./alert.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./alert.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(181)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".fadeout-transition {\n  opacity: 1;\n  -webkit-transition: opacity 0.2s linear;\n  transition: opacity 0.2s linear;\n}\n.fadeout-leave {\n  opacity: 0 !important;\n}\n", ""]);
+
+	// exports
+
 
 /***/ }
 /******/ ]);
