@@ -1,34 +1,75 @@
 <template>
-  
-<div class="am-panel am-panel-{{ style }}">
-  <div class="am-panel-hd" v-if="header !== ''">{{ header }}</div>
-  <content></content>
+
+<div class="am-panel am-panel-{{ amStyle }}">
+  <div class="am-panel-hd" v-on="click: show = !show">{{ header }}</div>
+  <div class="am-panel-collapse" v-if="collapsible" v-show="show" v-transition="collapse"><content></content></div>
+  <content v-if="!collapsible"></content>
 </div>
 
-  
 </template>
 
+<style lang="stylus">
+
+speed = .3s
+
+.collapse-transition
+  position relative
+  overflow hidden
+  -webkit-transition height speed ease
+  transition height speed ease
+
+.collapse-enter, .collapse-leave
+  height 0 !important
+
+</style>
+
 <script>
-  
+
+var utils = require('../utils');
+
 module.exports = {
-  
+
   props: {
-    "style": {
+    "amStyle": {
       type: String,
       default: 'default'
     },
     "header": {
       type: String,
       default: ''
+    },
+    "collapsible": {
+      type: Boolean,
+      default: false
     }
   },
-  
-  data: function() {
-    return {};
+
+  transitions: {
+    collapse: {
+      beforeEnter: function(el) {
+        this.lastHeight = el.style.height = this.lastHeight;
+        utils.repaintTrigger(el);
+      },
+      afterEnter: function(el) {
+        el.style.height = '';
+      },
+      beforeLeave: function(el) {
+        this.lastHeight = el.style.height = window.getComputedStyle(el).height;
+        utils.repaintTrigger(el);
+      },
+      afterLeave: function(el) {
+        el.style.height = '';
+      }
+    }
+  },
+
+  data: () => {
+    return {
+      show: true,
+      lastHeight: ''
+    };
   }
-  
-  // TODO: https://github.com/allmobilize/amazeui/blob/master/js/ui.collapse.js
-  
-};  
+
+};
 
 </script>

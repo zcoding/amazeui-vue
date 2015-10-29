@@ -8,12 +8,12 @@
 </template>
 
 <style lang="stylus">
-  .fadeout-transition
-    opacity 1
-    -webkit-transition opacity .2s linear
-    transition opacity .2s linear
-  .fadeout-leave
-    opacity 0 !important
+.fadeout-transition
+  opacity 1
+  -webkit-transition opacity .2s linear
+  transition opacity .2s linear
+.fadeout-leave
+  opacity 0 !important
 </style>
 
 <script>

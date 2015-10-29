@@ -3,11 +3,19 @@
 <grid>
   <column sm="12" md="8" lg="6">
 
-    <panel header="面板标题" style="success">
-      <div class="am-panel-bd">面板内容</div>
+    <panel header="面板标题" am-style="success" collapsible>
+      <div class="am-panel-bd">
+        <p>这个面板可以折叠</p>
+        <p>这个面板可以折叠</p>
+        <p>这个面板可以折叠</p>
+        <p>这个面板可以折叠</p>
+        <p>这个面板可以折叠</p>
+        <p>这个面板可以折叠</p>
+        <p>这个面板可以折叠</p>
+      </div>
     </panel>
 
-    <panel header="面板+表格" style="primary">
+    <panel header="面板+表格" am-style="primary">
       <table class="am-table am-table-bordered">
         <thead>
           <tr>
@@ -26,7 +34,7 @@
       </table>
     </panel>
 
-    <panel header="面板+列表" style="warning">
+    <panel header="面板+列表" am-style="warning">
       <list>
         <li><a v-link="{ path: '/' }">首页</a></li>
         <li><a v-link="{ path: '/buttons' }">按钮</a></li>
