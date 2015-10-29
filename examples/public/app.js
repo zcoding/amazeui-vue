@@ -13130,19 +13130,19 @@
 	    component: __webpack_require__(130)
 	  },
 	  "/forms": {
-	    component: __webpack_require__(205)
-	  },
-	  "/list": {
 	    component: __webpack_require__(208)
 	  },
-	  "/panels": {
+	  "/list": {
 	    component: __webpack_require__(211)
 	  },
-	  "/modals": {
+	  "/panels": {
 	    component: __webpack_require__(214)
 	  },
-	  "/paginations": {
+	  "/modals": {
 	    component: __webpack_require__(217)
+	  },
+	  "/paginations": {
+	    component: __webpack_require__(220)
 	  }
 	};
 
@@ -13174,7 +13174,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__(131)
-	module.exports.template = __webpack_require__(204)
+	module.exports.template = __webpack_require__(207)
 
 
 /***/ },
@@ -13221,15 +13221,15 @@
 	exports.form = __webpack_require__(140);
 	exports.grid = __webpack_require__(156);
 	exports.panel = __webpack_require__(163);
-	exports.list = __webpack_require__(166);
-	exports.badge = __webpack_require__(169);
-	exports.icon = __webpack_require__(173);
-	exports.modal = __webpack_require__(177);
+	exports.list = __webpack_require__(171);
+	exports.badge = __webpack_require__(174);
+	exports.icon = __webpack_require__(178);
+	exports.modal = __webpack_require__(182);
 
-	exports.ui = __webpack_require__(194);
-	exports.pagination = __webpack_require__(195);
+	exports.ui = __webpack_require__(197);
+	exports.pagination = __webpack_require__(198);
 
-	exports.alert = __webpack_require__(198);
+	exports.alert = __webpack_require__(201);
 
 
 /***/ },
@@ -13637,224 +13637,29 @@
 /* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(220)
-	module.exports = __webpack_require__(164)
-	module.exports.template = __webpack_require__(165)
+	__webpack_require__(164)
+	module.exports = __webpack_require__(168)
+	module.exports.template = __webpack_require__(170)
 
 
 /***/ },
 /* 164 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var utils = __webpack_require__(225);
-
-	module.exports = {
-
-	  props: {
-	    "amStyle": {
-	      type: String,
-	      default: 'default'
-	    },
-	    "header": {
-	      type: String,
-	      default: ''
-	    },
-	    "collapsible": {
-	      type: Boolean,
-	      default: false
-	    }
-	  },
-
-	  transitions: {
-	    collapse: {
-	      beforeEnter: function(el) {
-	        this.lastHeight = el.style.height = this.lastHeight;
-	        utils.repaintTrigger(el);
-	      },
-	      afterEnter: function(el) {
-	        el.style.height = '';
-	      },
-	      beforeLeave: function(el) {
-	        this.lastHeight = el.style.height = window.getComputedStyle(el).height;
-	        utils.repaintTrigger(el);
-	      },
-	      afterLeave: function(el) {
-	        el.style.height = '';
-	      }
-	    }
-	  },
-
-	  data: () => {
-	    return {
-	      show: true,
-	      lastHeight: ''
-	    };
-	  }
-
-	};
-
-/***/ },
-/* 165 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"am-panel am-panel-{{ amStyle }}\">\r\n  <div class=\"am-panel-hd\" v-on=\"click: show = !show\">{{ header }}</div>\r\n  <div class=\"am-panel-collapse\" v-if=\"collapsible\" v-show=\"show\" v-transition=\"collapse\"><content></content></div>\r\n  <content v-if=\"!collapsible\"></content>\r\n</div>";
-
-/***/ },
-/* 166 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(167)
-	module.exports.template = __webpack_require__(168)
-
-
-/***/ },
-/* 167 */
-/***/ function(module, exports) {
-
-	module.exports = {
-	  props: {
-	    static: {
-	      type: Boolean,
-	      default: false
-	    },
-	    border: {
-	      type: Boolean,
-	      default: false
-	    },
-	    striped: {
-	      type: Boolean,
-	      default: false
-	    }
-	  }
-	};
-
-/***/ },
-/* 168 */
-/***/ function(module, exports) {
-
-	module.exports = "<ul class=\"am-list\" v-class=\"am-list-static: static,am-list-border: border, am-list-striped: striped\">\r\n  <content></content>\r\n</ul>";
-
-/***/ },
-/* 169 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(170);
-
-
-/***/ },
-/* 170 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(171)
-	module.exports.template = __webpack_require__(172)
-
-
-/***/ },
-/* 171 */
-/***/ function(module, exports) {
-
-	module.exports = {
-	  props: {
-	    type: {
-	      type: String,
-	      default: 'default'
-	    },
-	    radius: {
-	      type: Boolean,
-	      default: false
-	    },
-	    round: {
-	      type: Boolean,
-	      default: false
-	    }
-	  }
-	};
-
-/***/ },
-/* 172 */
-/***/ function(module, exports) {
-
-	module.exports = "<span class=\"am-badge am-badge-{{ type }}\" v-class=\"am-radius: radius, am-round: round\"><content><content></span>";
-
-/***/ },
-/* 173 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(174);
-
-
-/***/ },
-/* 174 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(175)
-	module.exports.template = __webpack_require__(176)
-
-
-/***/ },
-/* 175 */
-/***/ function(module, exports) {
-
-	module.exports = {
-	  props: {
-	    name: {
-	      type: String,
-	      required: true
-	    },
-	    spin: {
-	      type: Boolean,
-	      default: false
-	    },
-	    pulse: {
-	      type: Boolean,
-	      default: false
-	    }
-	  }
-	};
-
-/***/ },
-/* 176 */
-/***/ function(module, exports) {
-
-	module.exports = "<i class=\"am-icon-{{ name }} am-icon-fw\" v-class=\"am-icon-spin: spin, am-icon-pulse: pulse\"></i>";
-
-/***/ },
-/* 177 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports.modal = __webpack_require__(178);
-	exports.alert = __webpack_require__(185);
-	exports.confirm = __webpack_require__(188);
-	exports.prompt = __webpack_require__(191);
-
-
-/***/ },
-/* 178 */
-/***/ function(module, exports, __webpack_require__) {
-
-	__webpack_require__(179)
-	module.exports = __webpack_require__(183)
-	module.exports.template = __webpack_require__(184)
-
-
-/***/ },
-/* 179 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(180);
+	var content = __webpack_require__(165);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(182)(content, {});
+	var update = __webpack_require__(167)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./am-modal.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./am-modal.vue");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./am-panel.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./am-panel.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -13864,21 +13669,21 @@
 	}
 
 /***/ },
-/* 180 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(181)();
+	exports = module.exports = __webpack_require__(166)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".am-modal, .am-dimmer {\r\n  display: block;\r\n}", ""]);
+	exports.push([module.id, ".collapse-transition {\n  position: relative;\n  overflow: hidden;\n  -webkit-transition: height 0.3s ease;\n  transition: height 0.3s ease;\n}\n.collapse-enter,\n.collapse-leave {\n  height: 0 !important;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 181 */
+/* 166 */
 /***/ function(module, exports) {
 
 	/*
@@ -13934,7 +13739,7 @@
 
 
 /***/ },
-/* 182 */
+/* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -14159,7 +13964,251 @@
 
 
 /***/ },
+/* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var utils = __webpack_require__(169);
+
+	module.exports = {
+
+	  props: {
+	    "amStyle": {
+	      type: String,
+	      default: 'default'
+	    },
+	    "header": {
+	      type: String,
+	      default: ''
+	    },
+	    "collapsible": {
+	      type: Boolean,
+	      default: false
+	    }
+	  },
+
+	  transitions: {
+	    collapse: {
+	      beforeEnter: function(el) {
+	        this.lastHeight = el.style.height = this.lastHeight;
+	        utils.repaintTrigger(el);
+	      },
+	      afterEnter: function(el) {
+	        el.style.height = '';
+	      },
+	      beforeLeave: function(el) {
+	        this.lastHeight = el.style.height = window.getComputedStyle(el).height;
+	        utils.repaintTrigger(el);
+	      },
+	      afterLeave: function(el) {
+	        el.style.height = '';
+	      }
+	    }
+	  },
+
+	  data: () => {
+	    return {
+	      show: true,
+	      lastHeight: ''
+	    };
+	  }
+
+	};
+
+/***/ },
+/* 169 */
+/***/ function(module, exports) {
+
+	exports.repaintTrigger = function(el) {
+	  return el.offsetHeight;
+	};
+
+
+/***/ },
+/* 170 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"am-panel am-panel-{{ amStyle }}\">\r\n  <div class=\"am-panel-hd\" v-on=\"click: show = !show\">{{ header }}</div>\r\n  <div class=\"am-panel-collapse\" v-if=\"collapsible\" v-show=\"show\" v-transition=\"collapse\"><content></content></div>\r\n  <content v-if=\"!collapsible\"></content>\r\n</div>";
+
+/***/ },
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(172)
+	module.exports.template = __webpack_require__(173)
+
+
+/***/ },
+/* 172 */
+/***/ function(module, exports) {
+
+	module.exports = {
+	  props: {
+	    static: {
+	      type: Boolean,
+	      default: false
+	    },
+	    border: {
+	      type: Boolean,
+	      default: false
+	    },
+	    striped: {
+	      type: Boolean,
+	      default: false
+	    }
+	  }
+	};
+
+/***/ },
+/* 173 */
+/***/ function(module, exports) {
+
+	module.exports = "<ul class=\"am-list\" v-class=\"am-list-static: static,am-list-border: border, am-list-striped: striped\">\r\n  <content></content>\r\n</ul>";
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(175);
+
+
+/***/ },
+/* 175 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(176)
+	module.exports.template = __webpack_require__(177)
+
+
+/***/ },
+/* 176 */
+/***/ function(module, exports) {
+
+	module.exports = {
+	  props: {
+	    type: {
+	      type: String,
+	      default: 'default'
+	    },
+	    radius: {
+	      type: Boolean,
+	      default: false
+	    },
+	    round: {
+	      type: Boolean,
+	      default: false
+	    }
+	  }
+	};
+
+/***/ },
+/* 177 */
+/***/ function(module, exports) {
+
+	module.exports = "<span class=\"am-badge am-badge-{{ type }}\" v-class=\"am-radius: radius, am-round: round\"><content><content></span>";
+
+/***/ },
+/* 178 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(179);
+
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(180)
+	module.exports.template = __webpack_require__(181)
+
+
+/***/ },
+/* 180 */
+/***/ function(module, exports) {
+
+	module.exports = {
+	  props: {
+	    name: {
+	      type: String,
+	      required: true
+	    },
+	    spin: {
+	      type: Boolean,
+	      default: false
+	    },
+	    pulse: {
+	      type: Boolean,
+	      default: false
+	    }
+	  }
+	};
+
+/***/ },
+/* 181 */
+/***/ function(module, exports) {
+
+	module.exports = "<i class=\"am-icon-{{ name }} am-icon-fw\" v-class=\"am-icon-spin: spin, am-icon-pulse: pulse\"></i>";
+
+/***/ },
+/* 182 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports.modal = __webpack_require__(183);
+	exports.alert = __webpack_require__(188);
+	exports.confirm = __webpack_require__(191);
+	exports.prompt = __webpack_require__(194);
+
+
+/***/ },
 /* 183 */
+/***/ function(module, exports, __webpack_require__) {
+
+	__webpack_require__(184)
+	module.exports = __webpack_require__(186)
+	module.exports.template = __webpack_require__(187)
+
+
+/***/ },
+/* 184 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(185);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(167)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./am-modal.vue", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./am-modal.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 185 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(166)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".am-modal, .am-dimmer {\r\n  display: block;\r\n}", ""]);
+
+	// exports
+
+
+/***/ },
+/* 186 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -14187,21 +14236,21 @@
 	};
 
 /***/ },
-/* 184 */
+/* 187 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"am-modal\" tabindex=\"-1\" v-class=\"am-modal-active: show\" v-show=\"show\">\r\n  <div class=\"am-modal-dialog\">\r\n    <content select=\".am-modal-hd\"></content>\r\n    <content select=\".am-modal-bd\"></content>\r\n    <content select=\".am-modal-footer\"></content>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"am-dimmer\" v-class=\"am-active: show\" v-show=\"show\" v-on=\"click: close()\"></div>";
 
 /***/ },
-/* 185 */
+/* 188 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(186)
-	module.exports.template = __webpack_require__(187)
+	module.exports = __webpack_require__(189)
+	module.exports.template = __webpack_require__(190)
 
 
 /***/ },
-/* 186 */
+/* 189 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
@@ -14229,57 +14278,7 @@
 	  },
 
 	  components: {
-	    "modal": __webpack_require__(178)
-	  }
-
-	};
-
-/***/ },
-/* 187 */
-/***/ function(module, exports) {
-
-	module.exports = "<modal show=\"{{@ show }}\" close-via-dimmer=\"{{* closeViaDimmer }}\">\r\n  <div class=\"am-modal-hd\" v-if=\"title !== ''\">{{ title }}</div>\r\n  <div class=\"am-modal-bd\"><content>default alert</content></div>\r\n  <div class=\"am-modal-footer\">\r\n    <span class=\"am-modal-btn\" v-on=\"click: ok\">确定</span>\r\n  </div>\r\n</modal>";
-
-/***/ },
-/* 188 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(189)
-	module.exports.template = __webpack_require__(190)
-
-
-/***/ },
-/* 189 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = {
-
-	  props: {
-	    title: {
-	      type: String,
-	      default: ''
-	    },
-	    show: {
-	      type: Boolean,
-	      default: false,
-	      twoWay: true
-	    },
-	    ok: {
-	      type: Function,
-	      default: function() {
-	        return false;
-	      }
-	    },
-	    cancel: {
-	      type: Function,
-	      default: function() {
-	        return false;
-	      }
-	    }
-	  },
-
-	  components: {
-	    "modal": __webpack_require__(178)
+	    "modal": __webpack_require__(183)
 	  }
 
 	};
@@ -14288,7 +14287,7 @@
 /* 190 */
 /***/ function(module, exports) {
 
-	module.exports = "<modal show=\"{{@ show }}\" close-via-dimmer=\"false\">\r\n  <div class=\"am-modal-hd\" v-if=\"title !== ''\">{{ title }}</div>\r\n  <div class=\"am-modal-bd\"><content>Are you sure ?</content></div>\r\n  <div class=\"am-modal-footer\">\r\n    <span class=\"am-modal-btn\" v-on=\"click: cancel\">取消</span>\r\n    <span class=\"am-modal-btn\" v-on=\"click: ok\">确定</span>\r\n  </div>\r\n</modal>";
+	module.exports = "<modal show=\"{{@ show }}\" close-via-dimmer=\"{{* closeViaDimmer }}\">\r\n  <div class=\"am-modal-hd\" v-if=\"title !== ''\">{{ title }}</div>\r\n  <div class=\"am-modal-bd\"><content>default alert</content></div>\r\n  <div class=\"am-modal-footer\">\r\n    <span class=\"am-modal-btn\" v-on=\"click: ok\">确定</span>\r\n  </div>\r\n</modal>";
 
 /***/ },
 /* 191 */
@@ -14329,7 +14328,57 @@
 	  },
 
 	  components: {
-	    "modal": __webpack_require__(178)
+	    "modal": __webpack_require__(183)
+	  }
+
+	};
+
+/***/ },
+/* 193 */
+/***/ function(module, exports) {
+
+	module.exports = "<modal show=\"{{@ show }}\" close-via-dimmer=\"false\">\r\n  <div class=\"am-modal-hd\" v-if=\"title !== ''\">{{ title }}</div>\r\n  <div class=\"am-modal-bd\"><content>Are you sure ?</content></div>\r\n  <div class=\"am-modal-footer\">\r\n    <span class=\"am-modal-btn\" v-on=\"click: cancel\">取消</span>\r\n    <span class=\"am-modal-btn\" v-on=\"click: ok\">确定</span>\r\n  </div>\r\n</modal>";
+
+/***/ },
+/* 194 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(195)
+	module.exports.template = __webpack_require__(196)
+
+
+/***/ },
+/* 195 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = {
+
+	  props: {
+	    title: {
+	      type: String,
+	      default: ''
+	    },
+	    show: {
+	      type: Boolean,
+	      default: false,
+	      twoWay: true
+	    },
+	    ok: {
+	      type: Function,
+	      default: function() {
+	        return false;
+	      }
+	    },
+	    cancel: {
+	      type: Function,
+	      default: function() {
+	        return false;
+	      }
+	    }
+	  },
+
+	  components: {
+	    "modal": __webpack_require__(183)
 	  },
 
 	  data: function() {
@@ -14341,27 +14390,27 @@
 	};
 
 /***/ },
-/* 193 */
+/* 196 */
 /***/ function(module, exports) {
 
 	module.exports = "<modal show=\"{{@ show }}\" close-via-dimmer=\"false\">\r\n  <div class=\"am-modal-hd\" v-if=\"title !== ''\">{{ title }}</div>\r\n  <div class=\"am-modal-bd\">\r\n    <content>输入</content>\r\n    <input type=\"text\" class=\"am-modal-prompt-input\" v-model=\"message\">\r\n  </div>\r\n  <div class=\"am-modal-footer\">\r\n    <span class=\"am-modal-btn\" v-on=\"click: cancel\">取消</span>\r\n    <span class=\"am-modal-btn\" v-on=\"click: ok(message)\">确定</span>\r\n  </div>\r\n</modal>";
 
 /***/ },
-/* 194 */
+/* 197 */
 /***/ function(module, exports) {
 
 	
 
 /***/ },
-/* 195 */
+/* 198 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(196)
-	module.exports.template = __webpack_require__(197)
+	module.exports = __webpack_require__(199)
+	module.exports.template = __webpack_require__(200)
 
 
 /***/ },
-/* 196 */
+/* 199 */
 /***/ function(module, exports) {
 
 	/**
@@ -14457,38 +14506,38 @@
 	};
 
 /***/ },
-/* 197 */
+/* 200 */
 /***/ function(module, exports) {
 
 	module.exports = "<ul class=\"am-pagination\" v-class=\"am-pagination-centered: centered, am-pagination-right: right\">\r\n  <li v-class=\"am-disabled: page === 1\"><a v-link=\"link(page-1)\">&laquo;</a></li>\r\n  <li v-repeat=\"p in pages\" v-class=\"am-active: p === page\">\r\n    <a v-link=\"link(p)\" v-if=\"p !== -1\">{{ p }}</a>\r\n    <a href=\"javascript:;\" v-if=\"p === -1\">...</a>\r\n  </li>\r\n  <li v-class=\"am-disabled: page === total\"><a v-link=\"link(page+1)\">&raquo;</a></li>\r\n</ul>";
 
 /***/ },
-/* 198 */
+/* 201 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(199);
+	module.exports = __webpack_require__(202);
 
 
 /***/ },
-/* 199 */
+/* 202 */
 /***/ function(module, exports, __webpack_require__) {
 
-	__webpack_require__(200)
-	module.exports = __webpack_require__(202)
-	module.exports.template = __webpack_require__(203)
+	__webpack_require__(203)
+	module.exports = __webpack_require__(205)
+	module.exports.template = __webpack_require__(206)
 
 
 /***/ },
-/* 200 */
+/* 203 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(201);
+	var content = __webpack_require__(204);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(182)(content, {});
+	var update = __webpack_require__(167)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -14505,10 +14554,10 @@
 	}
 
 /***/ },
-/* 201 */
+/* 204 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(181)();
+	exports = module.exports = __webpack_require__(166)();
 	// imports
 
 
@@ -14519,7 +14568,7 @@
 
 
 /***/ },
-/* 202 */
+/* 205 */
 /***/ function(module, exports) {
 
 	module.exports = {
@@ -14561,27 +14610,27 @@
 	};
 
 /***/ },
-/* 203 */
+/* 206 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"am-alert am-alert-{{ style }}\" v-transition=\"fadeout\">\r\n  <button type=\"button\" class=\"am-close\" v-if=\"closeable\" v-on=\"click: close($event)\">&times;</button>\r\n  <content></content>\r\n</div>";
 
 /***/ },
-/* 204 */
+/* 207 */
 /***/ function(module, exports) {
 
 	module.exports = "<grid>\r\n  <am-col sm=\"12\" md=\"12\" lg=\"12\">\r\n  <h1>button组件总是使用button标签，而且type总是为button，如果要使用a标签的button，需要自定义</h1>\r\n  </am-col>\r\n  <am-col sm=\"12\" md=\"12\" lg=\"12\">\r\n    <ambutton></ambutton>\r\n    <ambutton type=\"primary\" v-on=\"click: alert\" lg>主色按钮</ambutton>\r\n    <ambutton type=\"secondary\" radius xs>次色小圆角按钮</ambutton>\r\n    <ambutton type=\"success\" disabled round sm>绿色禁用椭圆按钮</ambutton>\r\n    <ambutton type=\"warning\" round loading=\"{{@ isLoading }}\" v-on=\"click: submitNow\">{{ isLoading ? '正在提交……' : '橙色椭圆按钮' }}</ambutton>\r\n    <ambutton type=\"danger\" active xl>红色大激活按钮</ambutton>\r\n    <ambutton block type=\"primary\">块状按钮</ambutton>\r\n  </am-col>\r\n  <am-col sm=\"12\" md=\"12\" lg=\"12\">\r\n    <ambutton-group>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n    </ambutton-group>\r\n  </am-col>\r\n  <am-col sm=\"12\" md=\"12\" lg=\"12\">\r\n    <a v-link=\"{ path: '/' }\">返回首页</a>\r\n  </am-col>\r\n</grid>";
 
 /***/ },
-/* 205 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(206)
-	module.exports.template = __webpack_require__(207)
+	module.exports = __webpack_require__(209)
+	module.exports.template = __webpack_require__(210)
 
 
 /***/ },
-/* 206 */
+/* 209 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var amaze = __webpack_require__(132);
@@ -14634,21 +14683,21 @@
 	};
 
 /***/ },
-/* 207 */
+/* 210 */
 /***/ function(module, exports) {
 
 	module.exports = "<am-grid>\r\n  <am-col sm=\"12\" md=\"6\" lg=\"8\">\r\n    <am-form submit=\"{{submit}}\">\r\n      <alert closed=\"{{ alertClosed }}\" style=\"warning\" closeable v-ref=\"alert\">我是提示，只显示一次，关了就没了</alert>\r\n      <am-input type=\"email\" name=\"email\" placeholder=\"请输入邮箱\" model=\"{{@ form.email }}\">邮箱</am-input>\r\n      <am-input name=\"nick\" placeholder=\"请输入昵称\" model=\"{{@ form.nick }}\">昵称</am-input>\r\n      <am-input name=\"nick2\" placeholder=\"请输入昵称\" disabled model=\"{{@ form.nick2 }}\">被禁用</am-input>\r\n      <am-input type=\"password\" name=\"passwd\" placeholder=\"请输入密码\" model=\"{{@ form.passwd }}\">密码</am-input>\r\n      <am-checkbox\r\n        name=\"when\"\r\n        items=\"{{[{label: '加蛋', value: 1}, {label: '加饭', value: 2}, {label: '加汤', value: 3}]}}\"\r\n        model=\"{{@ form.when }}\">\r\n      </am-checkbox>\r\n      <am-radio name=\"type\" items=\"{{ [{label: '中通', value: 1}, {label: '圆通', value: 2}, {label: '申通', value: 3}] }}\" model=\"{{@ form.type }}\"></am-radio>\r\n      <am-select label=\"时间\" name=\"when2\" items=\"{{ [{label: '上午', value: 1}, {label: '中午', value: 2}, {label: '下午', value: 3}] }}\" model=\"{{@ form.when2 }}\"></am-select>\r\n    </am-form>\r\n  </am-col>\r\n  <am-col sm=\"12\" md=\"6\" lg=\"4\">\r\n    <a v-link=\"{path: '/'}\">返回首页</a>\r\n  </am-col>\r\n</am-grid>";
 
 /***/ },
-/* 208 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(209)
-	module.exports.template = __webpack_require__(210)
+	module.exports = __webpack_require__(212)
+	module.exports.template = __webpack_require__(213)
 
 
 /***/ },
-/* 209 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var amaze = __webpack_require__(132);
@@ -14664,21 +14713,21 @@
 	};
 
 /***/ },
-/* 210 */
+/* 213 */
 /***/ function(module, exports) {
 
 	module.exports = "<grid>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <list striped border>\r\n      <li><a v-link=\"{ path: '/' }\">首页</a></li>\r\n      <li><a v-link=\"{ path: '/buttons' }\">按钮</a></li>\r\n      <li><a v-link=\"{ path: '/forms' }\">表单</a></li>\r\n      <li><a v-link=\"{ path: '/tables' }\">表格</a></li>\r\n    </list>\r\n  </column>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <list striped border static>\r\n      <li><badge type=\"success\">Yes</badge> static, border and striped</li>\r\n      <li><badge type=\"danger\">Yes</badge> static, border and striped</li>\r\n      <li><badge type=\"primary\">Yes</badge> static, border and striped</li>\r\n      <li><badge>Yes</badge> static, border and striped</li>\r\n    </list>\r\n  </column>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <list border static>\r\n      <li><badge type=\"success\">Yes</badge> static, border</li>\r\n      <li><badge type=\"danger\">Yes</badge> static, border</li>\r\n      <li><badge type=\"primary\">Yes</badge> static, border</li>\r\n      <li><badge>Yes</badge> static, border</li>\r\n    </list>\r\n  </column>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <list striped border static>\r\n      <li><icon name=\"home\"></icon> static, border and striped</li>\r\n      <li><icon name=\"spinner\" pulse></icon> static, border and striped</li>\r\n      <li><icon name=\"gear\" spin></icon> static, border and striped</li>\r\n      <li><icon name=\"github\"></icon> static, border and striped</li>\r\n    </list>\r\n  </column>\r\n</grid>";
 
 /***/ },
-/* 211 */
+/* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(212)
-	module.exports.template = __webpack_require__(213)
+	module.exports = __webpack_require__(215)
+	module.exports.template = __webpack_require__(216)
 
 
 /***/ },
-/* 212 */
+/* 215 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var amaze = __webpack_require__(132);
@@ -14701,21 +14750,21 @@
 	};
 
 /***/ },
-/* 213 */
+/* 216 */
 /***/ function(module, exports) {
 
 	module.exports = "<grid>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n\r\n    <panel header=\"面板标题\" am-style=\"success\" collapsible>\r\n      <div class=\"am-panel-bd\">\r\n        <p>这个面板可以折叠</p>\r\n        <p>这个面板可以折叠</p>\r\n        <p>这个面板可以折叠</p>\r\n        <p>这个面板可以折叠</p>\r\n        <p>这个面板可以折叠</p>\r\n        <p>这个面板可以折叠</p>\r\n        <p>这个面板可以折叠</p>\r\n      </div>\r\n    </panel>\r\n\r\n    <panel header=\"面板+表格\" am-style=\"primary\">\r\n      <table class=\"am-table am-table-bordered\">\r\n        <thead>\r\n          <tr>\r\n            <th>1</th>\r\n            <th>2</th>\r\n            <th>3</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr>\r\n            <td>4</td>\r\n            <td>5</td>\r\n            <td>6</td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n    </panel>\r\n\r\n    <panel header=\"面板+列表\" am-style=\"warning\">\r\n      <list>\r\n        <li><a v-link=\"{ path: '/' }\">首页</a></li>\r\n        <li><a v-link=\"{ path: '/buttons' }\">按钮</a></li>\r\n        <li><a v-link=\"{ path: '/forms' }\">表单</a></li>\r\n      </list>\r\n    </panel>\r\n\r\n  </column>\r\n</grid>";
 
 /***/ },
-/* 214 */
+/* 217 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(215)
-	module.exports.template = __webpack_require__(216)
+	module.exports = __webpack_require__(218)
+	module.exports.template = __webpack_require__(219)
 
 
 /***/ },
-/* 215 */
+/* 218 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var amaze = __webpack_require__(132);
@@ -14764,21 +14813,21 @@
 	};
 
 /***/ },
-/* 216 */
+/* 219 */
 /***/ function(module, exports) {
 
 	module.exports = "<grid>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <button class=\"am-btn am-btn-default\" type=\"button\" v-on=\"click: showModal = true\">打开modal</button>\r\n    <button class=\"am-btn am-btn-primary\" type=\"button\" v-on=\"click: showAlert = true\">打开alert</button>\r\n    <button class=\"am-btn am-btn-secondary\" type=\"button\" v-on=\"click: showConfirm = true\">打开confirm</button>\r\n    <button class=\"am-btn am-btn-success\" type=\"button\" v-on=\"click: showPrompt = true\">打开prompt</button>\r\n  </column>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n  <a v-link=\"{path: '/'}\">返回首页</a>\r\n  </column>\r\n</grid>\r\n\r\n<modal show=\"{{@ showModal }}\">\r\n  <div class=\"am-modal-hd\">yeah</div>\r\n</modal>\r\n\r\n<alert show=\"{{@ showAlert }}\" show=\"{{@ showAlert }}\" close-via-dimmer=\"false\" ok=\"{{ clickAlertOK }}\">好好好</alert>\r\n\r\n<confirm show=\"{{@ showConfirm }}\" ok=\"{{ clickConfirmOK }}\" cancel=\"{{ clickConfirmCancel }}\">没问题？</confirm>\r\n\r\n<prompt show=\"{{@ showPrompt }}\" ok=\"{{ clickPromptOK }}\" cancel=\"{{ clickPromptCancel }}\">输入你的名字</prompt>";
 
 /***/ },
-/* 217 */
+/* 220 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(218)
-	module.exports.template = __webpack_require__(219)
+	module.exports = __webpack_require__(221)
+	module.exports.template = __webpack_require__(222)
 
 
 /***/ },
-/* 218 */
+/* 221 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var amaze = __webpack_require__(132);
@@ -14798,62 +14847,10 @@
 	};
 
 /***/ },
-/* 219 */
+/* 222 */
 /***/ function(module, exports) {
 
 	module.exports = "<grid>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <pagination page=\"2\" total=\"10\" link=\"{{ createLink }}\" centered></pagination>\r\n  </column>\r\n  <column sm=\"12\" md=\"8\" lg=\"6\">\r\n    <a v-link=\"'/'\">返回首页</a>\r\n  </column>\r\n</grid>";
-
-/***/ },
-/* 220 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(221);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(182)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./am-panel.vue", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/stylus-loader/index.js!./../../node_modules/vue-loader/lib/selector.js?type=style&index=0!./am-panel.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 221 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(181)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".collapse-transition {\n  position: relative;\n  overflow: hidden;\n  -webkit-transition: height 0.3s ease;\n  transition: height 0.3s ease;\n}\n.collapse-enter,\n.collapse-leave {\n  height: 0 !important;\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 222 */,
-/* 223 */,
-/* 224 */,
-/* 225 */
-/***/ function(module, exports) {
-
-	exports.repaintTrigger = function(el) {
-	  return el.offsetHeight;
-	};
-
 
 /***/ }
 /******/ ]);
