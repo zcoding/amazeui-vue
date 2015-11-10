@@ -1,26 +1,22 @@
 <template>
 
-<am-grid>
-  <am-col sm="12" md="6" lg="8">
-    <am-form submit="{{submit}}">
-      <alert closed="{{ alertClosed }}" style="warning" closeable v-ref="alert">我是提示，只显示一次，关了就没了</alert>
-      <am-input type="email" name="email" placeholder="请输入邮箱" model="{{@ form.email }}">邮箱</am-input>
-      <am-input name="nick" placeholder="请输入昵称" model="{{@ form.nick }}">昵称</am-input>
-      <am-input name="nick2" placeholder="请输入昵称" disabled model="{{@ form.nick2 }}">被禁用</am-input>
-      <am-input type="password" name="passwd" placeholder="请输入密码" model="{{@ form.passwd }}">密码</am-input>
-      <am-checkbox
-        name="when"
-        items="{{[{label: '加蛋', value: 1}, {label: '加饭', value: 2}, {label: '加汤', value: 3}]}}"
-        model="{{@ form.when }}">
-      </am-checkbox>
-      <am-radio name="type" items="{{ [{label: '中通', value: 1}, {label: '圆通', value: 2}, {label: '申通', value: 3}] }}" model="{{@ form.type }}"></am-radio>
-      <am-select label="时间" name="when2" items="{{ [{label: '上午', value: 1}, {label: '中午', value: 2}, {label: '下午', value: 3}] }}" model="{{@ form.when2 }}"></am-select>
+<grid>
+  <column :sm="12" :md="6" :lg="8">
+    <am-form :submit="submit">
+      <alert :closed="alertClosed" style="warning" closeable v-ref:alert>我是提示，只显示一次，关了就没了</alert>
+      <am-input type="email" name="email" placeholder="请输入邮箱" :model.sync"form.email">邮箱</am-input>
+      <am-input name="nick" placeholder="请输入昵称" :model.sync="form.nick">昵称</am-input>
+      <am-input name="nick2" placeholder="请输入昵称" disabled :model.sync="form.nick2">被禁用</am-input>
+      <am-input type="password" name="passwd" placeholder="请输入密码" :model.sync="form.passwd">密码</am-input>
+      <am-checkbox name="when" :items="[{label: '加蛋', value: 1}, {label: '加饭', value: 2}, {label: '加汤', value: 3}]" :model.sync="form.when"></am-checkbox>
+      <am-radio name="type" :items="[{label: '中通', value: 1}, {label: '圆通', value: 2}, {label: '申通', value: 3}]" :model.sync="form.type"></am-radio>
+      <am-select label="时间" name="when2" :items="[{label: '上午', value: 1}, {label: '中午', value: 2}, {label: '下午', value: 3}]" :model.sync="form.when2"></am-select>
     </am-form>
-  </am-col>
-  <am-col sm="12" md="6" lg="4">
+  </column>
+  <column :sm="12" :md="6" :lg="4">
     <a v-link="{path: '/'}">返回首页</a>
-  </am-col>
-</am-grid>
+  </column>
+</grid>
 
 </template>
 
@@ -38,8 +34,8 @@ module.exports = {
   },
 
   components: {
-    "amGrid": amaze.grid.grid,
-    "amCol": amaze.grid.col,
+    "grid": amaze.grid.grid,
+    "column": amaze.grid.column,
     "amForm": amaze.form.form,
     "amInput": amaze.form.input,
     "amCheckbox": amaze.form.checkbox,

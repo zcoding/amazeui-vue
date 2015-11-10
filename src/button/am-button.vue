@@ -1,18 +1,8 @@
 <template>
 
-<button type="button" class="am-btn am-btn-{{ type }}" v-class="
-  am-radius: radius,
-  am-round: round,
-  am-active: active,
-  am-btn-xl: xl,
-  am-btn-lg: lg,
-  am-btn-sm: sm,
-  am-btn-xs: xs,
-  am-btn-block: block" v-attr="
-  disabled: disabled || loading
-  ">
+<button type="button" class="am-btn" :disabled="disabled || loading" :class="[buttonStyle, buttonSize, radius?'am-radius':'', round?'am-round':'', active?'am-active':'', block?'am-btn-block':'']">
   <span class="am-icon-circle-o-notch am-icon-spin" v-if="loading"></span>
-  <content>This is a button</content>
+  <slot>This is a button</slot>
 </button>
 
 </template>
@@ -22,7 +12,7 @@
 module.exports = {
 
   props: {
-    "type": {
+    "amStyle": {
       type: String,
       default: 'default'
     },
@@ -66,6 +56,27 @@ module.exports = {
     "block": {
       type: Boolean,
       default: false
+    }
+  },
+
+  computed: {
+    buttonStyle: function() {
+      return 'am-btn-' + this.amStyle;
+    },
+    buttonSize: function() {
+      if (this.xl) {
+        return 'am-btn-lg';
+      }
+      if (this.md) {
+        return 'am-btn-md';
+      }
+      if (this.sm) {
+        return 'am-btn-sm';
+      }
+      if (this.xs) {
+        return 'am-btn-xs';
+      }
+      return '';
     }
   }
 

@@ -1,7 +1,7 @@
 <template>
 
 <div class="am-btn-group">
-  <content></content>
+  <slot></slot>
 </div>
 
 </template>

@@ -1,12 +1,12 @@
 <template>
 
-<ul class="am-pagination" v-class="am-pagination-centered: centered, am-pagination-right: right">
-  <li v-class="am-disabled: page === 1"><a v-link="link(page-1)">&laquo;</a></li>
-  <li v-repeat="p in pages" v-class="am-active: p === page">
+<ul class="am-pagination" :class="{'am-pagination-centered': centered, 'am-pagination-right': right}">
+  <li :class="{'am-disabled': page === 1}"><a v-link="link(page-1)">&laquo;</a></li>
+  <li v-for="p in pages" :class="{'am-active': p === page}">
     <a v-link="link(p)" v-if="p !== -1">{{ p }}</a>
     <a href="javascript:;" v-if="p === -1">...</a>
   </li>
-  <li v-class="am-disabled: page === total"><a v-link="link(page+1)">&raquo;</a></li>
+  <li :class="{'am-disabled': page === total}"><a v-link="link(page+1)">&raquo;</a></li>
 </ul>
 
 </template>

@@ -1,17 +1,17 @@
 <template>
-  
+
 <div class="am-form-group">
-  <label class="am-radio-inline" v-repeat="item in items">
+  <label class="am-radio-inline" v-for="item in items">
     <input type="radio" name="{{ name }}" value="{{ item.value }}"> {{ item.label }}
   </label>
 </div>
-  
+
 </template>
 
 <script>
-  
+
 module.exports = {
-  
+
   props: {
     "name": {
       type: String,
@@ -22,12 +22,12 @@ module.exports = {
       required: true
     }
   },
-  
+
   data: function() {
     return {
     };
   }
-  
+
 };
-  
+
 </script>

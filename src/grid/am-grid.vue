@@ -1,13 +1,13 @@
 <template>
-  
+
 <div class="am-g">
-  <content></content>
+  <slot></slot>
 </div>
-  
+
 </template>
 
 <script>
-  
+
 module.exports = {};
-  
+
 </script>

@@ -1,14 +1,14 @@
 <template>
 
-<div class="am-modal" tabindex="-1" v-class="am-modal-active: show" v-show="show">
+<div class="am-modal" tabindex="-1" :class="{'am-modal-active': show}" v-show="show">
   <div class="am-modal-dialog">
-    <content select=".am-modal-hd"></content>
-    <content select=".am-modal-bd"></content>
-    <content select=".am-modal-footer"></content>
+    <slot name="header"></slot>
+    <slot name="body"></slot>
+    <slot name="footer"></slot>
   </div>
 </div>
 
-<div class="am-dimmer" v-class="am-active: show" v-show="show" v-on="click: close()"></div>
+<div class="am-dimmer" :class="{'am-active': show}" v-show="show" v-on:click="close"></div>
 
 </template>
 
@@ -23,8 +23,6 @@
 <script>
 
 module.exports = {
-  ready: function() {
-  },
   props: {
     show: {
       type: Boolean,

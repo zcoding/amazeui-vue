@@ -18,6 +18,15 @@ module.exports = {
     ]
   },
 
+  vue: {
+    autoprefixer: false,
+    loaders: {}
+  },
+
+  babel: {
+    nonStandard: false
+  },
+
   resolve: {
     alias: {
       amaze: path.resolve(__dirname, '../src')

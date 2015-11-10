@@ -1,11 +1,11 @@
 <template>
 
-<modal show="{{@ show }}" close-via-dimmer="false">
-  <div class="am-modal-hd" v-if="title !== ''">{{ title }}</div>
-  <div class="am-modal-bd"><content>Are you sure ?</content></div>
-  <div class="am-modal-footer">
-    <span class="am-modal-btn" v-on="click: cancel">取消</span>
-    <span class="am-modal-btn" v-on="click: ok">确定</span>
+<modal :show.sync="show" :close-via-dimmer="false">
+  <div class="am-modal-hd" slot="header" v-if="title !== ''">{{ title }}</div>
+  <div class="am-modal-bd" slot="body"><slot>Are you sure ?</slot></div>
+  <div class="am-modal-footer" slot="footer">
+    <span class="am-modal-btn" v-on:click="cancel">取消</span>
+    <span class="am-modal-btn" v-on:click="ok">确定</span>
   </div>
 </modal>
 

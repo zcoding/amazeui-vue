@@ -1,9 +1,9 @@
 <template>
 
-<form class="am-form" v-el="form" v-attr="action: action, method: method">
+<form class="am-form" v-el="form" :action="action" :method="method">
   <fieldset>
-    <content></content>
-    <p><button type="submit" class="am-btn am-btn-default" v-on="click: submit($event)">提交</button></p>
+    <slot></slot>
+    <p><button type="submit" class="am-btn am-btn-default" v-on:click="submit">提交</button></p>
   </fieldset>
 </form>
 
@@ -18,7 +18,7 @@ module.exports = {
   props: {
     "action": {
       type: String,
-      default: '/api?',
+      default: '',
       required: false
     },
     "method": {
@@ -34,14 +34,6 @@ module.exports = {
         return false;
       }
     }
-  },
-
-  data: function() {
-    return {
-    };
-  },
-
-  methods: {
   }
 
 };

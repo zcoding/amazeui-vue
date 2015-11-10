@@ -1,9 +1,9 @@
 <template>
 
 <div class="am-panel am-panel-{{ amStyle }}">
-  <div class="am-panel-hd" v-on="click: show = !show">{{ header }}</div>
-  <div class="am-panel-collapse" v-if="collapsible" v-show="show" v-transition="collapse"><content></content></div>
-  <content v-if="!collapsible"></content>
+  <div class="am-panel-hd" v-on:click="show = !show">{{ header }}</div>
+  <div class="am-panel-collapse" v-if="collapsible" v-show="show" transition="collapse"><slot></slot></div>
+  <slot v-if="!collapsible"></slot>
 </div>
 
 </template>

@@ -1,10 +1,10 @@
 <template>
 
-<modal show="{{@ show }}" close-via-dimmer="{{* closeViaDimmer }}">
-  <div class="am-modal-hd" v-if="title !== ''">{{ title }}</div>
-  <div class="am-modal-bd"><content>default alert</content></div>
-  <div class="am-modal-footer">
-    <span class="am-modal-btn" v-on="click: ok">确定</span>
+<modal :show.sync="show" :close-via-dimmer.once="closeViaDimmer">
+  <div class="am-modal-hd" slot="header" v-if="title !== ''">{{ title }}</div>
+  <div class="am-modal-bd" slot="body"><slot>default alert</slot></div>
+  <div class="am-modal-footer" slot="footer">
+    <span class="am-modal-btn" v-on:click="ok">确定</span>
   </div>
 </modal>
 

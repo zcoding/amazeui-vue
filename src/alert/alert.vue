@@ -1,8 +1,8 @@
 <template>
 
-<div class="am-alert am-alert-{{ style }}" v-transition="fadeout">
-  <button type="button" class="am-close" v-if="closeable" v-on="click: close($event)">&times;</button>
-  <content></content>
+<div class="am-alert am-alert-{{ style }}" transition="fadeout">
+  <button type="button" class="am-close" v-if="closeable" v-on:click="close">&times;</button>
+  <slot></slot>
 </div>
 
 </template>

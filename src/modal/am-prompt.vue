@@ -1,14 +1,14 @@
 <template>
 
-<modal show="{{@ show }}" close-via-dimmer="false">
-  <div class="am-modal-hd" v-if="title !== ''">{{ title }}</div>
-  <div class="am-modal-bd">
-    <content>输入</content>
+<modal :show.sync="show" :close-via-dimmer="false">
+  <div class="am-modal-hd" slot="header" v-if="title !== ''">{{ title }}</div>
+  <div class="am-modal-bd" slot="body">
+    <slot>输入</slot>
     <input type="text" class="am-modal-prompt-input" v-model="message">
   </div>
-  <div class="am-modal-footer">
-    <span class="am-modal-btn" v-on="click: cancel">取消</span>
-    <span class="am-modal-btn" v-on="click: ok(message)">确定</span>
+  <div class="am-modal-footer" slot="footer">
+    <span class="am-modal-btn" v-on:click="cancel">取消</span>
+    <span class="am-modal-btn" v-on:click="ok(message)">确定</span>
   </div>
 </modal>
 

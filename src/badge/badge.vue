@@ -1,6 +1,6 @@
 <template>
 
-<span class="am-badge am-badge-{{ type }}" v-class="am-radius: radius, am-round: round"><content><content></span>
+<span class="am-badge" :class="[style, radius?'am-radius':'', round?'am-round':'']"><slot><slot></span>
 
 </template>
 
@@ -8,7 +8,7 @@
 
 module.exports = {
   props: {
-    type: {
+    amStyle: {
       type: String,
       default: 'default'
     },
@@ -19,6 +19,12 @@ module.exports = {
     round: {
       type: Boolean,
       default: false
+    }
+  },
+
+  computed: {
+    style: function() {
+      return 'am-badge-' + this.amStyle;
     }
   }
 };

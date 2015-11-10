@@ -1,26 +1,26 @@
 <template>
 
 <grid>
-  <column sm="12" md="8" lg="6">
-    <button class="am-btn am-btn-default" type="button" v-on="click: showModal = true">打开modal</button>
-    <button class="am-btn am-btn-primary" type="button" v-on="click: showAlert = true">打开alert</button>
-    <button class="am-btn am-btn-secondary" type="button" v-on="click: showConfirm = true">打开confirm</button>
-    <button class="am-btn am-btn-success" type="button" v-on="click: showPrompt = true">打开prompt</button>
+  <column :sm="12" :md="8" :lg="6">
+    <button class="am-btn am-btn-default" type="button" v-on:click="showModal = true">打开modal</button>
+    <button class="am-btn am-btn-primary" type="button" v-on:click="showAlert = true">打开alert</button>
+    <button class="am-btn am-btn-secondary" type="button" v-on:click="showConfirm = true">打开confirm</button>
+    <button class="am-btn am-btn-success" type="button" v-on:click="showPrompt = true">打开prompt</button>
   </column>
-  <column sm="12" md="8" lg="6">
+  <column :sm="12" :md="8" :lg="6">
   <a v-link="{path: '/'}">返回首页</a>
   </column>
 </grid>
 
-<modal show="{{@ showModal }}">
-  <div class="am-modal-hd">yeah</div>
+<modal :show.sync="showModal">
+  <div class="am-modal-hd" slot="header">yeah</div>
 </modal>
 
-<alert show="{{@ showAlert }}" show="{{@ showAlert }}" close-via-dimmer="false" ok="{{ clickAlertOK }}">好好好</alert>
+<alert :show.sync="showAlert" :show.sync="showAlert" :close-via-dimmer="false" :ok="clickAlertOK">好好好</alert>
 
-<confirm show="{{@ showConfirm }}" ok="{{ clickConfirmOK }}" cancel="{{ clickConfirmCancel }}">没问题？</confirm>
+<confirm :show.sync="showConfirm" :ok="clickConfirmOK" :cancel="clickConfirmCancel">没问题？</confirm>
 
-<prompt show="{{@ showPrompt }}" ok="{{ clickPromptOK }}" cancel="{{ clickPromptCancel }}">输入你的名字</prompt>
+<prompt :show.sync="showPrompt" :ok="clickPromptOK" :cancel="clickPromptCancel">输入你的名字</prompt>
 
 </template>
 

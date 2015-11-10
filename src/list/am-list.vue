@@ -1,7 +1,7 @@
 <template>
 
-<ul class="am-list" v-class="am-list-static: static,am-list-border: border, am-list-striped: striped">
-  <content></content>
+<ul class="am-list" :class="[static?'am-list-static':'', border?'am-list-border':'', striped?'am-list-striped':'']">
+  <slot></slot>
 </ul>
 
 </template>

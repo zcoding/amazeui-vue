@@ -1,7 +1,7 @@
 <template>
 
 <grid>
-  <column sm="12" md="8" lg="6">
+  <column :sm="12" :md="8" :lg="6">
 
     <panel header="面板标题" am-style="success" collapsible>
       <div class="am-panel-bd">
