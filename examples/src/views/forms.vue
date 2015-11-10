@@ -8,9 +8,9 @@
       <am-input name="nick" placeholder="请输入昵称" :model.sync="form.nick">昵称</am-input>
       <am-input name="nick2" placeholder="请输入昵称" disabled :model.sync="form.nick2">被禁用</am-input>
       <am-input type="password" name="passwd" placeholder="请输入密码" :model.sync="form.passwd">密码</am-input>
-      <am-checkbox name="when" :items="[{label: '加蛋', value: 1}, {label: '加饭', value: 2}, {label: '加汤', value: 3}]" :model.sync="form.when"></am-checkbox>
-      <am-radio name="type" :items="[{label: '中通', value: 1}, {label: '圆通', value: 2}, {label: '申通', value: 3}]" :model.sync="form.type"></am-radio>
-      <am-select label="时间" name="when2" :items="[{label: '上午', value: 1}, {label: '中午', value: 2}, {label: '下午', value: 3}]" :model.sync="form.when2"></am-select>
+      <am-checkbox name="when" :items="[{label: '加蛋', value: '1'}, {label: '加饭', value: '2'}, {label: '加汤', value: '3'}]" :model.sync="form.when"></am-checkbox>
+      <am-radio name="type" :items="[{label: '中通', value: '1'}, {label: '圆通', value: '2'}, {label: '申通', value: '3'}]" :model.sync="form.type"></am-radio>
+      <am-select label="时间" name="when2" :items="[{label: '上午', value: '1'}, {label: '中午', value: '2'}, {label: '下午', value: '3'}]" :model.sync="form.when2"></am-select>
     </am-form>
   </column>
   <column :sm="12" :md="6" :lg="4">
@@ -25,13 +25,6 @@
 var amaze = require('amaze');
 
 module.exports = {
-
-  ready: function() {
-    // var alert = this.$.alert;
-    // setTimeout(function() {
-    //   alert.close();
-    // }, 3000);
-  },
 
   components: {
     "grid": amaze.grid.grid,
@@ -51,9 +44,9 @@ module.exports = {
         nick: '',
         nick2: '',
         passwd: '',
-        when: '',
+        when: [],
         type: '',
-        when2: ''
+        when2: '1'
       }
     };
   },
@@ -61,7 +54,7 @@ module.exports = {
   methods: {
     submit: function(event) {
       event.preventDefault();
-      console.log(this.form);
+      this.$log(this.form);
       return false;
     },
     alertClosed: function() {

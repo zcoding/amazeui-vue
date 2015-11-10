@@ -8,12 +8,13 @@
     <button class="am-btn am-btn-success" type="button" v-on:click="showPrompt = true">打开prompt</button>
   </column>
   <column :sm="12" :md="8" :lg="6">
-  <a v-link="{path: '/'}">返回首页</a>
+    <a v-link="{path: '/'}">返回首页</a>
   </column>
 </grid>
 
 <modal :show.sync="showModal">
   <div class="am-modal-hd" slot="header">yeah</div>
+  <div class="am-modal-bd" slot="body">hhh</div>
 </modal>
 
 <alert :show.sync="showAlert" :show.sync="showAlert" :close-via-dimmer="false" :ok="clickAlertOK">好好好</alert>

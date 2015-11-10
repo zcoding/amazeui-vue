@@ -6,8 +6,12 @@ exports.list = require('./list/am-list.vue');
 exports.badge = require('./badge');
 exports.icon = require('./icon');
 exports.modal = require('./modal');
+exports.breadcrumb = require('./breadcrumb/breadcrumb.vue');
 
 exports.ui = require('./utils/ui');
 exports.pagination = require('./utils/pagination.vue');
 
 exports.alert = require('./alert');
+
+// 将amazeui-vue组件注册到全局
+exports.install = function(Vue, options) {};

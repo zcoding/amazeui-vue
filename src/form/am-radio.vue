@@ -2,7 +2,7 @@
 
 <div class="am-form-group">
   <label class="am-radio-inline" v-for="item in items">
-    <input type="radio" name="{{ name }}" value="{{ item.value }}"> {{ item.label }}
+    <input type="radio" name="{{ name }}" value="{{ item.value }}" v-model="model"> {{ item.label }}
   </label>
 </div>
 
@@ -20,12 +20,13 @@ module.exports = {
     "items": {
       type: Array,
       required: true
+    },
+    "model": {
+      type: String,
+      twoWay: true,
+      default: '',
+      required: false
     }
-  },
-
-  data: function() {
-    return {
-    };
   }
 
 };

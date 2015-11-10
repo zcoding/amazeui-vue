@@ -13566,134 +13566,38 @@
 
 	module.exports = {
 	  "/": {
-	    component: __webpack_require__(131)
+	    component: __webpack_require__(234)
 	  },
 	  "/buttons": {
-	    component: __webpack_require__(134)
+	    component: __webpack_require__(237)
 	  },
 	  "/forms": {
-	    component: __webpack_require__(212)
+	    component: __webpack_require__(240)
 	  },
 	  "/list": {
-	    component: __webpack_require__(215)
+	    component: __webpack_require__(243)
 	  },
 	  "/panels": {
-	    component: __webpack_require__(218)
+	    component: __webpack_require__(246)
 	  },
 	  "/modals": {
-	    component: __webpack_require__(221)
+	    component: __webpack_require__(249)
 	  },
 	  "/paginations": {
-	    component: __webpack_require__(224)
+	    component: __webpack_require__(252)
+	  },
+	  "/breadcrumb": {
+	    component: __webpack_require__(260)
 	  }
 	};
 
 
 /***/ },
-/* 131 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(132)
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(133)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./index.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./index.vue","-!vue-html!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./index.vue"], function () {
-	var newOptions = require("-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./index.vue")
-	var newTemplate = require("-!vue-html!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./index.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 132 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	module.exports = {};
-
-/***/ },
-/* 133 */
-/***/ function(module, exports) {
-
-	module.exports = "<ul>\r\n    <li><a v-link=\"{ path: '/buttons' }\">按钮组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/forms' }\">表单组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/list' }\">列表组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/panels' }\">面板组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/modals' }\">模态框组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/paginations'}\">分页组件</a></li>\r\n  </ul>";
-
-/***/ },
-/* 134 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(135)
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(211)
-	if (false) {
-	(function () {
-	var hotAPI = require("vue-hot-reload-api")
-	hotAPI.install(require("vue"))
-	if (!hotAPI.compatible) return
-	var id = "-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./buttons.vue"
-	hotAPI.createRecord(id, module.exports)
-	module.hot.accept(["-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./buttons.vue","-!vue-html!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./buttons.vue"], function () {
-	var newOptions = require("-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./buttons.vue")
-	var newTemplate = require("-!vue-html!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./buttons.vue")
-	hotAPI.update(id, newOptions, newTemplate)
-	})
-	})()
-	}
-
-/***/ },
-/* 135 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	var amaze = __webpack_require__(136);
-
-	module.exports = {
-
-	  components: {
-	    "grid": amaze.grid.grid,
-	    "column": amaze.grid.column,
-	    "ambutton": amaze.button.button,
-	    "ambuttonGroup": amaze.button.buttonGroup
-	  },
-
-	  data: function data() {
-	    return {
-	      isLoading: false
-	    };
-	  },
-
-	  methods: {
-	    "alert": (function (_alert) {
-	      function alert() {
-	        return _alert.apply(this, arguments);
-	      }
-
-	      alert.toString = function () {
-	        return _alert.toString();
-	      };
-
-	      return alert;
-	    })(function () {
-	      alert('yeah~');
-	    }),
-	    "submitNow": function submitNow() {
-	      this.isLoading = true;
-	      var vm = this;
-	      setTimeout(function () {
-	        vm.isLoading = false;
-	      }, 3000);
-	    }
-	  }
-
-	};
-
-/***/ },
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
 /* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -13705,11 +13609,15 @@
 	exports.badge = __webpack_require__(178);
 	exports.icon = __webpack_require__(182);
 	exports.modal = __webpack_require__(186);
+	exports.breadcrumb = __webpack_require__(256);
 
 	exports.ui = __webpack_require__(201);
 	exports.pagination = __webpack_require__(202);
 
 	exports.alert = __webpack_require__(205);
+
+	// 将amazeui-vue组件注册到全局
+	exports.install = function(Vue, options) {};
 
 
 /***/ },
@@ -14034,11 +13942,15 @@
 	    "items": {
 	      type: Array,
 	      required: true
+	    },
+	    "model": {
+	      type: Array,
+	      twoWay: true,
+	      "default": function _default() {
+	        return [];
+	      },
+	      required: false
 	    }
-	  },
-
-	  data: function data() {
-	    return {};
 	  }
 
 	};
@@ -14047,7 +13959,7 @@
 /* 153 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"am-form-group\">\r\n  <label class=\"am-checkbox-inline\" v-for=\"item in items\">\r\n    <input type=\"checkbox\" :name=\"name\" value=\"{{ item.value }}\"> {{ item.label }}\r\n  </label>\r\n</div>";
+	module.exports = "<div class=\"am-form-group\">\r\n  <label class=\"am-checkbox-inline\" v-for=\"item in items\">\r\n    <input type=\"checkbox\" :name=\"name\" :value=\"item.value\" v-model=\"model\"> {{ item.label }}\r\n  </label>\r\n</div>";
 
 /***/ },
 /* 154 */
@@ -14086,11 +13998,13 @@
 	    "items": {
 	      type: Array,
 	      required: true
+	    },
+	    "model": {
+	      type: String,
+	      twoWay: true,
+	      "default": '',
+	      required: false
 	    }
-	  },
-
-	  data: function data() {
-	    return {};
 	  }
 
 	};
@@ -14099,7 +14013,7 @@
 /* 156 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"am-form-group\">\r\n  <label class=\"am-radio-inline\" v-for=\"item in items\">\r\n    <input type=\"radio\" name=\"{{ name }}\" value=\"{{ item.value }}\"> {{ item.label }}\r\n  </label>\r\n</div>";
+	module.exports = "<div class=\"am-form-group\">\r\n  <label class=\"am-radio-inline\" v-for=\"item in items\">\r\n    <input type=\"radio\" name=\"{{ name }}\" value=\"{{ item.value }}\" v-model=\"model\"> {{ item.label }}\r\n  </label>\r\n</div>";
 
 /***/ },
 /* 157 */
@@ -14142,11 +14056,13 @@
 	    "items": {
 	      type: Array,
 	      required: true
+	    },
+	    "model": {
+	      type: String,
+	      "default": '',
+	      twoWay: true,
+	      required: false
 	    }
-	  },
-
-	  data: function data() {
-	    return {};
 	  }
 
 	};
@@ -14155,7 +14071,7 @@
 /* 159 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"am-form-group\">\r\n  <label for=\"f-{{ name }}\" v-if=\"label !== ''\">{{ label }}</label>\r\n  <select id=\"f-{{ name }}\" name=\"{{ name }}\">\r\n    <option value=\"{{ item.value }}\" v-for=\"item in items\">{{ item.label }}</option>\r\n  </select>\r\n  <span class=\"am-form-caret\"></span>\r\n</div>";
+	module.exports = "<div class=\"am-form-group\">\r\n  <label for=\"f-{{ name }}\" v-if=\"label !== ''\">{{ label }}</label>\r\n  <select id=\"f-{{ name }}\" name=\"{{ name }}\" v-model=\"model\">\r\n    <option value=\"{{ item.value }}\" v-for=\"item in items\">{{ item.label }}</option>\r\n  </select>\r\n  <span class=\"am-form-caret\"></span>\r\n</div>";
 
 /***/ },
 /* 160 */
@@ -14333,7 +14249,7 @@
 
 
 	// module
-	exports.push([module.id, ".collapse-transition {\n  position: relative;\n  overflow: hidden;\n  -webkit-transition: height 0.3s ease;\n  transition: height 0.3s ease;\n}\n.collapse-enter,\n.collapse-leave {\n  height: 0 !important;\n}\n", ""]);
+	exports.push([module.id, ".collapse-transition {\n  position: relative;\n  overflow: hidden;\n  -webkit-transition: height 3s ease;\n  transition: height 3s ease;\n}\n.collapse-enter,\n.collapse-leave {\n  height: 0 !important;\n}\n", ""]);
 
 	// exports
 
@@ -14676,14 +14592,13 @@
 	  transitions: {
 	    collapse: {
 	      beforeEnter: function beforeEnter(el) {
-	        this.lastHeight = el.style.height = this.lastHeight;
+	        el.style.height = this.height;
 	        utils.repaintTrigger(el);
 	      },
-	      afterEnter: function afterEnter(el) {
-	        el.style.height = '';
-	      },
+	      afterEnter: function afterEnter(el) {},
 	      beforeLeave: function beforeLeave(el) {
-	        this.lastHeight = el.style.height = window.getComputedStyle(el).height;
+	        this.height = window.getComputedStyle(el).height;
+	        el.style.height = this.height;
 	        utils.repaintTrigger(el);
 	      },
 	      afterLeave: function afterLeave(el) {
@@ -14695,7 +14610,7 @@
 	  data: function data() {
 	    return {
 	      show: true,
-	      lastHeight: ''
+	      height: ''
 	    };
 	  }
 
@@ -15448,17 +15363,144 @@
 	module.exports = "<div class=\"am-alert am-alert-{{ style }}\" transition=\"fadeout\">\r\n  <button type=\"button\" class=\"am-close\" v-if=\"closeable\" v-on:click=\"close\">&times;</button>\r\n  <slot></slot>\r\n</div>";
 
 /***/ },
-/* 211 */
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */,
+/* 222 */,
+/* 223 */,
+/* 224 */,
+/* 225 */,
+/* 226 */,
+/* 227 */,
+/* 228 */,
+/* 229 */,
+/* 230 */,
+/* 231 */,
+/* 232 */,
+/* 233 */,
+/* 234 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(235)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(236)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./index.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./index.vue","-!vue-html!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./index.vue"], function () {
+	var newOptions = require("-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./index.vue")
+	var newTemplate = require("-!vue-html!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./index.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 235 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = {};
+
+/***/ },
+/* 236 */
+/***/ function(module, exports) {
+
+	module.exports = "<ul>\r\n    <li><a v-link=\"{ path: '/buttons' }\">按钮组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/forms' }\">表单组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/list' }\">列表组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/panels' }\">面板组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/modals' }\">模态框组件例子</a></li>\r\n    <li><a v-link=\"{ path: '/paginations'}\">分页组件</a></li>\r\n    <li><a v-link=\"{ path: '/breadcrumb'}\">面包屑导航</a></li>\r\n  </ul>";
+
+/***/ },
+/* 237 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(238)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(239)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./buttons.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./buttons.vue","-!vue-html!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./buttons.vue"], function () {
+	var newOptions = require("-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./buttons.vue")
+	var newTemplate = require("-!vue-html!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./buttons.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 238 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var amaze = __webpack_require__(136);
+
+	module.exports = {
+
+	  components: {
+	    "grid": amaze.grid.grid,
+	    "column": amaze.grid.column,
+	    "ambutton": amaze.button.button,
+	    "ambuttonGroup": amaze.button.buttonGroup
+	  },
+
+	  data: function data() {
+	    return {
+	      isLoading: false
+	    };
+	  },
+
+	  methods: {
+	    "alert": (function (_alert) {
+	      function alert() {
+	        return _alert.apply(this, arguments);
+	      }
+
+	      alert.toString = function () {
+	        return _alert.toString();
+	      };
+
+	      return alert;
+	    })(function () {
+	      alert('yeah~');
+	    }),
+	    "submitNow": function submitNow() {
+	      this.isLoading = true;
+	      var vm = this;
+	      setTimeout(function () {
+	        vm.isLoading = false;
+	      }, 3000);
+	    }
+	  }
+
+	};
+
+/***/ },
+/* 239 */
 /***/ function(module, exports) {
 
 	module.exports = "<grid>\r\n  <column :sm=\"12\" :md=\"12\" :lg=\"12\">\r\n  <h1>button组件总是使用button标签，而且type总是为button，如果要使用a标签的button，需要自定义</h1>\r\n  </column>\r\n  <column :sm=\"12\" :md=\"12\" :lg=\"12\">\r\n    <ambutton></ambutton>\r\n    <ambutton am-style=\"primary\" v-on:click=\"alert\" lg>主色按钮</ambutton>\r\n    <ambutton am-style=\"secondary\" radius xs>次色小圆角按钮</ambutton>\r\n    <ambutton am-style=\"success\" disabled round sm>绿色禁用椭圆按钮</ambutton>\r\n    <ambutton am-style=\"warning\" round :loading.sync=\"isLoading\" v-on:click=\"submitNow\">{{ isLoading ? '正在提交……' : '橙色椭圆按钮' }}</ambutton>\r\n    <ambutton am-style=\"danger\" active xl>红色大激活按钮</ambutton>\r\n    <ambutton block am-style=\"primary\">块状按钮</ambutton>\r\n  </column>\r\n  <column :sm=\"12\" :md=\"12\" :lg=\"12\">\r\n    <ambutton-group>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n      <ambutton></ambutton>\r\n    </ambutton-group>\r\n  </column>\r\n  <column :sm=\"12\" :md=\"12\" :lg=\"12\">\r\n    <a v-link=\"{ path: '/' }\">返回首页</a>\r\n  </column>\r\n</grid>";
 
 /***/ },
-/* 212 */
+/* 240 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(213)
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(214)
+	module.exports = __webpack_require__(241)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(242)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -15475,7 +15517,7 @@
 	}
 
 /***/ },
-/* 213 */
+/* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -15483,13 +15525,6 @@
 	var amaze = __webpack_require__(136);
 
 	module.exports = {
-
-	  ready: function ready() {
-	    // var alert = this.$.alert;
-	    // setTimeout(function() {
-	    //   alert.close();
-	    // }, 3000);
-	  },
 
 	  components: {
 	    "grid": amaze.grid.grid,
@@ -15509,9 +15544,9 @@
 	        nick: '',
 	        nick2: '',
 	        passwd: '',
-	        when: '',
+	        when: [],
 	        type: '',
-	        when2: ''
+	        when2: '1'
 	      }
 	    };
 	  },
@@ -15519,7 +15554,7 @@
 	  methods: {
 	    submit: function submit(event) {
 	      event.preventDefault();
-	      console.log(this.form);
+	      this.$log(this.form);
 	      return false;
 	    },
 	    alertClosed: function alertClosed() {
@@ -15530,17 +15565,17 @@
 	};
 
 /***/ },
-/* 214 */
+/* 242 */
 /***/ function(module, exports) {
 
-	module.exports = "<grid>\r\n  <column :sm=\"12\" :md=\"6\" :lg=\"8\">\r\n    <am-form :submit=\"submit\">\r\n      <alert :closed=\"alertClosed\" style=\"warning\" closeable v-ref:alert>我是提示，只显示一次，关了就没了</alert>\r\n      <am-input type=\"email\" name=\"email\" placeholder=\"请输入邮箱\" :model.sync\"form.email\">邮箱</am-input>\r\n      <am-input name=\"nick\" placeholder=\"请输入昵称\" :model.sync=\"form.nick\">昵称</am-input>\r\n      <am-input name=\"nick2\" placeholder=\"请输入昵称\" disabled :model.sync=\"form.nick2\">被禁用</am-input>\r\n      <am-input type=\"password\" name=\"passwd\" placeholder=\"请输入密码\" :model.sync=\"form.passwd\">密码</am-input>\r\n      <am-checkbox name=\"when\" :items=\"[{label: '加蛋', value: 1}, {label: '加饭', value: 2}, {label: '加汤', value: 3}]\" :model.sync=\"form.when\"></am-checkbox>\r\n      <am-radio name=\"type\" :items=\"[{label: '中通', value: 1}, {label: '圆通', value: 2}, {label: '申通', value: 3}]\" :model.sync=\"form.type\"></am-radio>\r\n      <am-select label=\"时间\" name=\"when2\" :items=\"[{label: '上午', value: 1}, {label: '中午', value: 2}, {label: '下午', value: 3}]\" :model.sync=\"form.when2\"></am-select>\r\n    </am-form>\r\n  </column>\r\n  <column :sm=\"12\" :md=\"6\" :lg=\"4\">\r\n    <a v-link=\"{path: '/'}\">返回首页</a>\r\n  </column>\r\n</grid>";
+	module.exports = "<grid>\r\n  <column :sm=\"12\" :md=\"6\" :lg=\"8\">\r\n    <am-form :submit=\"submit\">\r\n      <alert :closed=\"alertClosed\" style=\"warning\" closeable v-ref:alert>我是提示，只显示一次，关了就没了</alert>\r\n      <am-input type=\"email\" name=\"email\" placeholder=\"请输入邮箱\" :model.sync\"form.email\">邮箱</am-input>\r\n      <am-input name=\"nick\" placeholder=\"请输入昵称\" :model.sync=\"form.nick\">昵称</am-input>\r\n      <am-input name=\"nick2\" placeholder=\"请输入昵称\" disabled :model.sync=\"form.nick2\">被禁用</am-input>\r\n      <am-input type=\"password\" name=\"passwd\" placeholder=\"请输入密码\" :model.sync=\"form.passwd\">密码</am-input>\r\n      <am-checkbox name=\"when\" :items=\"[{label: '加蛋', value: '1'}, {label: '加饭', value: '2'}, {label: '加汤', value: '3'}]\" :model.sync=\"form.when\"></am-checkbox>\r\n      <am-radio name=\"type\" :items=\"[{label: '中通', value: '1'}, {label: '圆通', value: '2'}, {label: '申通', value: '3'}]\" :model.sync=\"form.type\"></am-radio>\r\n      <am-select label=\"时间\" name=\"when2\" :items=\"[{label: '上午', value: '1'}, {label: '中午', value: '2'}, {label: '下午', value: '3'}]\" :model.sync=\"form.when2\"></am-select>\r\n    </am-form>\r\n  </column>\r\n  <column :sm=\"12\" :md=\"6\" :lg=\"4\">\r\n    <a v-link=\"{path: '/'}\">返回首页</a>\r\n  </column>\r\n</grid>";
 
 /***/ },
-/* 215 */
+/* 243 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(216)
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(217)
+	module.exports = __webpack_require__(244)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(245)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -15557,7 +15592,7 @@
 	}
 
 /***/ },
-/* 216 */
+/* 244 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -15575,17 +15610,17 @@
 	};
 
 /***/ },
-/* 217 */
+/* 245 */
 /***/ function(module, exports) {
 
 	module.exports = "<grid>\r\n  <column :sm=\"12\" :md=\"8\" :lg=\"6\">\r\n    <list striped border>\r\n      <li><a v-link=\"{ path: '/' }\">首页</a></li>\r\n      <li><a v-link=\"{ path: '/buttons' }\">按钮</a></li>\r\n      <li><a v-link=\"{ path: '/forms' }\">表单</a></li>\r\n      <li><a v-link=\"{ path: '/tables' }\">表格</a></li>\r\n    </list>\r\n  </column>\r\n  <column :sm=\"12\" :md=\"8\" :lg=\"6\">\r\n    <list striped border static>\r\n      <li><badge am-style=\"success\">Yes</badge> static, border and striped</li>\r\n      <li><badge am-style=\"danger\">Yes</badge> static, border and striped</li>\r\n      <li><badge am-style=\"primary\">Yes</badge> static, border and striped</li>\r\n      <li><badge>Yes</badge> static, border and striped</li>\r\n    </list>\r\n  </column>\r\n  <column :sm=\"12\" :md=\"8\" :lg=\"6\">\r\n    <list border static>\r\n      <li><badge am-style=\"success\">Yes</badge> static, border</li>\r\n      <li><badge am-style=\"danger\">Yes</badge> static, border</li>\r\n      <li><badge am-style=\"primary\">Yes</badge> static, border</li>\r\n      <li><badge>Yes</badge> static, border</li>\r\n    </list>\r\n  </column>\r\n  <column :sm=\"12\" :md=\"8\" :lg=\"6\">\r\n    <list striped border static>\r\n      <li><icon name=\"home\"></icon> static, border and striped</li>\r\n      <li><icon name=\"spinner\" pulse></icon> static, border and striped</li>\r\n      <li><icon name=\"gear\" spin></icon> static, border and striped</li>\r\n      <li><icon name=\"github\"></icon> static, border and striped</li>\r\n    </list>\r\n  </column>\r\n</grid>";
 
 /***/ },
-/* 218 */
+/* 246 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(219)
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(220)
+	module.exports = __webpack_require__(247)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(248)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -15602,7 +15637,7 @@
 	}
 
 /***/ },
-/* 219 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -15627,17 +15662,17 @@
 	};
 
 /***/ },
-/* 220 */
+/* 248 */
 /***/ function(module, exports) {
 
 	module.exports = "<grid>\r\n  <column :sm=\"12\" :md=\"8\" :lg=\"6\">\r\n\r\n    <panel header=\"面板标题\" am-style=\"success\" collapsible>\r\n      <div class=\"am-panel-bd\">\r\n        <p>这个面板可以折叠</p>\r\n        <p>这个面板可以折叠</p>\r\n        <p>这个面板可以折叠</p>\r\n        <p>这个面板可以折叠</p>\r\n        <p>这个面板可以折叠</p>\r\n        <p>这个面板可以折叠</p>\r\n        <p>这个面板可以折叠</p>\r\n      </div>\r\n    </panel>\r\n\r\n    <panel header=\"面板+表格\" am-style=\"primary\">\r\n      <table class=\"am-table am-table-bordered\">\r\n        <thead>\r\n          <tr>\r\n            <th>1</th>\r\n            <th>2</th>\r\n            <th>3</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr>\r\n            <td>4</td>\r\n            <td>5</td>\r\n            <td>6</td>\r\n          </tr>\r\n        </tbody>\r\n      </table>\r\n    </panel>\r\n\r\n    <panel header=\"面板+列表\" am-style=\"warning\">\r\n      <list>\r\n        <li><a v-link=\"{ path: '/' }\">首页</a></li>\r\n        <li><a v-link=\"{ path: '/buttons' }\">按钮</a></li>\r\n        <li><a v-link=\"{ path: '/forms' }\">表单</a></li>\r\n      </list>\r\n    </panel>\r\n\r\n  </column>\r\n</grid>";
 
 /***/ },
-/* 221 */
+/* 249 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(222)
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(223)
+	module.exports = __webpack_require__(250)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(251)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -15654,7 +15689,7 @@
 	}
 
 /***/ },
-/* 222 */
+/* 250 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -15705,17 +15740,17 @@
 	};
 
 /***/ },
-/* 223 */
+/* 251 */
 /***/ function(module, exports) {
 
-	module.exports = "<grid>\r\n  <column :sm=\"12\" :md=\"8\" :lg=\"6\">\r\n    <button class=\"am-btn am-btn-default\" type=\"button\" v-on:click=\"showModal = true\">打开modal</button>\r\n    <button class=\"am-btn am-btn-primary\" type=\"button\" v-on:click=\"showAlert = true\">打开alert</button>\r\n    <button class=\"am-btn am-btn-secondary\" type=\"button\" v-on:click=\"showConfirm = true\">打开confirm</button>\r\n    <button class=\"am-btn am-btn-success\" type=\"button\" v-on:click=\"showPrompt = true\">打开prompt</button>\r\n  </column>\r\n  <column :sm=\"12\" :md=\"8\" :lg=\"6\">\r\n  <a v-link=\"{path: '/'}\">返回首页</a>\r\n  </column>\r\n</grid>\r\n\r\n<modal :show.sync=\"showModal\">\r\n  <div class=\"am-modal-hd\" slot=\"header\">yeah</div>\r\n</modal>\r\n\r\n<alert :show.sync=\"showAlert\" :show.sync=\"showAlert\" :close-via-dimmer=\"false\" :ok=\"clickAlertOK\">好好好</alert>\r\n\r\n<confirm :show.sync=\"showConfirm\" :ok=\"clickConfirmOK\" :cancel=\"clickConfirmCancel\">没问题？</confirm>\r\n\r\n<prompt :show.sync=\"showPrompt\" :ok=\"clickPromptOK\" :cancel=\"clickPromptCancel\">输入你的名字</prompt>";
+	module.exports = "<grid>\r\n  <column :sm=\"12\" :md=\"8\" :lg=\"6\">\r\n    <button class=\"am-btn am-btn-default\" type=\"button\" v-on:click=\"showModal = true\">打开modal</button>\r\n    <button class=\"am-btn am-btn-primary\" type=\"button\" v-on:click=\"showAlert = true\">打开alert</button>\r\n    <button class=\"am-btn am-btn-secondary\" type=\"button\" v-on:click=\"showConfirm = true\">打开confirm</button>\r\n    <button class=\"am-btn am-btn-success\" type=\"button\" v-on:click=\"showPrompt = true\">打开prompt</button>\r\n  </column>\r\n  <column :sm=\"12\" :md=\"8\" :lg=\"6\">\r\n    <a v-link=\"{path: '/'}\">返回首页</a>\r\n  </column>\r\n</grid>\r\n\r\n<modal :show.sync=\"showModal\">\r\n  <div class=\"am-modal-hd\" slot=\"header\">yeah</div>\r\n  <div class=\"am-modal-bd\" slot=\"body\">hhh</div>\r\n</modal>\r\n\r\n<alert :show.sync=\"showAlert\" :show.sync=\"showAlert\" :close-via-dimmer=\"false\" :ok=\"clickAlertOK\">好好好</alert>\r\n\r\n<confirm :show.sync=\"showConfirm\" :ok=\"clickConfirmOK\" :cancel=\"clickConfirmCancel\">没问题？</confirm>\r\n\r\n<prompt :show.sync=\"showPrompt\" :ok=\"clickPromptOK\" :cancel=\"clickPromptCancel\">输入你的名字</prompt>";
 
 /***/ },
-/* 224 */
+/* 252 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(225)
-	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(226)
+	module.exports = __webpack_require__(253)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(254)
 	if (false) {
 	(function () {
 	var hotAPI = require("vue-hot-reload-api")
@@ -15732,7 +15767,7 @@
 	}
 
 /***/ },
-/* 225 */
+/* 253 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -15754,10 +15789,106 @@
 	};
 
 /***/ },
-/* 226 */
+/* 254 */
 /***/ function(module, exports) {
 
 	module.exports = "<grid>\r\n  <column :sm=\"12\" :md=\"8\" :lg=\"6\">\r\n    <pagination :page=\"2\" :total=\"10\" :link=\"createLink\" centered></pagination>\r\n  </column>\r\n  <column :sm=\"12\" :md=\"8\" :lg=\"6\">\r\n    <a v-link=\"'/'\">返回首页</a>\r\n  </column>\r\n</grid>";
+
+/***/ },
+/* 255 */,
+/* 256 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(257)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(258)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./breadcrumb.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./breadcrumb.vue","-!vue-html!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./breadcrumb.vue"], function () {
+	var newOptions = require("-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./breadcrumb.vue")
+	var newTemplate = require("-!vue-html!./../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./breadcrumb.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 257 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	module.exports = {
+
+	  props: {
+	    slash: {
+	      type: Boolean,
+	      "default": false
+	    },
+	    menu: {
+	      type: Array,
+	      "default": function _default() {
+	        return [];
+	      },
+	      required: true
+	    }
+	  }
+
+	};
+
+/***/ },
+/* 258 */
+/***/ function(module, exports) {
+
+	module.exports = "<ol class=\"am-breadcrumb\" :class=\"{'am-breadcrumb-slash': slash}\">\r\n  <li v-for=\"item in menu\" :class=\"{'am-active': $index===menu.length-1}\"><a v-link=\"{path: item.link}\">{{ item.name }}</a></li>\r\n</ol>";
+
+/***/ },
+/* 259 */,
+/* 260 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__(261)
+	;(typeof module.exports === "function" ? module.exports.options : module.exports).template = __webpack_require__(262)
+	if (false) {
+	(function () {
+	var hotAPI = require("vue-hot-reload-api")
+	hotAPI.install(require("vue"))
+	if (!hotAPI.compatible) return
+	var id = "-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./breadcrumb.vue"
+	hotAPI.createRecord(id, module.exports)
+	module.hot.accept(["-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./breadcrumb.vue","-!vue-html!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./breadcrumb.vue"], function () {
+	var newOptions = require("-!babel?optional[]=runtime&loose=all&nonStandard=false!./../../../node_modules/vue-loader/lib/selector.js?type=script&index=0!./breadcrumb.vue")
+	var newTemplate = require("-!vue-html!./../../../node_modules/vue-loader/lib/selector.js?type=template&index=0!./breadcrumb.vue")
+	hotAPI.update(id, newOptions, newTemplate)
+	})
+	})()
+	}
+
+/***/ },
+/* 261 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var amaze = __webpack_require__(136);
+
+	module.exports = {
+
+	  components: {
+	    breadcrumb: amaze.breadcrumb
+	  }
+
+	};
+
+/***/ },
+/* 262 */
+/***/ function(module, exports) {
+
+	module.exports = "<breadcrumb :menu=\"[{name:'首页',link:'/'},{name:'内容',link:'/'}]\"></breadcrumb>\r\n\r\n<breadcrumb :menu=\"[{name:'首页',link:'/'},{name:'内容',link:'/'}]\" slash></breadcrumb>";
 
 /***/ }
 /******/ ]);

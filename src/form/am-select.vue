@@ -2,7 +2,7 @@
 
 <div class="am-form-group">
   <label for="f-{{ name }}" v-if="label !== ''">{{ label }}</label>
-  <select id="f-{{ name }}" name="{{ name }}">
+  <select id="f-{{ name }}" name="{{ name }}" v-model="model">
     <option value="{{ item.value }}" v-for="item in items">{{ item.label }}</option>
   </select>
   <span class="am-form-caret"></span>
@@ -26,12 +26,13 @@ module.exports = {
     "items": {
       type: Array,
       required: true
+    },
+    "model": {
+      type: String,
+      default: '',
+      twoWay: true,
+      required: false
     }
-  },
-
-  data: function() {
-    return {
-    };
   }
 
 };

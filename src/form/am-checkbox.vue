@@ -2,7 +2,7 @@
 
 <div class="am-form-group">
   <label class="am-checkbox-inline" v-for="item in items">
-    <input type="checkbox" :name="name" value="{{ item.value }}"> {{ item.label }}
+    <input type="checkbox" :name="name" :value="item.value" v-model="model"> {{ item.label }}
   </label>
 </div>
 
@@ -20,12 +20,15 @@ module.exports = {
     "items": {
       type: Array,
       required: true
+    },
+    "model": {
+      type: Array,
+      twoWay: true,
+      default: function() {
+        return [];
+      },
+      required: false
     }
-  },
-
-  data: function() {
-    return {
-    };
   }
 
 };

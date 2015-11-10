@@ -1,23 +1,26 @@
 module.exports = {
   "/": {
-    component: require('./components/index.vue')
+    component: require('./views/index.vue')
   },
   "/buttons": {
-    component: require('./components/buttons.vue')
+    component: require('./views/buttons.vue')
   },
   "/forms": {
-    component: require('./components/forms.vue')
+    component: require('./views/forms.vue')
   },
   "/list": {
-    component: require('./components/list.vue')
+    component: require('./views/list.vue')
   },
   "/panels": {
-    component: require('./components/panels.vue')
+    component: require('./views/panels.vue')
   },
   "/modals": {
-    component: require('./components/modals.vue')
+    component: require('./views/modals.vue')
   },
   "/paginations": {
-    component: require('./components/paginations.vue')
+    component: require('./views/paginations.vue')
+  },
+  "/breadcrumb": {
+    component: require('./views/breadcrumb.vue')
   }
 };

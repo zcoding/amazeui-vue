@@ -10,7 +10,7 @@
 
 <style lang="stylus">
 
-speed = .3s
+speed = 3s
 
 .collapse-transition
   position relative
@@ -47,14 +47,14 @@ module.exports = {
   transitions: {
     collapse: {
       beforeEnter: function(el) {
-        this.lastHeight = el.style.height = this.lastHeight;
+        el.style.height = this.height;
         utils.repaintTrigger(el);
       },
       afterEnter: function(el) {
-        el.style.height = '';
       },
       beforeLeave: function(el) {
-        this.lastHeight = el.style.height = window.getComputedStyle(el).height;
+        this.height = window.getComputedStyle(el).height;
+        el.style.height = this.height;
         utils.repaintTrigger(el);
       },
       afterLeave: function(el) {
@@ -66,7 +66,7 @@ module.exports = {
   data: () => {
     return {
       show: true,
-      lastHeight: ''
+      height: ''
     };
   }
 
