@@ -30,10 +30,12 @@
   "devDependencies": {
     "babel-loader": "^5.3.2",
     "babel-runtime": "^5.8.25",
+    "chalk": "^1.1.1",
     "css-loader": "^0.21.0",
     "koa": "^1.1.2",
     "koa-route": "^2.4.2",
     "koa-static": "^1.5.2",
+    "open": "0.0.5",
     "style-loader": "^0.13.0",
     "stylus-loader": "^1.4.2",
     "vue": "^1.0.7",
