@@ -43,7 +43,7 @@ module.exports = {
   },
 
   components: {
-    "modal": require('./am-modal.vue')
+    "modal": require('./modal.vue')
   },
 
   data: function() {

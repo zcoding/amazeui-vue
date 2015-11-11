@@ -3,7 +3,7 @@
 <grid>
   <column :sm="12" :md="8" :lg="6">
 
-    <panel header="面板标题" am-style="success" collapsible>
+    <panel header="面板标题" am-style="success" collapse>
       <div class="am-panel-bd">
         <p>这个面板可以折叠</p>
         <p>这个面板可以折叠</p>
@@ -49,16 +49,7 @@
 
 <script>
 
-var amaze = require('amaze');
-
 module.exports = {
-
-  components: {
-    "grid": amaze.grid.grid,
-    "column": amaze.grid.column,
-    "panel": amaze.panel,
-    "list": amaze.list
-  },
 
   data: function() {
     return {

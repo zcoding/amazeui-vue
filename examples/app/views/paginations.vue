@@ -13,14 +13,7 @@
 
 <script>
 
-var amaze = require('amaze');
-
 module.exports = {
-  components: {
-    grid: amaze.grid.grid,
-    column: amaze.grid.column,
-    pagination: amaze.pagination
-  },
 
   methods: {
     createLink: function(p) {

@@ -1,10 +1,9 @@
+var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
 
   entry: path.resolve(__dirname, './app/index.js'),
-
-  watch: true,
 
   output: {
     path: path.resolve(__dirname, './public/app'),
@@ -29,9 +28,22 @@ module.exports = {
 
   resolve: {
     alias: {
-      "amazeui-vue": path.resolve(__dirname, '../src'),
-      "views": path.resolve(__dirname, './app/views')
+      amaze: path.resolve(__dirname, '../src'),
+      views: path.resolve(__dirname, './app/views')
     }
-  }
+  },
+
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ]
 
 };

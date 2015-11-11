@@ -17,24 +17,39 @@ vue.js的组件可以注册到全局或者局部。[vue.js: using components](ht
 ### 全局注册
 amazeui-vue提供了一个注册到全局的方法，让你可以像使用vuejs插件一样引入amazeui-vue组件。
 
+引入install函数，就可以将amazeui-vue组件注册到全局，而且是同步加载。
+```javascript
+Vue.use(require('amaze/install'));
+```
+如果希望使用异步加载组件，可以引入另外一个install-async函数
+```javascript
+Vue.use(require('amaze/install-async'));
+```
+
+无论是同步还是异步，以上方法都将把amazeui-vue组件注册到全局。如果你希望只在局部使用，可以用局部注册方法。
+
 ### 局部注册
 
 #### 同步加载
 ```javascript
-{
+import amButton from 'amazeui-vue/button/am-button.vue'
+// 或者
+// var amButton = require('amazeui-vue').button;
+
+export default {
   components: {
-    "amButton": require('../src/button/am-button.vue')
+    "amButton": amButton
   }
 }
 ```
 
 #### 异步加载
-vue.js支持异步加载组件
+结合webpack的异步加载机制，可以很方便的实现异步组件
 ```javascript
-{
+export default {
   components: {
     "amButton": function(resolve) {
-      require(['../src/button/am-button.vue'], resolve);
+      require(['amazeui-vue/am-button.vue'], resolve)
     }
   }
 }

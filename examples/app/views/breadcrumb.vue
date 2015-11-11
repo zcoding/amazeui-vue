@@ -8,13 +8,7 @@
 
 <script>
 
-var amaze = require('amaze');
-
 module.exports = {
-
-  components: {
-    breadcrumb: amaze.breadcrumb
-  }
 
 };
 

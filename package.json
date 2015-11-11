@@ -8,7 +8,10 @@
   },
   "scripts": {
     "start": "node scripts/server.js",
-    "dev": "webpack --progress --colors --config ./examples/webpack.config.js"
+    "clean": "node scripts/clean.js",
+    "predev": "npm run clean",
+    "dev": "webpack --progress --colors --config ./examples/webpack.config.js",
+    "example": "webpack --progress --colors --config ./examples/webpack.production.js"
   },
   "repository": {
     "type": "git",

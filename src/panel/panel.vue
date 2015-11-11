@@ -1,16 +1,16 @@
 <template>
 
 <div class="am-panel am-panel-{{ amStyle }}">
-  <div class="am-panel-hd" v-on:click="show = !show">{{ header }}</div>
-  <div class="am-panel-collapse" v-if="collapsible" v-show="show" transition="collapse"><slot></slot></div>
-  <slot v-if="!collapsible"></slot>
+  <div class="am-panel-hd" @click="show = !show">{{ header }}</div>
+  <div class="am-panel-collapse" v-if="collapse" v-show="show" transition="collapse"><slot></slot></div>
+  <slot v-if="!collapse"></slot>
 </div>
 
 </template>
 
 <style lang="stylus">
 
-speed = 3s
+speed = .3s
 
 .collapse-transition
   position relative
@@ -38,7 +38,7 @@ module.exports = {
       type: String,
       default: ''
     },
-    "collapsible": {
+    "collapse": {
       type: Boolean,
       default: false
     }
@@ -63,7 +63,7 @@ module.exports = {
     }
   },
 
-  data: () => {
+  data: function() {
     return {
       show: true,
       height: ''

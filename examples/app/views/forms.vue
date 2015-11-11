@@ -3,7 +3,7 @@
 <grid>
   <column :sm="12" :md="6" :lg="8">
     <am-form :submit="submit">
-      <alert :closed="alertClosed" style="warning" closeable v-ref:alert>我是提示，只显示一次，关了就没了</alert>
+      <am-alert :closed="alertClosed" style="warning" closeable v-ref:alert>我是提示，只显示一次，关了就没了</am-alert>
       <am-input type="email" name="email" placeholder="请输入邮箱" :model.sync"form.email">邮箱</am-input>
       <am-input name="nick" placeholder="请输入昵称" :model.sync="form.nick">昵称</am-input>
       <am-input name="nick2" placeholder="请输入昵称" disabled :model.sync="form.nick2">被禁用</am-input>
@@ -22,20 +22,7 @@
 
 <script>
 
-var amaze = require('amaze');
-
 module.exports = {
-
-  components: {
-    "grid": amaze.grid.grid,
-    "column": amaze.grid.column,
-    "amForm": amaze.form.form,
-    "amInput": amaze.form.input,
-    "amCheckbox": amaze.form.checkbox,
-    "amRadio": amaze.form.radio,
-    "amSelect": amaze.form.select,
-    "alert": amaze.alert
-  },
 
   data: function() {
     return {

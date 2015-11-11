@@ -39,16 +39,7 @@
 
 <script>
 
-var amaze = require('amaze');
-
 module.exports = {
-  components: {
-    "list": amaze.list,
-    "grid": amaze.grid.grid,
-    "column": amaze.grid.column,
-    "badge": amaze.badge,
-    "icon": amaze.icon
-  }
 };
 
 </script>

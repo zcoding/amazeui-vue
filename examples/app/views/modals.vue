@@ -27,18 +27,7 @@
 
 <script>
 
-var amaze = require('amaze');
-
 module.exports = {
-
-  components: {
-    "modal": amaze.modal.modal,
-    "alert": amaze.modal.alert,
-    "confirm": amaze.modal.confirm,
-    "prompt": amaze.modal.prompt,
-    "grid": amaze.grid.grid,
-    "column": amaze.grid.column
-  },
 
   data: function() {
     return {
