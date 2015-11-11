@@ -3,12 +3,12 @@ var path = require('path');
 
 module.exports = {
 
-  entry: path.resolve(__dirname, './app/index.js'),
+  entry: path.resolve(__dirname, './src/build.js'),
 
   output: {
-    path: path.resolve(__dirname, './public/app'),
-    publicPath: "/app/",
-    filename: "app.js"
+    path: path.resolve(__dirname, './build'),
+    publicPath: "/",
+    filename: "amazeui-vue.js"
   },
 
   module: {
@@ -19,18 +19,13 @@ module.exports = {
 
   vue: {
     autoprefixer: false,
-    loaders: {}
+    loaders: {
+      html: 'vue-html?removeRedundantAttributes=false'
+    }
   },
 
   babel: {
     nonStandard: false
-  },
-
-  resolve: {
-    alias: {
-      amaze: path.resolve(__dirname, '../src'),
-      views: path.resolve(__dirname, './app/views')
-    }
   },
 
   plugins: [

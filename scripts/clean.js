@@ -18,4 +18,4 @@ function emptydir(dirpath) {
   });
 }
 
-return emptydir(path.resolve(__dirname, '../examples/public/app'));
+emptydir(path.resolve(__dirname, '../examples/public/app'));

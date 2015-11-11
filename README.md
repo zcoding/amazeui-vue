@@ -6,7 +6,9 @@ AmazeUI官方支持[React版本的组件](https://github.com/amazeui/amazeui-rea
 
 本项目基于vue.js的组件系统重构AmazeUI的组件，使其能够在vue.js中使用，支持vue.js的组件编写方式，摆脱jQuery依赖。
 
-## Notice
+## Requirements
++ vue.js ^`1.0`
+
 vue.js 1.0版本已经正式发布了，为了配合vue.js升级，amazeui-vue也将改为使用vue.js 1.0版本。如果你正在使用vue.js 1.0版本或者正在升级你的vue.js到1.0版本，可以使用vuejs1.0分支。
 
 ## 组件使用方式

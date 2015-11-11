@@ -24,7 +24,7 @@ module.exports = {
       default: false,
       twoWay: true
     },
-    closeViaDimmer: { // 是否通过点击遮罩层关闭模态框，默认为true
+    closeViaDimmer: { // close via click event on dimmer or not, default is true
       type: Boolean,
       default: true
     },

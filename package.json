@@ -1,6 +1,6 @@
 {
   "name": "amazeui-vue",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "Amaze UI components build with vue.js",
   "main": "./src/index.js",
   "directories": {
@@ -11,7 +11,7 @@
     "clean": "node scripts/clean.js",
     "predev": "npm run clean",
     "dev": "webpack --progress --colors --config ./examples/webpack.config.js",
-    "example": "webpack --progress --colors --config ./examples/webpack.production.js"
+    "build": "webpack --progress --colors --config ./webpack.build.js"
   },
   "repository": {
     "type": "git",
@@ -45,7 +45,8 @@
   },
   "peerDependencies": {
     "vue": "^1.0.7",
-    "vue-loader": "^6.0.5"
+    "vue-loader": "^6.0.5",
+    "stylus-loader": "^1.4.2"
   },
   "dependencies": {}
 }
