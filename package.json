@@ -1,6 +1,6 @@
 {
   "name": "amazeui-vue",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Amaze UI components build with vue.js",
   "main": "./src/index.js",
   "directories": {
