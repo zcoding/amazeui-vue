@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
 
-  entry: path.resolve(__dirname, './src/index.js'),
+  entry: path.resolve(__dirname, './app/index.js'),
 
   watch: true,
 
@@ -29,7 +29,8 @@ module.exports = {
 
   resolve: {
     alias: {
-      amaze: path.resolve(__dirname, '../src')
+      amaze: path.resolve(__dirname, '../src'),
+      views: path.resolve(__dirname, './app/views')
     }
   }
 

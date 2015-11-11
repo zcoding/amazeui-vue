@@ -4,6 +4,7 @@ var routes = require('./routes');
 
 Vue.config.debug = true;
 
+Vue.use(require('amaze/install'));
 Vue.use(VueRouter);
 
 var router = new VueRouter();

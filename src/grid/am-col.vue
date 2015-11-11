@@ -8,20 +8,27 @@
 
 <script>
 
+function columnNumberRange(num) {
+  return num >= 0 && num <= 12;
+}
+
 module.exports = {
 
   props: {
     "sm": {
       type: Number,
-      default: 0
+      default: 0,
+      validator: columnNumberRange
     },
     "md": {
       type: Number,
-      default: 0
+      default: 0,
+      validator: columnNumberRange
     },
     "lg": {
       type: Number,
-      default: 0
+      default: 0,
+      validator: columnNumberRange
     }
   },
 

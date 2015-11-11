@@ -5,7 +5,6 @@
   <select id="f-{{ name }}" name="{{ name }}" v-model="model">
     <option value="{{ item.value }}" v-for="item in items">{{ item.label }}</option>
   </select>
-  <span class="am-form-caret"></span>
 </div>
 
 </template>

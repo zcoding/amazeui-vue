@@ -12,6 +12,3 @@ exports.ui = require('./utils/ui');
 exports.pagination = require('./utils/pagination.vue');
 
 exports.alert = require('./alert');
-
-// 将amazeui-vue组件注册到全局
-exports.install = function(Vue, options) {};
