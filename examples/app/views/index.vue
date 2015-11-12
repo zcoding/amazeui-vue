@@ -8,6 +8,7 @@
     <li><a v-link="{ path: '/paginations'}">分页组件</a></li>
     <li><a v-link="{ path: '/breadcrumb'}">面包屑导航</a></li>
     <li><a v-link="{ path: '/article'}">文章展示</a></li>
+    <li><a v-link="{ path: '/datetimepicker'}">日期选择器</a></li>
   </ul>
 </template>
 

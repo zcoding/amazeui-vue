@@ -81,5 +81,16 @@ module.exports = {
         }
       }
     }
+  },
+
+  "datetimepicker": {
+    component: {
+      template: '<dtpicker></dtpicker>',
+      components: {
+        "dtpicker": function(resolve) {
+          require(['views/dtpicker.vue'], resolve);
+        }
+      }
+    }
   }
 };
