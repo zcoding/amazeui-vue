@@ -1,6 +1,6 @@
 <template>
 
-<div class="am-datepicker-days">
+<div class="am-datepicker-days" style={this.props.style}>
   <table class="am-datepicker-table">
     <thead>
     <tr class="am-datepicker-header">
@@ -33,46 +33,6 @@
 
 <script>
 
-export default {
-
-  props: {
-    weekStart: {
-      type: Number,
-      default: 7
-    }
-
-  },
-
-  data() {
-    return {
-      viewDate: new Date(),
-      days: [],
-      weeks: [7, 1, 2, 3, 4, 5, 6]
-    };
-  },
-
-  filters: {
-    locale(num) {
-      return {
-        1: '一'
-        , 2: '二'
-        , 3: '三'
-        , 4: '四'
-        , 5: '五'
-        , 6: '六'
-        , 7: '日'
-      }[num];
-    }
-  },
-
-  methods: {
-
-    subtractMonth() {},
-
-    showMonths() {},
-
-    addMonth() {}
-  }
-};
+export default {};
 
 </script>

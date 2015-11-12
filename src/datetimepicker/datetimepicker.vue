@@ -1,30 +1,17 @@
 <template>
 
 <div class="am-datepicker">
-  <div class="am-datepicker-caret"></div>
-  <div class="am-datepicker-date">
-    <date-picker
-      onClose={this.props.onClose}
-      weekStart={this.props.weekStart}
-      viewMode={this.props.viewMode}
-      minViewMode={this.props.minViewMode}
-      daysOfWeekDisabled={this.props.daysOfWeekDisabled}
-      format={this.props.format}
-      date={this.state.date}
-      locale={this.props.locale}
-      minDate={this.props.minDate}
-      maxDate={this.props.maxDate}>
+  <div class="am-datepicker-caret" v-if="caretDisplayed"></div>
+  <div class="am-datepicker-date" v-show="showDatePicker">
+    <date-picker>
   </div>
-  <div class="am-datepicker-time">
-    <time-picker
-      onSelect={this.handleSelect}
-      date={this.state.date}
-      format={this.props.format}>
+  <div class="am-datepicker-time" v-show="showTimePicker">
+    <time-picker>
   </div>
-  <div class="am-datepicker-toggle" @click="handleToggleTime">
+  <div class="am-datepicker-toggle" v-show="showDatePicker" @click="handleToggleTime">
     <icon name="clock-o">
   </div>
-  <div class="am-datepicker-toggle" @click="handleToggleDate">
+  <div class="am-datepicker-toggle" v-show="showTimePicker" @click="handleToggleDate">
     <icon name="calendar">
   </div>
 </div>
@@ -76,7 +63,10 @@ export default {
     },
     amStyle: {
       type: String,
-      default: ''
+      default: '',
+      validator(style) {
+        return /success|danger|warning|/.test(style);
+      }
     },
     minDate: {
       type: String,
@@ -99,7 +89,10 @@ export default {
 
     add() {},
 
-    handleToggleTime() {},
+    handleToggleTime() {
+      this.showDatePicker = true,
+      this.showTimePicker = false;
+    },
 
     handleToggleDate() {}
   }

@@ -1,32 +1,23 @@
 <template>
 
-<div
-  className={prefixClass(this.props.displayName)}
-  style={this.props.style}>
-  <table className={prefixClass('table')}>
+<div>
+  <table class="am-datepicker-table">
     <thead>
-    <tr className={prefixClass('header')}>
-      <th className={prefixClass('prev')} onClick={this.props.subtract}>
-        <i className={prefixClass('prev-icon')}></i>
+    <tr class="am-datepicker-header">
+      <th class="am-datepicker-prev" @click="prev">
+        <i class="am-datepicker-prev-icon"></i>
       </th>
-      <th
-        className={prefixClass('switch')}
-        colSpan="5"
-        onClick={this.props.showFunc}>
-        <div className={this.prefixClass('select')}>
-          {this.props.showText}
-        </div>
+      <th class="am-datepicker-switch" colspan="5" @click="show">
+        <div class="am-datepicker-select">{{ text }}</div>
       </th>
-      <th className={prefixClass('next')} onClick={this.props.add}>
-        <i className={prefixClass('next-icon')}></i>
+      <th class="am-datepicker-next" @click="next">
+        <i class="am-datepicker-next-icon"></i>
       </th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td colSpan="7">
-        {this.props.body}
-      </td>
+      <td colspan="7"><slot></slot></td>
     </tr>
     </tbody>
   </table>
@@ -36,6 +27,29 @@
 
 <script>
 
+import utils from '../utils';
 
+export default {
+
+  props: {
+    text: {
+      type: String,
+      required: true
+    },
+    show: {
+      type: Function,
+      required: true
+    },
+    prev: {
+      type: Function,
+      required: true
+    },
+    next: {
+      type: Function,
+      required: true
+    }
+  }
+
+};
 
 </script>
