@@ -1,13 +1,64 @@
 # amazeui-vue
-使用[vue.js](https://github.com/yyx990803/vue/)重构的Amaze UI组件
+[amazeui](https://github.com/amazeui/amazeui) components build with [vue.js](https://github.com/vuejs/vue)
+
+## Installation
+### <del>NPM</del>
+<del>`npm install amazeui-vue`</del>
+
+### build
+use the all-in-one file in 'build' folder
+
+```html
+<head>
+  <!-- remember to add vue.js lib and amazeui styles -->
+  <link rel="stylesheet" href="path/to/amazeui.css">
+  <script src="path/to/vue.js"></script>
+  <!-- include amazeui-vue -->
+  <script src="path/to/amazeui-vue.js"></script>
+  <script>
+  // important !!! remember to use amazeui as a vuejs plugin
+  Vue.use(amazeuiVue);
+  // now you can use it as you like
+  </script>
+</head>
+```
 
 ## About
-AmazeUI官方支持[React版本的组件](https://github.com/amazeui/amazeui-react)，对于不想使用React的开发者只能使用jQuery版本，而jQuery版本对于MVVM框架并不十分友好。
+This repository is built to use amazeui as vue.js components, without jQuery requirement.
 
-本项目基于vue.js的组件系统重构AmazeUI的组件，使其能够在vue.js中使用，支持vue.js的组件编写方式，摆脱jQuery依赖。
+If you are not familiar with vue.js, you can learn from the [vue.js official site](http://vuejs.org/).
+
+If you want to use the react version, you can find it [here](https://github.com/amazeui/amazeui-react), it's developed by the amazeui team.
+
+## Available Now
++ `grid`
++ `column`
++ `container`
++ `amButton`
++ `buttonGroup`
++ `amForm`
++ `amInput`
++ `checkbox`
++ `radio`
++ `amSelect`
++ `panel`
++ `list`
++ `modal`
++ `alert`
++ `confirm`
++ `prompt`
++ `icon`
++ `badge`
++ `pagination`
++ `article`
+
+## Development
++ `datetimepicker`
++ `slider`
++ `tab`
 
 ## Requirements
-+ vue.js ^`1.0`
++ [vue.js](https://github.com/vuejs/vue) ^1.0
 
 vue.js 1.0版本已经正式发布了，为了配合vue.js升级，amazeui-vue也将改为使用vue.js 1.0版本。如果你正在使用vue.js 1.0版本或者正在升级你的vue.js到1.0版本，可以使用vuejs1.0分支。
 

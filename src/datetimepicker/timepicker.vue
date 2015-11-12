@@ -1,46 +1,56 @@
 <template>
 
-<div className={this.prefixClass('body')}>
-  <div
-    className={prefixClass(this.props.displayName)}
-    style={this.props.style}>
-    <table className={prefixClass('table')}>
+<div class="am-datepicker-body">
+  <div class="am-datepicker-time-wrapper">
+    <table class="am-datepicker-table">
       <thead>
-      <tr className={prefixClass('header')}>
-        <th className={prefixClass('prev')} onClick={this.props.subtract}>
-          <i className={prefixClass('prev-icon')}></i>
+      <tr class="am-datepicker-header">
+        <th class="am-datepicker-prev" @click="subtract">
+          <i class="am-datepicker-prev-icon"></i>
         </th>
-        <th
-          className={prefixClass('switch')}
-          colSpan="5"
-          onClick={this.props.showFunc}
-          >
-          <div className={this.prefixClass('select')}>
-            {this.props.showText}
-          </div>
+        <th class="am-datepicker-switch" colspan="5" @click="showFunc">
+          <div class="am-datepicker-select">{{ showText }}</div>
         </th>
-        <th className={prefixClass('next')} onClick={this.props.add}>
-          <i className={prefixClass('next-icon')}></i>
+        <th class="am-datepicker-next" @click="add">
+          <i class="am-datepicker-next-icon"></i>
         </th>
       </tr>
       </thead>
       <tbody>
       <tr>
-        <td colSpan="7">
-          {this.props.body}
+        <td colspan="7">
+          <div class="am-datepicker-time-box">
+            <strong @click="showHours">{time.hour}</strong><em>:</em><strong @click="showMinutes">{time.minute}</strong>
+          </div>
         </td>
       </tr>
       </tbody>
     </table>
   </div>
-  {this.renderHours()}
-  {this.renderMinutes()}
+  <hours-picker>
+  <minutes-picker>
 </div>
 
 </template>
 
 <script>
 
-export default {};
+import minutesPicker from './minutespicker.vue';
+import hoursPicker from './hourspicker.vue';
+
+export default {
+
+  components: {
+    minutesPicker,
+    hoursPicker
+  },
+
+  methods: {
+    showHours() {},
+
+    showMinutes() {}
+  }
+
+};
 
 </script>

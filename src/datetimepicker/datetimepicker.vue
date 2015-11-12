@@ -21,8 +21,12 @@
       date={this.state.date}
       format={this.props.format}>
   </div>
-  {this.renderToggleTime()}
-  {this.renderToggleDate()}
+  <div class="am-datepicker-toggle" @click="handleToggleTime">
+    <icon name="clock-o">
+  </div>
+  <div class="am-datepicker-toggle" @click="handleToggleDate">
+    <icon name="calendar">
+  </div>
 </div>
 
 </template>
@@ -30,6 +34,7 @@
 <script>
 
 import utils from '../utils';
+import icon from '../icon/icon.vue';
 import datePicker from './datepicker.vue';
 import timePicker from './timepicker.vue';
 
@@ -92,7 +97,11 @@ export default {
 
     showFunc() {},
 
-    add() {}
+    add() {},
+
+    handleToggleTime() {},
+
+    handleToggleDate() {}
   }
 
 };
