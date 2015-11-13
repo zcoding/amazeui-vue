@@ -4,13 +4,13 @@
   <table class="am-datepicker-table">
     <thead>
     <tr class="am-datepicker-header">
-      <th class="am-datepicker-prev" @click="subtract">
+      <th class="am-datepicker-prev" @click="subtractMinute">
         <i class="am-datepicker-prev-icon"></i>
       </th>
-      <th class="am-datepicker-switch" colspan="5" @click="showFunc">
+      <th class="am-datepicker-switch" colspan="5">
         <div class="am-datepicker-select">{{ showText }}</div>
       </th>
-      <th class="am-datepicker-next" @click="add">
+      <th class="am-datepicker-next" @click="addMinute">
         <i class="am-datepicker-next-icon"></i>
       </th>
     </tr>
@@ -40,11 +40,11 @@ export default {
   },
 
   methods: {
-    subtract() {},
+    subtractMinute() {},
 
-    showFunc() {},
+    addMinute() {},
 
-    add() {}
+    setSelectedMinute() {}
   }
 
 };

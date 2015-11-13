@@ -5,13 +5,13 @@
     <table class="am-datepicker-table">
       <thead>
       <tr class="am-datepicker-header">
-        <th class="am-datepicker-prev" @click="subtract">
+        <th class="am-datepicker-prev" @click="subtractMinute">
           <i class="am-datepicker-prev-icon"></i>
         </th>
-        <th class="am-datepicker-switch" colspan="5" @click="showFunc">
-          <div class="am-datepicker-select">{{ showText }}</div>
+        <th class="am-datepicker-switch" colspan="5" @click="showDate">
+          <div class="am-datepicker-select">today</div>
         </th>
-        <th class="am-datepicker-next" @click="add">
+        <th class="am-datepicker-next" @click="addMinute">
           <i class="am-datepicker-next-icon"></i>
         </th>
       </tr>
@@ -20,7 +20,7 @@
       <tr>
         <td colspan="7">
           <div class="am-datepicker-time-box">
-            <strong @click="showHours">{time.hour}</strong><em>:</em><strong @click="showMinutes">{time.minute}</strong>
+            <strong @click="showHours">{{ time.hour }}</strong><em>:</em><strong @click="showMinutes">{{ time.minute }}</strong>
           </div>
         </td>
       </tr>
@@ -40,6 +40,15 @@ import hoursPicker from './hourspicker.vue';
 
 export default {
 
+  data() {
+    return {
+      time: {
+        hour: '12',
+        minute: '12'
+      }
+    };
+  },
+
   components: {
     minutesPicker,
     hoursPicker
@@ -48,7 +57,13 @@ export default {
   methods: {
     showHours() {},
 
-    showMinutes() {}
+    showMinutes() {},
+
+    subtractMinute() {},
+
+    addMinute() {},
+
+    showDate() {}
   }
 
 };

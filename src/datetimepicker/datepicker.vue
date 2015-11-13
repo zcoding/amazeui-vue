@@ -1,7 +1,7 @@
 <template>
 
 <div class="am-datepicker-body">
-  <days-picker>
+  <days-picker :selectedDate.sync="selectedDate">
   <months-picker>
   <years-picker>
 </div>
@@ -15,6 +15,14 @@ import monthsPicker from './monthspicker.vue';
 import yearsPicker from './yearspicker.vue';
 
 export default {
+  props: {
+    selectedDate: {
+      twoWay: true,
+      default() {
+        return new Date();
+      }
+    }
+  },
   components: {
     daysPicker,
     monthsPicker,

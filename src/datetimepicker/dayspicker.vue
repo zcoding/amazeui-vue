@@ -1,13 +1,13 @@
 <template>
 
-<div class="am-datepicker-days">
+<div class="am-datepicker-days" v-show="showDays">
   <table class="am-datepicker-table">
     <thead>
     <tr class="am-datepicker-header">
       <th class="am-datepicker-prev" @click="subtractMonth">
         <i class="am-datepicker-prev-icon"></i>
       </th>
-      <th class="am-datepicker-switch" colSpan="5" @click="showMonths">
+      <th class="am-datepicker-switch" colspan="5" @click="showMonths">
         <div class="am-datepicker-select">
           {{ viewDate.getMonth() }}
           {{ viewDate.getFullYear() }}
@@ -23,7 +23,14 @@
     </thead>
     <tbody>
       <tr v-for="row in days">
-        <td v-for="day in row" @click="setSelectedDate(day)">{{ day }}</td>
+        <td class="am-datepicker-day" v-for="day in row"
+        :class="{
+          'am-disabled': day.isDisabled,
+          'am-active': day.isSelected,
+          'am-datepicker-old': day.isOld,
+          'am-datepicker-new': day.isNew
+        }"
+        @click="setSelectedDate(day)">{{ day.show }}</td>
       </tr>
     </tbody>
   </table>
@@ -33,22 +40,118 @@
 
 <script>
 
+import {dateUtils} from '../utils';
+
 export default {
 
   props: {
+    selectedDate: {
+      twoWay: true,
+      default() {
+        return new Date();
+      }
+    },
     weekStart: {
       type: Number,
       default: 7
     }
-
+    , showDays: {
+      type: Boolean,
+      default: true
+    }
   },
 
   data() {
     return {
       viewDate: new Date(),
-      days: [],
       weeks: [7, 1, 2, 3, 4, 5, 6]
     };
+  },
+
+  computed: {
+    days() {
+
+      var days = [];
+
+      var weekStart = 7;
+
+      var weekEnd = ((weekStart + 6) % 7);
+
+      var d = this.viewDate;
+      var year = d.getFullYear();
+      var month = d.getMonth();
+      var selectedDate = this.selectedDate;
+
+      var currentDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), selectedDate.getDate(), 0, 0, 0, 0).valueOf();
+
+      var prevMonth = new Date(year, month - 1, 28, 0, 0, 0, 0);
+      var day = dateUtils.getDaysInMonth(prevMonth.getFullYear(), prevMonth.getMonth());
+
+      prevMonth.setDate(day);
+      prevMonth.setDate(day - (prevMonth.getDay() - weekStart + 7) % 7);
+
+      var nextMonth = new Date(prevMonth);
+
+      nextMonth.setDate(nextMonth.getDate() + 42);
+      nextMonth = nextMonth.valueOf();
+
+      // var minDate = this.props.minDate && fecha.parse(this.props.minDate);
+      // var maxDate = this.props.maxDate && fecha.parse(this.props.maxDate);
+
+      var cells = [], prevY, prevM;
+
+      while (prevMonth.valueOf() < nextMonth) {
+
+        prevY = prevMonth.getFullYear();
+        prevM = prevMonth.getMonth();
+
+        var day = {
+          show: prevMonth.getDate(),
+          isActive: false,
+          isOld: false,
+          isNew: false
+        };
+
+        // set className old new
+        if ((prevM < month && prevY === year) || prevY < year) {
+          day.isOld = true;
+        } else if ((prevM > month && prevY === year) || prevY > year) {
+          day.isNew = true;
+        }
+
+        // set className active
+        if (prevMonth.valueOf() === currentDate) {
+          day.isActive = true;
+        }
+
+        // set className disabled
+        // if ((minDate && prevMonth.valueOf() < minDate) || (maxDate && prevMonth.valueOf() > maxDate)) {
+        // }
+
+         // week disabled
+        // if (this.props.daysOfWeekDisabled) {
+        //   _ref = this.props.daysOfWeekDisabled;
+        //   for (_i = 0, _len = _ref.length; _i < _len; _i++) {
+        //     i = _ref[_i];
+        //     if (prevMonth.getDay() === this.props.daysOfWeekDisabled[i]) {
+        //       break;
+        //     }
+        //   }
+        // }
+
+        cells.push(day);
+
+        // add tr
+        if (prevMonth.getDay() === weekEnd) {
+          days.push(cells);
+          cells = [];
+        }
+
+        prevMonth.setDate(prevMonth.getDate() + 1);
+      }
+
+      return days;
+    }
   },
 
   filters: {
@@ -71,7 +174,9 @@ export default {
 
     showMonths() {},
 
-    addMonth() {}
+    addMonth() {},
+
+    setSelectedDate() {}
   }
 };
 

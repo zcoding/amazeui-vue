@@ -1,29 +1,25 @@
 <template>
 
-<div class="am-datepicker-days" style={this.props.style}>
+<div class="am-datepicker-months" v-show="showMonths">
   <table class="am-datepicker-table">
     <thead>
     <tr class="am-datepicker-header">
-      <th class="am-datepicker-prev" @click="subtractMonth">
+      <th class="am-datepicker-prev" @click="subtractYear">
         <i class="am-datepicker-prev-icon"></i>
       </th>
-      <th class="am-datepicker-switch" colSpan="5" @click="showMonths">
+      <th class="am-datepicker-switch" colspan="5" @click="showYears">
         <div class="am-datepicker-select">
-          {{ viewDate.getMonth() }}
           {{ viewDate.getFullYear() }}
         </div>
       </th>
-      <th class="am-datepicker-next" @click="addMonth">
+      <th class="am-datepicker-next" @click="addYear">
         <i class="am-datepicker-next-icon"></i>
       </th>
     </tr>
-    <tr>
-      <th class="am-datepicker-dow" v-for="day in weeks">{{ day | locale }}</th>
-    </tr>
     </thead>
     <tbody>
-      <tr v-for="row in days">
-        <td v-for="day in row" @click="setSelectedDate(day)">{{ day }}</td>
+      <tr v-for="month in months">
+        <span class="am-datepicker-month">{{ month }}</span>
       </tr>
     </tbody>
   </table>

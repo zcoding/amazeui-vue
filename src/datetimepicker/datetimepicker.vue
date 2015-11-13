@@ -1,9 +1,9 @@
 <template>
 
-<div class="am-datepicker">
+<div class="am-datepicker" style="display:block;">
   <div class="am-datepicker-caret" v-if="caretDisplayed"></div>
   <div class="am-datepicker-date" v-show="showDatePicker">
-    <date-picker>
+    <date-picker :selectedDate.sync="selectedDate">
   </div>
   <div class="am-datepicker-time" v-show="showTimePicker">
     <time-picker>
@@ -47,7 +47,7 @@ export default {
     },
     showTimePicker: {
       type: Boolean,
-      default: true
+      default: false
     },
     showDatePicker: {
       type: Boolean,
@@ -79,7 +79,9 @@ export default {
   },
 
   data() {
-    return {};
+    return {
+      selectedDate: null
+    };
   },
 
   methods: {

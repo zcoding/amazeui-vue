@@ -1,29 +1,25 @@
 <template>
 
-<div class="am-datepicker-days" style={this.props.style}>
+<div class="am-datepicker-years" v-show="showYears">
   <table class="am-datepicker-table">
     <thead>
     <tr class="am-datepicker-header">
-      <th class="am-datepicker-prev" @click="subtractMonth">
+      <th class="am-datepicker-prev" @click="subtractDecade">
         <i class="am-datepicker-prev-icon"></i>
       </th>
-      <th class="am-datepicker-switch" colSpan="5" @click="showMonths">
+      <th class="am-datepicker-switch" colspan="5" @click="showMonths">
         <div class="am-datepicker-select">
-          {{ viewDate.getMonth() }}
-          {{ viewDate.getFullYear() }}
+          {{ showYear }}
         </div>
       </th>
-      <th class="am-datepicker-next" @click="addMonth">
+      <th class="am-datepicker-next" @click="addDecade">
         <i class="am-datepicker-next-icon"></i>
       </th>
     </tr>
-    <tr>
-      <th class="am-datepicker-dow" v-for="day in weeks">{{ day | locale }}</th>
-    </tr>
     </thead>
     <tbody>
-      <tr v-for="row in days">
-        <td v-for="day in row" @click="setSelectedDate(day)">{{ day }}</td>
+      <tr v-for="year in years">
+        <span class="am-datepicker-year">{{ year }}</span>
       </tr>
     </tbody>
   </table>
@@ -33,6 +29,12 @@
 
 <script>
 
-export default {};
+export default {
+
+  computed: {
+    showYear() {}
+  }
+
+};
 
 </script>

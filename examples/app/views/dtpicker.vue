@@ -1,6 +1,10 @@
 <template>
 
-<date-time-picker></date-time-picker>
+<grid>
+  <column :sm="12" :md="12">
+    <date-time-picker></date-time-picker>
+  </column>
+</grid>
 
 </template>
 
