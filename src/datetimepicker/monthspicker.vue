@@ -9,7 +9,7 @@
       </th>
       <th class="am-datepicker-switch" colspan="5" @click="showYears">
         <div class="am-datepicker-select">
-          {{ showYear }}
+          {{ viewDate.getFullYear() }}
         </div>
       </th>
       <th class="am-datepicker-next" @click="nextYear">
@@ -20,7 +20,9 @@
     <tbody>
       <tr>
         <td colspan="7">
-          <span class="am-datepicker-month" v-for="month in months" :class="{'am-active': month.isActive}">{{ month.show }}</span>
+          <span class="am-datepicker-month" v-for="month in months" :class="{'am-active': month.isActive}" @click="setViewMonth(month)">
+            {{ month.show }}
+          </span>
         </td>
       </tr>
     </tbody>
@@ -69,6 +71,22 @@ export default {
       var newDate = new Date(viewDate.valueOf());
       newDate.setFullYear(viewDate.getFullYear() + 1);
       this.viewDate = newDate;
+    },
+
+    setViewMonth(month) {
+      var viewDate = this.viewDate;
+      // var months = this.locale.monthsShort;
+      viewDate.setMonth(month);
+
+      // if (this.props.minViewMode === 'months') {
+      //   this.setViewDate(viewDate);
+      // }
+
+      this.$dispatch('view-change', {
+        days: true,
+        months: false,
+        years: false
+      });
     }
   },
 
@@ -102,12 +120,6 @@ export default {
       }
 
       return months;
-    },
-
-    showYear() {
-      var year = parseInt(this.viewDate.getFullYear() / 10, 10) * 10;
-      var addYear = year + 9;
-      return year + '-' + addYear;
     }
   }
 

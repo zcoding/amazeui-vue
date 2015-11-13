@@ -7,9 +7,9 @@
       <th class="am-datepicker-prev" @click="prevDecade">
         <i class="am-datepicker-prev-icon"></i>
       </th>
-      <th class="am-datepicker-switch" colspan="5" @click="showMonths">
+      <th class="am-datepicker-switch" colspan="5">
         <div class="am-datepicker-select">
-          {{ viewDate.getFullYear() }}
+          {{ showYear }}
         </div>
       </th>
       <th class="am-datepicker-next" @click="nextDecade">
@@ -20,7 +20,7 @@
     <tbody>
       <tr>
         <td colspan="7">
-          <span class="am-datepicker-year" v-for="year in years" :class="{'am-datepicker-old': year.isOld, 'am-datepicker-new': year.isNew, 'am-active': year.isActive}">
+          <span class="am-datepicker-year" v-for="year in years" :class="{'am-datepicker-old': year.isOld, 'am-datepicker-new': year.isNew, 'am-active': year.isActive}" @click="setViewYear(year)">
             {{ year.show }}
           </span>
         </td>
@@ -85,6 +85,12 @@ export default {
       }
 
       return years;
+    },
+
+    showYear() {
+      var year = parseInt(this.viewDate.getFullYear() / 10, 10) * 10;
+      var addYear = year + 9;
+      return year + '-' + addYear;
     }
   },
 
@@ -103,13 +109,22 @@ export default {
       this.viewDate = newDate;
     },
 
-    showMonths() {
+    setViewYear(year) {
+      var viewDate = this.viewDate;
+
+      viewDate.setFullYear(year);
+
+      // if (this.props.minViewMode === 'years') {
+      //   this.setViewDate(viewDate);
+      // }
+
       this.$dispatch('view-change', {
         days: false,
         months: true,
         years: false
       });
     }
+
   }
 
 };

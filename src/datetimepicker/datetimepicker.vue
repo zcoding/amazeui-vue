@@ -92,11 +92,14 @@ export default {
     add() {},
 
     handleToggleTime() {
-      this.showDatePicker = true,
-      this.showTimePicker = false;
+      this.showDatePicker = false,
+      this.showTimePicker = true;
     },
 
-    handleToggleDate() {}
+    handleToggleDate() {
+      this.showDatePicker = true,
+      this.showTimePicker = false;
+    }
   }
 
 };

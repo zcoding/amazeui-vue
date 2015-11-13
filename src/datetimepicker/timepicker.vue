@@ -5,7 +5,7 @@
     <table class="am-datepicker-table">
       <thead>
       <tr class="am-datepicker-header">
-        <th class="am-datepicker-prev" @click="subtractMinute">
+        <th class="am-datepicker-prev" @click="prevMinute">
           <i class="am-datepicker-prev-icon"></i>
         </th>
         <th class="am-datepicker-switch" colspan="5" @click="showDate">
@@ -27,8 +27,8 @@
       </tbody>
     </table>
   </div>
-  <hours-picker>
-  <minutes-picker>
+  <hours-picker v-show="show.hours"></hours-picker>
+  <minutes-picker v-show="show.minutes"></hours-picker>
 </div>
 
 </template>
@@ -42,11 +42,33 @@ export default {
 
   data() {
     return {
-      time: {
-        hour: '12',
-        minute: '12'
-      }
+      show: {
+        hours: false,
+        minutes: false
+      },
+      viewDate: new Date(),
+      selectedDate: new Date()
     };
+  },
+
+  computed: {
+    time() {
+      var hour = this.viewDate.getHours();
+      var minute = this.viewDate.getMinutes();
+
+      if (minute < 10) {
+        minute = '0' + minute;
+      }
+
+      if (hour < 10) {
+        hour = '0' + hour;
+      }
+
+      return {
+        hour: hour,
+        minute: minute
+      };
+    }
   },
 
   components: {
@@ -55,11 +77,18 @@ export default {
   },
 
   methods: {
-    showHours() {},
+    showHours() {
+    },
 
     showMinutes() {},
 
-    subtractMinute() {},
+    prevMinute() {
+      var viewDate = this.viewDate;
+
+      viewDate.setMinutes(viewDate.getMinutes() - 1);
+
+      this.selectedDate = new Date(viewDate.valueOf());
+    },
 
     addMinute() {},
 

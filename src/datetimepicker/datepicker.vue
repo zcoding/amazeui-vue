@@ -41,7 +41,6 @@ export default {
 
   events: {
     "view-change"(show) {
-      this.$log(show);
       this.show = show;
     }
   }
