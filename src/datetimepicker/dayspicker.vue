@@ -1,19 +1,18 @@
 <template>
 
-<div class="am-datepicker-days" v-show="showDays">
+<div class="am-datepicker-days">
   <table class="am-datepicker-table">
     <thead>
     <tr class="am-datepicker-header">
-      <th class="am-datepicker-prev" @click="subtractMonth">
+      <th class="am-datepicker-prev" @click="prevMonth">
         <i class="am-datepicker-prev-icon"></i>
       </th>
       <th class="am-datepicker-switch" colspan="5" @click="showMonths">
         <div class="am-datepicker-select">
-          {{ viewDate.getMonth() }}
-          {{ viewDate.getFullYear() }}
+          {{ viewDate.getMonth()+1 }}月 {{ viewDate.getFullYear() }}
         </div>
       </th>
-      <th class="am-datepicker-next" @click="addMonth">
+      <th class="am-datepicker-next" @click="nextMonth">
         <i class="am-datepicker-next-icon"></i>
       </th>
     </tr>
@@ -26,7 +25,7 @@
         <td class="am-datepicker-day" v-for="day in row"
         :class="{
           'am-disabled': day.isDisabled,
-          'am-active': day.isSelected,
+          'am-active': day.isActive,
           'am-datepicker-old': day.isOld,
           'am-datepicker-new': day.isNew
         }"
@@ -54,10 +53,6 @@ export default {
     weekStart: {
       type: Number,
       default: 7
-    }
-    , showDays: {
-      type: Boolean,
-      default: true
     }
   },
 
@@ -112,14 +107,12 @@ export default {
           isNew: false
         };
 
-        // set className old new
         if ((prevM < month && prevY === year) || prevY < year) {
           day.isOld = true;
         } else if ((prevM > month && prevY === year) || prevY > year) {
           day.isNew = true;
         }
 
-        // set className active
         if (prevMonth.valueOf() === currentDate) {
           day.isActive = true;
         }
@@ -170,13 +163,43 @@ export default {
 
   methods: {
 
-    subtractMonth() {},
+    prevMonth() {
+      var viewDate = this.viewDate;
+      var newDate = new Date(viewDate.valueOf());
+      newDate.setMonth(viewDate.getMonth() - 1);
+      this.viewDate = newDate;
+    },
 
-    showMonths() {},
+    showMonths() {
+      this.$dispatch('view-change', {
+        days: false,
+        months: true,
+        years: false
+      });
+    },
 
-    addMonth() {},
+    nextMonth() {
+      var viewDate = this.viewDate;
+      var newDate = new Date(viewDate.valueOf());
+      newDate.setMonth(viewDate.getMonth() + 1);
+      this.viewDate = newDate;
+    },
 
-    setSelectedDate() {}
+    setSelectedDate(day) {
+      if (day.isDisabled) {
+        return false;
+      }
+
+      var viewDate = new Date(this.viewDate.valueOf());
+      if (day.isNew) {
+        viewDate.setMonth(viewDate.getMonth() + 1);
+      } else if (day.isOld) {
+        viewDate.setMonth(viewDate.getMonth() - 1);
+      }
+      viewDate.setDate(day.show);
+      this.viewDate = viewDate;
+      this.selectedDate = new Date(viewDate.valueOf());
+    }
   }
 };
 
