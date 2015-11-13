@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>amazeui-vue</title>
+  <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.4.2/css/amazeui.min.css">
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.7/vue.min.js"></script>
+  <script src="../build/amazeui-vue.js"></script>
+</head>
+<body>
+  <h1>这个例子直接使用build版本，不需要CommonJS支持。</h1>
+  <div id="app">
+    <grid>
+      <column :sm="12" :md="8" :lg="6">
+        <panel header="面板标题" am-style="success" collapse>
+          <div class="am-panel-bd">
+            <p>version: {{ version }}</p>
+            <p>这个面板可以折叠</p>
+            <p>这个面板可以折叠</p>
+            <p>这个面板可以折叠</p>
+            <p>这个面板可以折叠</p>
+            <p>这个面板可以折叠</p>
+            <p>这个面板可以折叠</p>
+          </div>
+        </panel>
+      </column>
+    </grid>
+  </div>
+  <script>
+  Vue.use(amazeuiVue);
+
+  new Vue({
+    el: '#app',
+    data: {
+      version: Vue.version
+    }
+  });
+  </script>
+</body>
+</html>

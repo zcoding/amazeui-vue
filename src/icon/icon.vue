@@ -1,6 +1,6 @@
 <template>
 
-<i class="am-icon-{{ name }} am-icon-fw" v-class="am-icon-spin: spin, am-icon-pulse: pulse"></i>
+<i class="am-icon-fw" :class="[iconName, spin?'am-icon-spin':'', pulse?'am-icon-pulse':'']"></i>
 
 </template>
 
@@ -19,6 +19,12 @@ module.exports = {
     pulse: {
       type: Boolean,
       default: false
+    }
+  },
+
+  computed: {
+    iconName: function() {
+      return 'am-icon-' + this.name;
     }
   }
 };
