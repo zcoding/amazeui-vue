@@ -3,10 +3,10 @@
 <div class="am-datepicker" style="display:block;">
   <div class="am-datepicker-caret" v-if="caretDisplayed"></div>
   <div class="am-datepicker-date" v-show="showDatePicker">
-    <date-picker :selectedDate.sync="selectedDate">
+    <date-picker :selected-date.sync="dateTime">
   </div>
   <div class="am-datepicker-time" v-show="showTimePicker">
-    <time-picker>
+    <time-picker :selected-date.sync="dateTime">
   </div>
   <div class="am-datepicker-toggle" v-show="showDatePicker" @click="handleToggleTime">
     <icon name="clock-o">
@@ -34,8 +34,11 @@ export default {
 
   props: {
     dateTime: {
-      type: String,
-      default: new Date().toString()
+      type: Date,
+      twoWay: true,
+      default() {
+        return new Date();
+      }
     },
     onSelect: {
       type: Function,
@@ -55,7 +58,7 @@ export default {
     },
     caretDisplayed: {
       type: Boolean,
-      default: true
+      default: false
     },
     format: {
       type: String,
@@ -79,9 +82,6 @@ export default {
   },
 
   data() {
-    return {
-      selectedDate: null
-    };
   },
 
   methods: {

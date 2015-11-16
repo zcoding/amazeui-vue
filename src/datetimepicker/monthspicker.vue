@@ -21,7 +21,7 @@
       <tr>
         <td colspan="7">
           <span class="am-datepicker-month" v-for="month in months" :class="{'am-active': month.isActive}" @click="setViewMonth(month)">
-            {{ month.show }}
+            {{ month.show + 1 }}
           </span>
         </td>
       </tr>
@@ -38,16 +38,12 @@ export default {
   props: {
     selectedDate: {
       twoWay: true,
-      default() {
-        return new Date();
-      }
+      required: true
+    },
+    viewDate: {
+      twoWay: true,
+      required: true
     }
-  },
-
-  data() {
-    return {
-      viewDate: new Date()
-    };
   },
 
   methods: {
@@ -74,13 +70,9 @@ export default {
     },
 
     setViewMonth(month) {
-      var viewDate = this.viewDate;
-      // var months = this.locale.monthsShort;
-      viewDate.setMonth(month);
-
-      // if (this.props.minViewMode === 'months') {
-      //   this.setViewDate(viewDate);
-      // }
+      var newDate = new Date(this.viewDate.valueOf());
+      newDate.setMonth(month.show);
+      this.viewDate = newDate;
 
       this.$dispatch('view-change', {
         days: true,

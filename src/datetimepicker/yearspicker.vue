@@ -38,16 +38,12 @@ export default {
   props: {
     selectedDate: {
       twoWay: true,
-      default() {
-        return new Date();
-      }
+      required: true
+    },
+    viewDate: {
+      twoWay: true,
+      required: true
     }
-  },
-
-  data() {
-    return {
-      viewDate: new Date()
-    };
   },
 
   computed: {
@@ -110,13 +106,9 @@ export default {
     },
 
     setViewYear(year) {
-      var viewDate = this.viewDate;
-
-      viewDate.setFullYear(year);
-
-      // if (this.props.minViewMode === 'years') {
-      //   this.setViewDate(viewDate);
-      // }
+      var newDate = new Date(this.viewDate.valueOf());
+      newDate.setFullYear(year.show);
+      this.viewDate = newDate;
 
       this.$dispatch('view-change', {
         days: false,

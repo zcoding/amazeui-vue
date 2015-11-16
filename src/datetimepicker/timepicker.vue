@@ -1,7 +1,7 @@
 <template>
 
 <div class="am-datepicker-body">
-  <div class="am-datepicker-time-wrapper">
+  <div class="am-datepicker-time-wrapper" v-show="show.wrapper">
     <table class="am-datepicker-table">
       <thead>
       <tr class="am-datepicker-header">
@@ -11,7 +11,7 @@
         <th class="am-datepicker-switch" colspan="5" @click="showDate">
           <div class="am-datepicker-select">today</div>
         </th>
-        <th class="am-datepicker-next" @click="addMinute">
+        <th class="am-datepicker-next" @click="nextMinute">
           <i class="am-datepicker-next-icon"></i>
         </th>
       </tr>
@@ -27,8 +27,8 @@
       </tbody>
     </table>
   </div>
-  <hours-picker v-show="show.hours"></hours-picker>
-  <minutes-picker v-show="show.minutes"></hours-picker>
+  <hours-picker :selected-date.sync="selectedDate" :view-date.sync="viewDate" v-show="show.hours"></hours-picker>
+  <minutes-picker :selected-date.sync="selectedDate" :view-date.sync="viewDate" v-show="show.minutes"></minutes-picker>
 </div>
 
 </template>
@@ -40,14 +40,27 @@ import hoursPicker from './hourspicker.vue';
 
 export default {
 
+  props: {
+    selectedDate: {
+      twoWay: true,
+      default() {
+        return new Date();
+      }
+    }
+  },
+
+  created() {
+    this.viewDate = new Date(this.selectedDate.valueOf());
+  },
+
   data() {
     return {
       show: {
+        wrapper: true,
         hours: false,
         minutes: false
       },
-      viewDate: new Date(),
-      selectedDate: new Date()
+      viewDate: new Date()
     };
   },
 
@@ -55,15 +68,12 @@ export default {
     time() {
       var hour = this.viewDate.getHours();
       var minute = this.viewDate.getMinutes();
-
       if (minute < 10) {
         minute = '0' + minute;
       }
-
       if (hour < 10) {
         hour = '0' + hour;
       }
-
       return {
         hour: hour,
         minute: minute
@@ -78,19 +88,34 @@ export default {
 
   methods: {
     showHours() {
+      this.show = {
+        wrapper: false,
+        hours: true,
+        minutes: false
+      };
     },
 
-    showMinutes() {},
+    showMinutes() {
+      this.show = {
+        wrapper: false,
+        hours: false,
+        minutes: true
+      };
+    },
 
     prevMinute() {
-      var viewDate = this.viewDate;
-
-      viewDate.setMinutes(viewDate.getMinutes() - 1);
-
-      this.selectedDate = new Date(viewDate.valueOf());
+      var newDate = new Date(this.viewDate.valueOf());
+      newDate.setMinutes(newDate.getMinutes() - 1);
+      this.viewDate = newDate;
+      this.selectedDate = new Date(newDate.valueOf());
     },
 
-    addMinute() {},
+    nextMinute() {
+      var newDate = new Date(this.viewDate.valueOf());
+      newDate.setMinutes(newDate.getMinutes() + 1);
+      this.viewDate = newDate;
+      this.selectedDate = new Date(newDate.valueOf());
+    },
 
     showDate() {}
   }

@@ -46,9 +46,11 @@ export default {
   props: {
     selectedDate: {
       twoWay: true,
-      default() {
-        return new Date();
-      }
+      required: true
+    },
+    viewDate: {
+      twoWay: true,
+      required: true
     },
     weekStart: {
       type: Number,
@@ -58,7 +60,6 @@ export default {
 
   data() {
     return {
-      viewDate: new Date(),
       weeks: [7, 1, 2, 3, 4, 5, 6]
     };
   },

@@ -1,9 +1,9 @@
 <template>
 
 <div class="am-datepicker-body">
-  <days-picker :selectedDate.sync="selectedDate" v-show="show.days"></days-picker>
-  <months-picker :selectedDate.sync="selectedDate" v-show="show.months"></months-picker>
-  <years-picker :selectedDate.sync="selectedDate" v-show="show.years"></years-picker>
+  <days-picker :selected-date.sync="selectedDate" :view-date.sync="viewDate" v-show="show.days"></days-picker>
+  <months-picker :selected-date.sync="selectedDate" :view-date.sync="viewDate" v-show="show.months"></months-picker>
+  <years-picker :selected-date.sync="selectedDate" :view-date.sync="viewDate" v-show="show.years"></years-picker>
 </div>
 
 </template>
@@ -23,6 +23,11 @@ export default {
       }
     }
   },
+
+  created() {
+    this.viewDate = new Date(this.selectedDate.valueOf());
+  },
+
   components: {
     daysPicker,
     monthsPicker,
@@ -35,7 +40,8 @@ export default {
         days: true,
         months: false,
         years: false
-      }
+      },
+      viewDate: new Date()
     };
   },
 

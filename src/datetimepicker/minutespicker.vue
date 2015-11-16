@@ -4,13 +4,13 @@
   <table class="am-datepicker-table">
     <thead>
     <tr class="am-datepicker-header">
-      <th class="am-datepicker-prev" @click="subtractMinute">
+      <th class="am-datepicker-prev" @click="prevMinute">
         <i class="am-datepicker-prev-icon"></i>
       </th>
       <th class="am-datepicker-switch" colspan="5">
-        <div class="am-datepicker-select">{{ showText }}</div>
+        <div class="am-datepicker-select">{{ showText.hour + ':' + showText.minute }}</div>
       </th>
-      <th class="am-datepicker-next" @click="addMinute">
+      <th class="am-datepicker-next" @click="nextMinute">
         <i class="am-datepicker-next-icon"></i>
       </th>
     </tr>
@@ -18,7 +18,7 @@
     <tbody>
     <tr>
       <td colspan="7">
-        <span class="am-datepicker-minute" v-for="m in minutes" @click="setSelectedMinute">{{ m < 10 ? hour + ':0' + m : hour + ':' + m }}</span>
+        <span class="am-datepicker-minute" v-for="m in minutes" @click="setSelectedMinute(m)">{{ m.show < 10 ? m.hour + ':0' + m.show : m.hour + ':' + m.show }}</span>
       </td>
     </tr>
     </tbody>
@@ -31,20 +31,76 @@
 
 export default {
 
-  data() {
-    return {
-      showText: '',
-      hour: '',
-      minutes: []
-    };
+  props: {
+    selectedDate: {
+      twoWay: true,
+      required: true
+    },
+    viewDate: {
+      twoWay: true,
+      required: true
+    }
+  },
+
+  computed: {
+    showText() {
+      var hour = this.viewDate.getHours();
+      var minute = this.viewDate.getMinutes();
+      if (minute < 10) {
+        minute = '0' + minute;
+      }
+      if (hour < 10) {
+        hour = '0' + hour;
+      }
+      return {
+        hour: hour,
+        minute: minute
+      };
+    },
+
+    minutes() {
+      var minute = this.selectedDate.getMinutes();
+      var hour = this.selectedDate.getHours();
+      var minutes = [];
+      for (var i = 0; i < 60; ++i) {
+        var _minute = {
+          hour: hour,
+          show: i,
+          isActive: false
+        };
+        if (i === minute) {
+          _minute.isActive = true;
+        }
+        if (i % 5 === 0) {
+          minutes.push(_minute);
+        }
+      }
+      return minutes;
+    }
   },
 
   methods: {
-    subtractMinute() {},
+    prevMinute() {
+      var newDate = new Date(this.viewDate.valueOf());
+      newDate.setMinutes(newDate.getMinutes() - 1);
+      this.viewDate = newDate;
+      this.selectedDate = new Date(newDate.valueOf());
+    },
 
-    addMinute() {},
+    nextMinute() {
+      var newDate = new Date(this.viewDate.valueOf());
+      newDate.setMinutes(newDate.getMinutes() + 1);
+      this.viewDate = newDate;
+      this.selectedDate = new Date(newDate.valueOf());
+    },
 
-    setSelectedMinute() {}
+    setSelectedMinute(minute) {
+      var newDate = new Date(this.viewDate.valueOf());
+      newDate.setMinutes(minute.hour);
+      newDate.setMinutes(minute.show);
+      this.viewDate = newDate;
+      this.selectedDate = new Date(newDate.valueOf());
+    }
   }
 
 };
