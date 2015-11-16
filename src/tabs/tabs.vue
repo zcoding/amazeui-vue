@@ -16,12 +16,22 @@
 
 module.exports = {
 
-  props: ['tabs'],
-
-  data: function() {
-    return {
-      active: 1
-    };
+  props: {
+    tabs: {
+      type: Array,
+      default() {
+        return [];
+      }
+    },
+    active: {
+      type: Number,
+      twoWay: true,
+      default: 0
+    },
+    justify: {
+      type: Boolean,
+      default: false
+    }
   },
 
   methods: {
