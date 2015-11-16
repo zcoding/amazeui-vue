@@ -1,11 +1,11 @@
 <template>
 
-<div class="am-datepicker" style="display:block;">
+<div class="am-datepicker">
   <div class="am-datepicker-caret" v-if="caretDisplayed"></div>
-  <div class="am-datepicker-date" v-show="showDatePicker">
+  <div class="am-datepicker-date" v-if="showDatePicker">
     <date-picker :selected-date.sync="dateTime">
   </div>
-  <div class="am-datepicker-time" v-show="showTimePicker">
+  <div class="am-datepicker-time" v-if="showTimePicker">
     <time-picker :selected-date.sync="dateTime">
   </div>
   <div class="am-datepicker-toggle" v-show="showDatePicker" @click="handleToggleTime">
@@ -17,6 +17,13 @@
 </div>
 
 </template>
+
+<style lang="stylus">
+
+.am-datepicker
+  display block
+
+</style>
 
 <script>
 
