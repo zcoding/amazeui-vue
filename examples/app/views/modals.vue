@@ -17,7 +17,7 @@
   <div class="am-modal-bd" slot="body">hhh</div>
 </modal>
 
-<alert :show.sync="showAlert" :show.sync="showAlert" :close-via-dimmer="false" :ok="clickAlertOK">好好好</alert>
+<alert :show.sync="showAlert" :close-via-dimmer="false" :ok="clickAlertOK">好好好</alert>
 
 <confirm :show.sync="showConfirm" :ok="clickConfirmOK" :cancel="clickConfirmCancel">没问题？</confirm>
 
