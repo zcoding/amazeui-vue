@@ -1,12 +1,17 @@
 # amazeui-vue
 [amazeui](https://github.com/amazeui/amazeui) components build with [vue.js](https://github.com/vuejs/vue)
 
-## Installation
-### <del>NPM</del>
-<del>`npm install amazeui-vue`</del>
+[![version](https://img.shields.io/npm/v/amazeui-vue.svg?style=flat-square "version")](https://www.npmjs.com/package/amazeui-vue)
+[![LICENSE](https://img.shields.io/npm/l/amazeui-vue.svg?style=flat-square "license")](./LICENSE)
 
-### build
-use the all-in-one file in 'build' folder
+## Installation
+### NPM
+`npm install amazeui-vue`
+
+it's recommended to use vuejs + webpack + amazeui-vue !
+
+### Standalone
+The build-all-in-one file is in the 'build' folder.
 
 ```html
 <head>
@@ -30,10 +35,18 @@ If you are not familiar with vue.js, you can learn from the [vue.js official sit
 
 If you want to use the react version, you can find it [here](https://github.com/amazeui/amazeui-react), it's developed by the amazeui team.
 
-## run examples
+## Requirements
++ [vue.js](https://github.com/vuejs/vue) ^1.0.7
+
+[Vue.js 1.0.0 is released!](http://vuejs.org/2015/10/26/1.0.0-release/) Amazeui-vue now requires vue.js@^1.0. If you are upgrading your vue.js project to 1.0 version from 0.12, [this article](./vue.js-0.12vs1.0.md) may help you learn some important changes.
+
+## Documents
++ [中文](./README.CN.md)
+
+## Run examples
 `npm run dev` and then `npm start`
 
-## Available Now
+## Components Available Now
 + `grid`
 + `column`
 + `container`
@@ -55,45 +68,38 @@ If you want to use the react version, you can find it [here](https://github.com/
 + `pagination`
 + `article`
 
-## In development
-+ `datetimepicker`
+## Components In Development
++ `dateTimePicker`
 + `slider`
 + `tabs`
 + `topbar`
 + `nprogress`
 
-## Requirements
-+ [vue.js](https://github.com/vuejs/vue) ^1.0
+## How To
+You must register the components before you can use amazeui-vue.
 
-vue.js 1.0版本已经正式发布了，为了配合vue.js升级，amazeui-vue也将改为使用vue.js 1.0版本。如果你正在使用vue.js 1.0版本或者正在升级你的vue.js到1.0版本，可以使用vuejs1.0分支。
+You can register the components globally or locally:[vue.js: using components](http://vuejs.org/guide/components.html#Using_Components)
 
-## 组件使用方式
-vue.js的组件在使用之前必须先定义和注册。引入本项目只能得到amazeui组件的定义，所以在使用之前仍需注册。
-
-vue.js的组件可以注册到全局或者局部。[vue.js: using components](http://vuejs.org/guide/components.html#Using_Components) or [中文](http://cn.vuejs.org/guide/components.html#使用组件)
-
-### 全局注册
-amazeui-vue提供了一个注册到全局的方法，让你可以像使用vuejs插件一样引入amazeui-vue组件。
-
-引入install函数，就可以将amazeui-vue组件注册到全局，而且是同步加载。
+### Global Registration
+amazeui-vue exports an install function so taht you can register it as a plugin for vue.js. You can do it like this:
 ```javascript
-Vue.use(require('amaze/install'));
+Vue.use(require('amazeui-vue/install'));
 ```
-如果希望使用异步加载组件，可以引入另外一个install-async函数
+and then amazeui-vue components will be registered globally, and they will be load synchronously.
+
+If you want to use amazeui-vue as [asyn components](http://vuejs.org/guide/components.html#Async_Components), use the install-async function:
 ```javascript
-Vue.use(require('amaze/install-async'));
+Vue.use(require('amazeui-vue/install-async'));
 ```
 
-无论是同步还是异步，以上方法都将把amazeui-vue组件注册到全局。如果你希望只在局部使用，可以用局部注册方法。
+### Local Registration
 
-### 局部注册
-
-#### 同步加载
+**_sync_**
 ```javascript
-import amButton from 'amazeui-vue/button/am-button.vue'
-// 或者
+import amButton from 'amazeui-vue/button/am-button.vue'; // you may need babel-loader to do it like this
+// or
 // var amButton = require('amazeui-vue').button;
-
+// ...
 export default {
   components: {
     "amButton": amButton
@@ -101,8 +107,7 @@ export default {
 }
 ```
 
-#### 异步加载
-结合webpack的异步加载机制，可以很方便的实现异步组件
+**_async_** (with webpack)
 ```javascript
 export default {
   components: {
@@ -113,25 +118,5 @@ export default {
 }
 ```
 
-## 组件
-
-### 按钮组件
-
-### 表格组件
-
-### 表单组件
-表单组件包含以下几个子组件
-+ 输入框（单行和多行，各种类型）
-+ 复选框（checkbox）
-+ 单选框（radio）
-+ 下拉选择框（select）
-
-### 列表组件
-
-### 面板组件
-
-### 模态框组件
-
-### 下拉组件
-
-### 导航组件
+## Components
+TODO...
