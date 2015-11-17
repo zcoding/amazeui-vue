@@ -1,10 +1,12 @@
 {
   "name": "amazeui-vue",
   "version": "0.1.1",
+  "author": "zcoding",
   "description": "Amaze UI components build with vue.js",
   "main": "./src/index.js",
   "directories": {
-    "example": "examples"
+    "example": "examples",
+    "doc": "doc"
   },
   "scripts": {
     "start": "node scripts/server.js",
@@ -18,10 +20,16 @@
     "url": "git+https://github.com/zcoding/amazeui-vue.git"
   },
   "keywords": [
+    "vue",
     "vue.js",
-    "amazeui"
+    "AMUI",
+    "Amaze UI",
+    "components",
+    "mvvm",
+    "front-end",
+    "stylus",
+    "plugin"
   ],
-  "author": "zcoding",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/zcoding/amazeui-vue/issues"

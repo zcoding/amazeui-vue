@@ -30,6 +30,9 @@ If you are not familiar with vue.js, you can learn from the [vue.js official sit
 
 If you want to use the react version, you can find it [here](https://github.com/amazeui/amazeui-react), it's developed by the amazeui team.
 
+## run examples
+`npm run dev` and then `npm start`
+
 ## Available Now
 + `grid`
 + `column`
@@ -52,10 +55,12 @@ If you want to use the react version, you can find it [here](https://github.com/
 + `pagination`
 + `article`
 
-## Development
+## In development
 + `datetimepicker`
 + `slider`
-+ `tab`
++ `tabs`
++ `topbar`
++ `nprogress`
 
 ## Requirements
 + [vue.js](https://github.com/vuejs/vue) ^1.0
