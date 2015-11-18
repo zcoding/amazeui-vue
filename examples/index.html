@@ -59,7 +59,12 @@
             <li><a v-link="{path: '/datetimepicker'}"><span class="am-icon-bug"></span> DateTimePickers</a></li>
           </ul>
         </li>
-        <li><a v-link="{path: '/'}"><span class="am-icon-table"></span> Advanced</a></li>
+        <li class="admin-parent">
+          <a class="am-cf"><span class="am-icon-file"></span> Advanced <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in">
+            <li><a v-link="{path: '/datatables'}"><span class="am-icon-edit"></span> DataTables</a></li>
+          </ul>
+        </li>
       </ul>
 
       <div class="am-panel am-panel-default admin-sidebar-panel">

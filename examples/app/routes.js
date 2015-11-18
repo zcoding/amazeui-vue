@@ -92,5 +92,16 @@ module.exports = {
         }
       }
     }
+  },
+
+  "datatables": {
+    component: {
+      template: '<datatable></datatable>',
+      components: {
+        "datatable": function(resolve) {
+          require(['views/datatables.vue'], resolve);
+        }
+      }
+    }
   }
 };

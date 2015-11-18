@@ -3,6 +3,7 @@
 ## List Rendering
 
 + `v-repeat` changes to `v-for` [more](http://vuejs.org/guide/list.html)
++ alias is required in v-for
 + alias for the index(key) is available
 
 ## Events
