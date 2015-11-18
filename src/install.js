@@ -1,7 +1,7 @@
 var defaultNames = {
   "article": "amArticle"
   , "lead": "lead"
-  , "alert": "amAlert"
+  , "amAlert": "amAlert"
   , "badge": "badge"
   , "breadcrumb": "breadcrumb"
   , "button": "amButton"
@@ -36,7 +36,7 @@ exports.install = function(Vue, options) {
 
   Vue.component(defaultNames['lead'], require('./article/lead.vue'));
 
-  Vue.component(defaultNames['alert'], require('./alert/alert.vue'));
+  Vue.component(defaultNames['amAlert'], require('./alert/alert.vue'));
 
   Vue.component(defaultNames['badge'], require('./badge/badge.vue'));
 

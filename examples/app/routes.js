@@ -32,7 +32,7 @@ module.exports = {
       }
     }
   },
-  "/list": {
+  "/lists": {
     component: {
       template: '<lists></lists>',
       components: {

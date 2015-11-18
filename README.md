@@ -29,7 +29,7 @@ The build-all-in-one file is in the 'build' folder.
 ```
 
 ## About
-This repository is built to use amazeui as vue.js components, without jQuery requirement.
+This repository is built to use Amaze UI as Vue.js components, **without jQuery** requirement.
 
 If you are not familiar with vue.js, you can learn from the [vue.js official site](http://vuejs.org/).
 
@@ -119,4 +119,3 @@ export default {
 ```
 
 ## Components
-TODO...

@@ -1,17 +1,104 @@
 <!doctype html>
-<html class="no-js" id="app-main">
+<html class="no-js fixed-layout" id="app-main">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>amazeui-vue examples</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>AmazeUI Vue</title>
   <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI">
   <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.4.2/css/amazeui.min.css">
+  <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
 
-  <router-view></router-view>
+<header class="am-topbar admin-header">
+  <div class="am-topbar-brand">
+    <strong>amazeui-vue</strong> <small>components</small>
+  </div>
 
-  <script src="/app/app.js"></script>
+  <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+
+  <div class="am-collapse am-topbar-collapse">
+
+    <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+      <li><a href="javascript:;"><span class="am-icon-envelope-o"></span> 收件箱 <span class="am-badge am-badge-warning">5</span></a></li>
+      <li class="am-dropdown">
+        <a class="am-dropdown-toggle" href="javascript:;">
+          <span class="am-icon-users"></span> 管理员 <span class="am-icon-caret-down"></span>
+        </a>
+        <ul class="am-dropdown-content">
+          <li><a href="#"><span class="am-icon-user"></span> 资料</a></li>
+          <li><a href="#"><span class="am-icon-cog"></span> 设置</a></li>
+          <li><a href="#"><span class="am-icon-power-off"></span> 退出</a></li>
+        </ul>
+      </li>
+      <li class="am-hide-sm-only"><a href="javascript:;"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="am-cf admin-main">
+  <!-- sidebar start -->
+  <div class="admin-sidebar am-offcanvas">
+    <div class="am-offcanvas-bar admin-offcanvas-bar">
+      <ul class="am-list admin-sidebar-list">
+        <li><a v-link="{path: '/'}"><span class="am-icon-home"></span> Home</a></li>
+        <li class="admin-parent">
+          <a class="am-cf"><span class="am-icon-file"></span> Components <span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+          <ul class="am-list am-collapse admin-sidebar-sub am-in">
+            <li><a v-link="{path: '/forms'}"><span class="am-icon-edit"></span> Forms</a></li>
+            <li><a v-link="{path: '/buttons'}"><span class="am-icon-square-o"></span> Buttons</a></li>
+            <li><a v-link="{path: '/lists'}"><span class="am-icon-th"></span> Lists</a></li>
+            <li><a v-link="{path: '/panels'}"><span class="am-icon-calendar"></span> Panels</a></li>
+            <li><a v-link="{path: '/modals'}"><span class="am-icon-bug"></span> Modals</a></li>
+            <li><a v-link="{path: '/paginations'}"><span class="am-icon-bug"></span> Paginations</a></li>
+            <li><a v-link="{path: '/breadcrumb'}"><span class="am-icon-bug"></span> Breadcrumbs</a></li>
+            <li><a v-link="{path: '/article'}"><span class="am-icon-bug"></span> Articles</a></li>
+            <li><a v-link="{path: '/datetimepicker'}"><span class="am-icon-bug"></span> DateTimePickers</a></li>
+          </ul>
+        </li>
+        <li><a v-link="{path: '/'}"><span class="am-icon-table"></span> Advanced</a></li>
+      </ul>
+
+      <div class="am-panel am-panel-default admin-sidebar-panel">
+        <div class="am-panel-bd">
+          <p><span class="am-icon-github"></span> Github</p>
+          <p><a href="https://github.com/zcoding/amazeui-vue">amazeui-vue</a></p>
+        </div>
+      </div>
+
+      <div class="am-panel am-panel-default admin-sidebar-panel">
+        <div class="am-panel-bd">
+          <p><span class="am-icon-bookmark"></span> NPM</p>
+          <p>npm install amazeui-vue</p>
+          <p><a href="https://www.npmjs.com/package/amazeui-vue">amazeui-vue package</a></p>
+        </div>
+      </div>
+
+      <div class="am-panel am-panel-default admin-sidebar-panel">
+        <div class="am-panel-bd">
+          <p><span class="am-icon-github-square"></span> wiki</p>
+          <p><a href="https://github.com/zcoding/amazeui-vue/wiki">amazeui-vue wiki</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- sidebar end -->
+
+  <!-- content start -->
+  <div class="admin-content">
+
+    <router-view></router-view>
+
+  </div>
+  <!-- content end -->
+
+</div>
+
+<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+<script src="/app/app.js"></script>
 </body>
 </html>

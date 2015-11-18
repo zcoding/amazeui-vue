@@ -1,13 +1,13 @@
 <template>
 
 <grid>
-  <column :sm="12" :md="12">
+  <column :sm="12">
     <p>{{ myDate | formatDate 'yyyy-MM-dd hh:mm:ss' }}</p>
   </column>
-  <column :sm="12" :md="12">
+  <column :sm="12">
     <date-time-picker :date-time.sync="myDate"></date-time-picker>
   </column>
-  <column :sm="12" :md="12">
+  <column :sm="12">
     <date-time-input></date-time-input>
   </column>
 </grid>

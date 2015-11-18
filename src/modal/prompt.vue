@@ -7,8 +7,8 @@
     <input type="text" class="am-modal-prompt-input" v-model="message">
   </div>
   <div class="am-modal-footer" slot="footer">
-    <span class="am-modal-btn" v-on:click="cancel">取消</span>
-    <span class="am-modal-btn" v-on:click="ok(message)">确定</span>
+    <span class="am-modal-btn" @click="cancel">取消</span>
+    <span class="am-modal-btn" @click="ok(message)">确定</span>
   </div>
 </modal>
 

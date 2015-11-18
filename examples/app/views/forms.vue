@@ -13,9 +13,6 @@
       <am-select label="时间" name="when2" :items="[{label: '上午', value: '1'}, {label: '中午', value: '2'}, {label: '下午', value: '3'}]" :model.sync="form.when2"></am-select>
     </am-form>
   </column>
-  <column :sm="12" :md="6" :lg="4">
-    <a v-link="{path: '/'}">返回首页</a>
-  </column>
 </grid>
 
 </template>
@@ -41,7 +38,7 @@ module.exports = {
   methods: {
     submit: function(event) {
       event.preventDefault();
-      this.$log(this.form);
+      this.$log('form');
       return false;
     },
     alertClosed: function() {

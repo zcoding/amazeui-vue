@@ -6,24 +6,21 @@
   </column>
   <column :sm="12" :md="12" :lg="12">
     <am-button></am-button>
-    <am-button am-style="primary" v-on:click="alert" lg>主色按钮</am-button>
+    <am-button am-style="primary" @click="alert" lg>主色按钮</am-button>
     <am-button am-style="secondary" radius xs>次色小圆角按钮</am-button>
     <am-button am-style="success" disabled round sm>绿色禁用椭圆按钮</am-button>
-    <am-button am-style="warning" round :loading.sync="isLoading" v-on:click="submitNow">{{ isLoading ? '正在提交……' : '橙色椭圆按钮' }}</am-button>
+    <am-button am-style="warning" round :loading.sync="isLoading" @click="submitNow">{{ isLoading ? '正在提交……' : '橙色椭圆按钮' }}</am-button>
     <am-button am-style="danger" active xl>红色大激活按钮</am-button>
-    <am-button block am-style="primary">块状按钮</am-button>
+    <am-button am-style="primary" block>Block Style Button</am-button>
   </column>
   <column :sm="12" :md="12" :lg="12">
     <button-group>
-      <am-button></am-button>
-      <am-button></am-button>
-      <am-button></am-button>
-      <am-button></am-button>
-      <am-button></am-button>
+      <am-button>button1</am-button>
+      <am-button>button2</am-button>
+      <am-button>button3</am-button>
+      <am-button>button4</am-button>
+      <am-button>button5</am-button>
     </button-group>
-  </column>
-  <column :sm="12" :md="12" :lg="12">
-    <a v-link="{ path: '/' }">返回首页</a>
   </column>
 </grid>
 
