@@ -3,7 +3,7 @@
 <form class="am-form" v-el="form" :action="action" :method="method">
   <fieldset>
     <slot></slot>
-    <p><button type="submit" class="am-btn am-btn-default" v-on:click="submit">提交</button></p>
+    <p><button type="submit" class="am-btn am-btn-default" @click="submitForm">提交</button></p>
   </fieldset>
 </form>
 
@@ -13,26 +13,35 @@
 
 // Form组件不能单独使用
 
-module.exports = {
+export default {
 
   props: {
     "action": {
       type: String,
-      default: '',
-      required: false
+      default: ''
     },
     "method": {
       type: String,
-      default: 'GET',
-      required: false
+      default: 'GET'
     },
     "submit": {
       type: Function,
       required: true,
-      default: function(event) {
+      default() {}
+    },
+    "async": {
+      type: Boolean,
+      default: false
+    }
+  },
+
+  methods: {
+    submitForm(event) {
+      if (this.async) {
         event.preventDefault();
-        return false;
       }
+      this.submit();
+      return false;
     }
   }
 
