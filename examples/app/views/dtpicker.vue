@@ -16,15 +16,7 @@
 
 <script>
 
-import dateTimePicker from 'amazeui-vue/datetimepicker/datetimepicker.vue';
-import dateTimeInput from 'amazeui-vue/datetimepicker/datetimeinput.vue';
-
 export default {
-
-  components: {
-    dateTimePicker,
-    dateTimeInput
-  },
 
   data() {
     return {

@@ -83,13 +83,13 @@ vue.js组件系统要求使用组件前必须先注册，安装amazeui-vue并不
 ### 注册到全局
 amazeui-vue提供了一个install函数，让你可以像使用vue.js插件一样使用amazeui-vue：
 ```javascript
-Vue.use(require('amazeui-vue/install'));
+Vue.use(require('amazeui-vue').install);
 ```
 这样amazeui-vue组件就注册到全局，而且他们将会被同步加载。
 
 如果你希望使用[异步组件](http://cn.vuejs.org/guide/components.html#异步组件)，就换成install-async函数：
 ```javascript
-Vue.use(require('amazeui-vue/install-async'));
+Vue.use(require('amazeui-vue').installAsync);
 ```
 
 ### 局部注册

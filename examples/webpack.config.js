@@ -29,7 +29,7 @@ module.exports = {
 
   resolve: {
     alias: {
-      "amazeui-vue": path.resolve(__dirname, '../src'),
+      "amazeui-vue": path.resolve(__dirname, '../'),
       "views": path.resolve(__dirname, './app/views')
     }
   }

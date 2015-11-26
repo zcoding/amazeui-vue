@@ -83,13 +83,13 @@ You can register the components globally or locally:[vue.js: using components](h
 ### Global Registration
 amazeui-vue exports an install function so taht you can register it as a plugin for vue.js. You can do it like this:
 ```javascript
-Vue.use(require('amazeui-vue/install'));
+Vue.use(require('amazeui-vue').install);
 ```
 and then amazeui-vue components will be registered globally, and they will be load synchronously.
 
 If you want to use amazeui-vue as [asyn components](http://vuejs.org/guide/components.html#Async_Components), use the install-async function:
 ```javascript
-Vue.use(require('amazeui-vue/install-async'));
+Vue.use(require('amazeui-vue').installAsync);
 ```
 
 ### Local Registration

@@ -10,7 +10,7 @@
 
 <script>
 
-import dataTable from 'amazeui-vue/datatable/datatable.vue';
+import dataTable from 'amazeui-vue/src/datatable/datatable.vue';
 
 export default {
   components: {

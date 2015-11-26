@@ -32,3 +32,9 @@ exports.prompt = require('./modal/prompt.vue');
 exports.panel = require('./panel/panel.vue');
 
 exports.pagination = require('./pagination/pagination.vue');
+
+exports.dateTimePicker = require('./datetimepicker/datetimepicker.vue');
+exports.dateTimeInput = require('./datetimepicker/datetimeinput.vue');
+
+exports.install = require('./install');
+exports.installAsync = require('./install-async');

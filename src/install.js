@@ -21,6 +21,8 @@ var defaultNames = {
   , "prompt": "prompt"
   , "pagination": "pagination"
   , "panel": "panel"
+  , "dateTimeInput": "dateTimeInput"
+  , "dateTimePicker": "dateTimePicker"
 };
 
 // 将amazeui-vue组件注册到全局
@@ -75,5 +77,11 @@ exports.install = function(Vue, options) {
   Vue.component(defaultNames['pagination'], require('./pagination/pagination.vue'));
 
   Vue.component(defaultNames['panel'], require('./panel/panel.vue'));
+
+  Vue.component(defaultNames['panel'], require('./panel/panel.vue'));
+
+  Vue.component(defaultNames['dateTimePicker'], require('./datetimepicker/datetimepicker.vue'));
+
+  Vue.component(defaultNames['dateTimeInput'], require('./datetimepicker/datetimeinput.vue'));
 
 };
