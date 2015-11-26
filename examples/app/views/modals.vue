@@ -14,11 +14,11 @@
   <div class="am-modal-bd" slot="body">nothing</div>
 </modal>
 
-<alert :show.sync="showAlert" :close-via-dimmer="false" :ok="clickAlertOK">好好好</alert>
+<alert :show.sync="showAlert" v-on:ok="clickAlertOK">好好好</alert>
 
-<confirm :show.sync="showConfirm" :ok="clickConfirmOK" :cancel="clickConfirmCancel">Are you OK ?</confirm>
+<confirm :show.sync="showConfirm" v-on:ok="clickConfirmOK" v-on:cancel="clickConfirmCancel">Are you OK ?</confirm>
 
-<prompt :show.sync="showPrompt" :ok="clickPromptOK" :cancel="clickPromptCancel">输入你的名字</prompt>
+<prompt :show.sync="showPrompt" v-on:ok="clickPromptOK" v-on:cancel="clickPromptCancel">输入你的名字</prompt>
 
 </template>
 

@@ -16,7 +16,9 @@
 
 <script>
 
-module.exports = {
+import modal from './modal.vue';
+
+export default {
 
   props: {
     title: {
@@ -27,29 +29,27 @@ module.exports = {
       type: Boolean,
       default: false,
       twoWay: true
-    },
-    ok: {
-      type: Function,
-      default: function() {
-        return false;
-      }
-    },
-    cancel: {
-      type: Function,
-      default: function() {
-        return false;
-      }
     }
   },
 
   components: {
-    "modal": require('./modal.vue')
+    modal
   },
 
-  data: function() {
+  data() {
     return {
       message: ''
     };
+  },
+
+  methods: {
+    ok(message) {
+      this.$dispatch('ok', message);
+    },
+
+    cancel() {
+      this.$dispatch('cancel');
+    }
   }
 
 };

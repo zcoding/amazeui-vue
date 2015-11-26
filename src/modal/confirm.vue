@@ -4,8 +4,8 @@
   <div class="am-modal-hd" slot="header" v-if="title !== ''">{{ title }}</div>
   <div class="am-modal-bd" slot="body"><slot>Are you sure ?</slot></div>
   <div class="am-modal-footer" slot="footer">
-    <span class="am-modal-btn" v-on:click="cancel">取消</span>
-    <span class="am-modal-btn" v-on:click="ok">确定</span>
+    <span class="am-modal-btn" @click="cancel">取消</span>
+    <span class="am-modal-btn" @click="ok">确定</span>
   </div>
 </modal>
 
@@ -13,7 +13,9 @@
 
 <script>
 
-module.exports = {
+import modal from './modal.vue';
+
+export default {
 
   props: {
     title: {
@@ -24,23 +26,20 @@ module.exports = {
       type: Boolean,
       default: false,
       twoWay: true
-    },
-    ok: {
-      type: Function,
-      default: function() {
-        return false;
-      }
-    },
-    cancel: {
-      type: Function,
-      default: function() {
-        return false;
-      }
     }
   },
 
   components: {
-    "modal": require('./modal.vue')
+    modal
+  },
+
+  methods: {
+    ok() {
+      this.$dispatch('ok');
+    },
+    cancel() {
+      this.$dispatch('cancel');
+    }
   }
 
 };

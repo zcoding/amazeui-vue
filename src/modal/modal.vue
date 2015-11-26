@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<div class="am-dimmer" :class="{'am-active': show}" v-show="show" v-on:click="close"></div>
+<div class="am-dimmer" :class="{'am-active': show}" v-show="show" @click="close"></div>
 
 </template>
 
@@ -22,7 +22,8 @@
 
 <script>
 
-module.exports = {
+export default {
+
   props: {
     show: {
       type: Boolean,
@@ -36,12 +37,13 @@ module.exports = {
   },
 
   methods: {
-    close: function() {
+    close() {
       if (this.closeViaDimmer) {
         this.show = false;
       }
     }
   }
+
 };
 
 </script>
