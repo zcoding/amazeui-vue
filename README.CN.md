@@ -67,12 +67,12 @@ build目录下有一个打包好的非模块化文件，用script标签引入即
 + `badge`
 + `pagination`
 + `article`
++ `tab`
++ `topbar`
 
 ## 还在开发中的组件
 + `dateTimePicker`
 + `slider`
-+ `tabs`
-+ `topbar`
 + `nprogress`
 
 ## 如何使用
@@ -96,7 +96,7 @@ Vue.use(require('amazeui-vue').installAsync);
 
 **_同步加载_**
 ```javascript
-import amButton from 'amazeui-vue/button/am-button.vue'; // 你可能需要babel-loader来兼容ES2015语法
+import amButton from 'amazeui-vue/src/button/am-button.vue'; // 你可能需要babel-loader来兼容ES2015语法
 // 或者用CommonJS语法
 // var amButton = require('amazeui-vue').button;
 // ...
@@ -112,7 +112,7 @@ export default {
 export default {
   components: {
     "amButton": function(resolve) {
-      require(['amazeui-vue/am-button.vue'], resolve)
+      require(['amazeui-vue/src/button/am-button.vue'], resolve)
     }
   }
 }

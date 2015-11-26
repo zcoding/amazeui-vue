@@ -36,6 +36,7 @@ export default {
   methods: {
     tabTo(index) {
       this.active = index;
+      this.$dispatch('tab');
     }
   }
 

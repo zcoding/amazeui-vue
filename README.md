@@ -67,12 +67,12 @@ If you want to use the react version, you can find it [here](https://github.com/
 + `badge`
 + `pagination`
 + `article`
++ `tab`
++ `topbar`
 
 ## Components In Development
 + `dateTimePicker`
 + `slider`
-+ `tabs`
-+ `topbar`
 + `nprogress`
 
 ## How To
@@ -96,7 +96,7 @@ Vue.use(require('amazeui-vue').installAsync);
 
 **_sync_**
 ```javascript
-import amButton from 'amazeui-vue/button/am-button.vue'; // you may need babel-loader to do it like this
+import amButton from 'amazeui-vue/src/button/am-button.vue'; // you may need babel-loader to do it like this
 // or
 // var amButton = require('amazeui-vue').button;
 // ...
@@ -112,7 +112,7 @@ export default {
 export default {
   components: {
     "amButton": function(resolve) {
-      require(['amazeui-vue/am-button.vue'], resolve)
+      require(['amazeui-vue/src/button/am-button.vue'], resolve)
     }
   }
 }
