@@ -1,6 +1,6 @@
 <template>
 
-<div class="am-modal" tabindex="-1" :class="{'am-modal-active': show}" v-show="show">
+<div class="am-modal" tabindex="-1" :class="{'am-modal-active': show, 'am-modal-lg': lg}" v-show="show">
   <div class="am-modal-dialog">
     <slot name="header"></slot>
     <slot name="body"></slot>
@@ -23,6 +23,11 @@
 .am-modal, .am-dimmer
   display block
 
+.am-modal-lg
+  width 1024px
+  margin-left -512px
+  top 100px
+
 </style>
 
 <script>
@@ -38,6 +43,10 @@ export default {
     closeViaDimmer: { // 是否通过点击遮罩层关闭模态框，默认为true
       type: Boolean,
       default: true
+    },
+    lg: {
+      type: Boolean,
+      default: false
     }
   },
 

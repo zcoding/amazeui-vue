@@ -103,5 +103,16 @@ module.exports = {
         }
       }
     }
+  },
+
+  "navs": {
+    component: {
+      template: '<navs></navs>',
+      components: {
+        "navs": function(resolve) {
+          require(['views/navs.vue'], resolve);
+        }
+      }
+    }
   }
 };

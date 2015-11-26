@@ -9,7 +9,7 @@
   </column>
 </grid>
 
-<modal :show.sync="showModal">
+<modal :show.sync="showModal" lg>
   <div class="am-modal-hd" slot="header">yeah</div>
   <div class="am-modal-bd" slot="body">nothing</div>
 </modal>
