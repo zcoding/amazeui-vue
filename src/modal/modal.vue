@@ -8,15 +8,20 @@
   </div>
 </div>
 
-<div class="am-dimmer" :class="{'am-active': show}" v-show="show" @click="close"></div>
+<div class="am-dimmer" :class="{'am-active': show}" v-show="show" @click="close" transition="modal-fade"></div>
 
 </template>
 
-<style>
+<style lang="stylus">
 
-.am-modal, .am-dimmer {
-  display: block;
-}
+.modal-fade-transition
+  transition background-color 300ms 0s
+  -webkit-transition background-color 300ms 0s
+.modal-fade-enter, .modal-fade-leave
+  background-color rgba(0, 0, 0, 0)
+
+.am-modal, .am-dimmer
+  display block
 
 </style>
 
@@ -33,6 +38,27 @@ export default {
     closeViaDimmer: { // 是否通过点击遮罩层关闭模态框，默认为true
       type: Boolean,
       default: true
+    }
+  },
+
+  transitions: {
+    "modal-fade": {
+      beforeEnter(el) {
+      },
+      enter (el) {
+      },
+      afterEnter(el) {
+      },
+      enterCancelled(el) {
+      },
+      beforeLeave(el) {
+      },
+      leave(el) {
+      },
+      afterLeave(el) {
+      },
+      leaveCancelled(el) {
+      }
     }
   },
 
