@@ -1,6 +1,9 @@
 <template>
 
-<header class="am-topbar"></header>
+<header class="am-topbar" :class="{'am-topbar-inverse': inverse, 'am-topbar-fixed-top': fixedTop, 'am-topbar-fixed-bottom': fixedBottom}">
+  <h1 class="am-topbar-brand">{{ title }}</h1>
+  <slot></slot>
+</header>
 
 </template>
 
@@ -9,7 +12,7 @@
 export default {
 
   props: {
-    brand: {
+    title: {
       type: String,
       default: ''
     },

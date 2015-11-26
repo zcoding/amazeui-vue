@@ -1,5 +1,13 @@
 <template>
 
+<topbar title="Amaze UI vue">
+  <am-nav :items="items" topbar pills></am-nav>
+</topbar>
+
+<topbar inverse title="Amaze UI vue">
+  <am-nav :items="items" topbar pills></am-nav>
+</topbar>
+
 <grid>
   <column :sm="12">
     <div class="am-padding">
@@ -24,7 +32,13 @@
 
 <script>
 
+import topbar from 'amazeui-vue/src/topbar/topbar.vue';
+
 export default {
+
+  components: {
+    topbar
+  },
 
   data() {
     return {
