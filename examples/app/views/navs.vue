@@ -32,13 +32,7 @@
 
 <script>
 
-import topbar from 'amazeui-vue/src/topbar/topbar.vue';
-
 export default {
-
-  components: {
-    topbar
-  },
 
   data() {
     return {

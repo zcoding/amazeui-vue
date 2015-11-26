@@ -24,6 +24,8 @@ var defaultNames = {
   , "dateTimeInput": "dateTimeInput"
   , "dateTimePicker": "dateTimePicker"
   , "nav": "amNav"
+  , "topbar": "topbar"
+  , "tab": "tab"
 };
 
 // 将amazeui-vue组件注册到全局
@@ -133,6 +135,14 @@ exports.install = function(Vue, options) {
 
   Vue.component(defaultNames['nav'], function(resolve) {
     require(['./nav/nav.vue'], resolve);
+  });
+
+  Vue.component(defaultNames['topbar'], function(resolve) {
+    require(['./topbar/topbar.vue'], resolve);
+  });
+
+  Vue.component(defaultNames['tab'], function(resolve) {
+    require(['./tab/tab.vue'], resolve);
   });
 
 };

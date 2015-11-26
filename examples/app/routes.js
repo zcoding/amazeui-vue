@@ -114,5 +114,16 @@ module.exports = {
         }
       }
     }
+  },
+
+  "tabs": {
+    component: {
+      template: '<tabs></tabs>',
+      components: {
+        "tabs": function(resolve) {
+          require(['views/tabs.vue'], resolve);
+        }
+      }
+    }
   }
 };
