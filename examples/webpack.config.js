@@ -1,8 +1,12 @@
+var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
 
-  entry: path.resolve(__dirname, './app/index.js'),
+  entry: {
+    app: path.resolve(__dirname, './app/index.js'),
+    vendor: ["vue"]
+  },
 
   watch: true,
 
@@ -14,24 +18,48 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.vue$/, loader: 'vue' }
+      {
+          test: /\.vue$/
+        , loader: 'vue'
+      },
+      {
+          test: /\.js$/
+        , exclude: /node_modules/
+        , loader: "babel"
+        , query: {
+            presets: ['es2015']
+          , plugins: ['transform-runtime']
+        }
+      }
     ]
   },
 
   vue: {
     autoprefixer: false,
-    loaders: {}
-  },
-
-  babel: {
-    nonStandard: false
+    loaders: {
+      // html: 'vue-html?removeRedundantAttributes=false'
+    }
   },
 
   resolve: {
     alias: {
-      "amazeui-vue": path.resolve(__dirname, '../'),
+      "amazeui-vue": path.resolve(__dirname, '..'),
       "views": path.resolve(__dirname, './app/views')
     }
-  }
+  },
+
+  plugins: [
+    // new webpack.DefinePlugin({
+    //   'process.env': {
+    //     NODE_ENV: '"production"'
+    //   }
+    // }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false
+    //   }
+    // }),
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
+  ]
 
 };

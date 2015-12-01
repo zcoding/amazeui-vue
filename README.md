@@ -1,5 +1,5 @@
 # amazeui-vue
-[amazeui](https://github.com/amazeui/amazeui) components build with [vue.js](https://github.com/vuejs/vue)
+[amazeui](https://github.com/amazeui/amazeui) components built with [vue.js](https://github.com/vuejs/vue)
 
 [![version](https://img.shields.io/npm/v/amazeui-vue.svg?style=flat-square "version")](https://www.npmjs.com/package/amazeui-vue)
 [![LICENSE](https://img.shields.io/npm/l/amazeui-vue.svg?style=flat-square "license")](./LICENSE)

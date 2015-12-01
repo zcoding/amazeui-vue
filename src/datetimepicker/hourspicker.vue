@@ -18,7 +18,7 @@
     <tbody>
     <tr>
       <td colspan="7">
-        <span class="am-datepicker-hour" v-for="h in hours" :class="{'am-active': h.isActive}" @click="setSelectedHour(h)">{{ h.show < 10 ? '0' + h.show + ':00' : h.show + ':00' }}</span>
+        <span class="am-datepicker-hour" v-for="h in hours" :class="{'am-active': h.isActive}" @click="setSelectedHour(h)" v-text="h.show < 10 ? '0' + h.show + ':00' : h.show + ':00'"></span>
       </td>
     </tr>
     </tbody>

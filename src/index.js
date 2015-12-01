@@ -1,40 +1,67 @@
-exports.alert = require('./alert/alert.vue');
+import amAlert        from './alert/alert.vue';
+import amArticle      from './article/article.vue';
+import lead           from './article/lead.vue';
+import badge          from './badge/badge.vue';
+import breadcrumb     from './breadcrumb/breadcrumb.vue';
+import amButton       from './button/button.vue';
+import buttonGroup    from './button/button-group.vue';
+import amForm         from './form/form.vue';
+import amInput        from './form/input.vue';
+import checkbox       from './form/checkbox.vue';
+import radio          from './form/radio.vue';
+import amSelect       from './form/select.vue';
+import grid           from './grid/grid.vue';
+import column         from './grid/column.vue';
+import container      from './grid/container.vue';
+import icon           from './icon/icon.vue';
+import list           from './list/list.vue';
+import modal          from './modal/modal.vue';
+import alert          from './modal/alert.vue';
+import confirm        from './modal/confirm.vue';
+import prompt         from './modal/prompt.vue';
+import panel          from './panel/panel.vue';
+import pagination     from './pagination/pagination.vue';
+import dateTimePicker from './datetimepicker/datetimepicker.vue';
+import dateTimeInput  from './datetimepicker/datetimeinput.vue';
+import amNav          from './nav/nav.vue';
+import topbar         from './topbar/topbar.vue';
+import tab            from './tab/tab.vue';
 
-exports.article = require('./article/article.vue');
-exports.lead = require('./article/lead.vue');
+let components = {
+  amAlert,
+  amArticle,
+  lead,
+  badge,
+  breadcrumb,
+  amButton,
+  buttonGroup,
+  amForm,
+  amInput,
+  checkbox,
+  radio,
+  amSelect,
+  grid,
+  column,
+  container,
+  icon,
+  list,
+  modal,
+  alert,
+  confirm,
+  prompt,
+  panel,
+  pagination,
+  dateTimePicker,
+  dateTimeInput,
+  amNav,
+  topbar,
+  tab
+};
 
-exports.badge = require('./badge/badge.vue');
+export default function(Vue) {
 
-exports.breadcrumb = require('./breadcrumb/breadcrumb.vue');
+  for (let name in components) {
+    Vue.component(name, components[name]);
+  }
 
-exports.button = require('./button/button.vue');
-exports.buttonGroup = require('./button/button-group.vue');
-
-exports.form = require('./form/form.vue');
-exports.input = require('./form/input.vue');
-exports.checkbox = require('./form/checkbox.vue');
-exports.radio = require('./form/radio.vue');
-exports.select = require('./form/select.vue');
-
-exports.grid = require('./grid/grid.vue');
-exports.column = require('./grid/column.vue');
-exports.container = require('./grid/container.vue');
-
-exports.icon = require('./icon/icon.vue');
-
-exports.list = require('./list/list.vue');
-
-exports.modal = require('./modal/modal.vue');
-exports.alert = require('./modal/alert.vue');
-exports.confirm = require('./modal/confirm.vue');
-exports.prompt = require('./modal/prompt.vue');
-
-exports.panel = require('./panel/panel.vue');
-
-exports.pagination = require('./pagination/pagination.vue');
-
-exports.dateTimePicker = require('./datetimepicker/datetimepicker.vue');
-exports.dateTimeInput = require('./datetimepicker/datetimeinput.vue');
-
-exports.install = require('./install');
-exports.installAsync = require('./install-async');
+}

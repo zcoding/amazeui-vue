@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
 
-  entry: path.resolve(__dirname, './src/build.js'),
+  entry: path.resolve(__dirname, './src/standalone.js'),
 
   output: {
     path: path.resolve(__dirname, './build'),
@@ -13,7 +13,19 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.vue$/, loader: 'vue' }
+      {
+          test: /\.vue$/
+        , loader: 'vue'
+      },
+      {
+          test: /\.js$/
+        , exclude: /node_modules/
+        , loader: "babel"
+        , query: {
+            presets: ['es2015']
+          , plugins: ['transform-runtime']
+        }
+      }
     ]
   },
 
@@ -22,10 +34,6 @@ module.exports = {
     loaders: {
       html: 'vue-html?removeRedundantAttributes=false'
     }
-  },
-
-  babel: {
-    nonStandard: false
   },
 
   plugins: [

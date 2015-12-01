@@ -1,10 +1,11 @@
-var Vue = require('vue');
-var VueRouter = require('vue-router');
-var routes = require('./routes');
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import routes from './routes';
+import amazeuiVue from 'amazeui-vue';
 
 Vue.config.debug = true;
 
-Vue.use(require('amazeui-vue').install);
+Vue.use(amazeuiVue);
 Vue.use(VueRouter);
 
 var router = new VueRouter();

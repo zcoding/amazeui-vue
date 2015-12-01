@@ -1,8 +1,9 @@
-module.exports = {
+export default {
   "/": {
-    component: require('./views/index.vue')
-  },
-  "/article": {
+    component: require('views/index.vue')
+  }
+
+  , "/article": {
     component: {
       template: '<articles></articles>',
       components: {
@@ -11,8 +12,9 @@ module.exports = {
         }
       }
     }
-  },
-  "/buttons": {
+  }
+
+  , "/buttons": {
     component: {
       template: '<buttons></buttons>',
       components: {
@@ -21,8 +23,9 @@ module.exports = {
         }
       }
     }
-  },
-  "/forms": {
+  }
+
+  , "/forms": {
     component: {
       template: '<forms></forms>',
       components: {
@@ -31,8 +34,9 @@ module.exports = {
         }
       }
     }
-  },
-  "/lists": {
+  }
+
+  , "/lists": {
     component: {
       template: '<lists></lists>',
       components: {

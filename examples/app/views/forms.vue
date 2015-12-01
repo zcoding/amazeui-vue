@@ -15,9 +15,9 @@
 
       <am-input type="password" name="passwd" placeholder="请输入密码" :model.sync="form.passwd">密码</am-input>
 
-      <am-checkbox name="when" :items="[{label: '加蛋', value: '1'}, {label: '加饭', value: '2'}, {label: '加汤', value: '3'}]" :model.sync="form.when"></am-checkbox>
+      <checkbox name="when" :items="[{label: '加蛋', value: '1'}, {label: '加饭', value: '2'}, {label: '加汤', value: '3'}]" :model.sync="form.when"></checkbox>
 
-      <am-radio name="type" :items="[{label: '中通', value: '1'}, {label: '圆通', value: '2'}, {label: '申通', value: '3'}]" :model.sync="form.type"></am-radio>
+      <radio name="type" :items="[{label: '中通', value: '1'}, {label: '圆通', value: '2'}, {label: '申通', value: '3'}]" :model.sync="form.type"></radio>
 
       <am-select label="时间" name="when2" :items="[{label: '上午', value: '1'}, {label: '中午', value: '2'}, {label: '下午', value: '3'}]" :model.sync="form.when2"></am-select>
 
@@ -30,9 +30,9 @@
 
 <script>
 
-module.exports = {
+export default {
 
-  data: function() {
+  data() {
     return {
       form: {
         email: '',
@@ -47,10 +47,10 @@ module.exports = {
   },
 
   methods: {
-    submit: function() {
+    submit() {
       this.$log('form');
     },
-    alertClosed: function() {
+    alertClosed() {
       alert('调用closed的时候还没有完全销毁');
     }
   }
