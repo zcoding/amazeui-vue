@@ -1,6 +1,6 @@
 <template>
 
-<div class="am-modal" tabindex="-1" :class="{'am-modal-active': show, 'am-modal-lg': lg}" v-show="show">
+<div class="am-modal" tabindex="-1" v-bind:class="{'am-modal-active': show, 'am-modal-lg': lg}" v-show="show">
   <div class="am-modal-dialog">
     <slot name="header"></slot>
     <slot name="body"></slot>
@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<div class="am-dimmer" :class="{'am-active': show}" v-show="show" @click="close" transition="modal-fade"></div>
+<div class="am-dimmer" v-bind:class="{'am-active': show}" v-show="show" v-on:click="close" transition="modal-fade"></div>
 
 </template>
 

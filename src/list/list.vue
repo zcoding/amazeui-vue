@@ -1,6 +1,6 @@
 <template>
 
-<ul class="am-list" :class="[static?'am-list-static':'', border?'am-list-border':'', striped?'am-list-striped':'']">
+<ul class="am-list" v-bind:class="[static?'am-list-static':'', border?'am-list-border':'', striped?'am-list-striped':'']">
   <slot></slot>
 </ul>
 

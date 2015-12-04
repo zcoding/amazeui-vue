@@ -1,6 +1,6 @@
 <template>
 
-<ul class="am-nav" :class="{'am-nav-pills': pills, 'am-nav-tabs': tabs, 'am-nav-justify': justify, 'am-topbar-nav': topbar}">
+<ul class="am-nav" v-bind:class="{'am-nav-pills': pills, 'am-nav-tabs': tabs, 'am-nav-justify': justify, 'am-topbar-nav': topbar}">
   <li v-for="item in items" :class="{'am-active': item.active}"><a v-link="item.link">{{ item.text }}</a></li>
 </ul>
 

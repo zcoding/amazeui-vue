@@ -4,15 +4,15 @@
   <table class="am-datepicker-table">
     <thead>
     <tr class="am-datepicker-header">
-      <th class="am-datepicker-prev" @click="prevYear">
+      <th class="am-datepicker-prev" v-on:click="prevYear">
         <i class="am-datepicker-prev-icon"></i>
       </th>
-      <th class="am-datepicker-switch" colspan="5" @click="showYears">
+      <th class="am-datepicker-switch" colspan="5" v-on:click="showYears">
         <div class="am-datepicker-select">
           {{ viewDate.getFullYear() }}
         </div>
       </th>
-      <th class="am-datepicker-next" @click="nextYear">
+      <th class="am-datepicker-next" v-on:click="nextYear">
         <i class="am-datepicker-next-icon"></i>
       </th>
     </tr>
@@ -20,7 +20,7 @@
     <tbody>
       <tr>
         <td colspan="7">
-          <span class="am-datepicker-month" v-for="month in months" :class="{'am-active': month.isActive}" @click="setViewMonth(month)">
+          <span class="am-datepicker-month" v-for="month in months" v-bind:class="{'am-active': month.isActive}" v-on:click="setViewMonth(month)">
             {{ month.show + 1 }}
           </span>
         </td>

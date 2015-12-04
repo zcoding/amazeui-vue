@@ -1,8 +1,8 @@
 <template>
 
 <grid>
-  <column :sm="12">
-    <data-table :headers="headers" :datas="datas"></data-table>
+  <column v-bind:sm="12">
+    <data-table v-bind:headers="headers" v-bind:datas="datas"></data-table>
   </column>
 </grid>
 

@@ -1,6 +1,6 @@
 <template>
 
-<button type="button" class="am-btn" :disabled="disabled || loading" :class="[buttonStyle, buttonSize, radius?'am-radius':'', round?'am-round':'', active?'am-active':'', block?'am-btn-block':'']">
+<button type="button" class="am-btn" v-bind:disabled="disabled || loading" v-bind:class="[buttonStyle, buttonSize, radius?'am-radius':'', round?'am-round':'', active?'am-active':'', block?'am-btn-block':'']">
   <span class="am-icon-circle-o-notch am-icon-spin" v-if="loading"></span>
   <slot>This is a button</slot>
 </button>

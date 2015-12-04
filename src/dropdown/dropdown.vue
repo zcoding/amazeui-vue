@@ -1,7 +1,7 @@
 <template>
 
 <div class="am-dropdown">
-  <button class="am-btn am-btn-primary am-dropdown-toggle" v-on="click: toggleDropdown">{{ title }} <span class="am-icon-caret-down"></span></button>
+  <button class="am-btn am-btn-primary am-dropdown-toggle" v-on:click="toggleDropdown">{{ title }} <span class="am-icon-caret-down"></span></button>
   <ul class="am-dropdown-content">
     <slot></slot>
   </ul>

@@ -1,6 +1,6 @@
 <template>
 
-<i class="am-icon-fw" :class="[iconName, spin?'am-icon-spin':'', pulse?'am-icon-pulse':'']"></i>
+<i class="am-icon-fw" v-bind:class="[iconName, spin?'am-icon-spin':'', pulse?'am-icon-pulse':'']"></i>
 
 </template>
 

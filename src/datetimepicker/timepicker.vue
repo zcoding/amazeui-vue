@@ -5,13 +5,13 @@
     <table class="am-datepicker-table">
       <thead>
       <tr class="am-datepicker-header">
-        <th class="am-datepicker-prev" @click="prevMinute">
+        <th class="am-datepicker-prev" v-on:click="prevMinute">
           <i class="am-datepicker-prev-icon"></i>
         </th>
-        <th class="am-datepicker-switch" colspan="5" @click="showDate">
+        <th class="am-datepicker-switch" colspan="5" v-on:click="showDate">
           <div class="am-datepicker-select">today</div>
         </th>
-        <th class="am-datepicker-next" @click="nextMinute">
+        <th class="am-datepicker-next" v-on:click="nextMinute">
           <i class="am-datepicker-next-icon"></i>
         </th>
       </tr>
@@ -20,15 +20,15 @@
       <tr>
         <td colspan="7">
           <div class="am-datepicker-time-box">
-            <strong @click="showHours">{{ time.hour }}</strong><em>:</em><strong @click="showMinutes">{{ time.minute }}</strong>
+            <strong v-on:click="showHours">{{ time.hour }}</strong><em>:</em><strong v-on:click="showMinutes">{{ time.minute }}</strong>
           </div>
         </td>
       </tr>
       </tbody>
     </table>
   </div>
-  <hours-picker :selected-date.sync="selectedDate" :view-date.sync="viewDate" v-show="show.hours"></hours-picker>
-  <minutes-picker :selected-date.sync="selectedDate" :view-date.sync="viewDate" v-show="show.minutes"></minutes-picker>
+  <hours-picker v-bind:selected-date.sync="selectedDate" v-bind:view-date.sync="viewDate" v-show="show.hours"></hours-picker>
+  <minutes-picker v-bind:selected-date.sync="selectedDate" v-bind:view-date.sync="viewDate" v-show="show.minutes"></minutes-picker>
 </div>
 
 </template>

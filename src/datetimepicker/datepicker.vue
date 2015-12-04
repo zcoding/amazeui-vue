@@ -1,9 +1,9 @@
 <template>
 
 <div class="am-datepicker-body">
-  <days-picker :selected-date.sync="selectedDate" :view-date.sync="viewDate" v-show="show.days"></days-picker>
-  <months-picker :selected-date.sync="selectedDate" :view-date.sync="viewDate" v-show="show.months"></months-picker>
-  <years-picker :selected-date.sync="selectedDate" :view-date.sync="viewDate" v-show="show.years"></years-picker>
+  <days-picker v-bind:selected-date.sync="selectedDate" v-bind:view-date.sync="viewDate" v-show="show.days"></days-picker>
+  <months-picker v-bind:selected-date.sync="selectedDate" v-bind:view-date.sync="viewDate" v-show="show.months"></months-picker>
+  <years-picker v-bind:selected-date.sync="selectedDate" v-bind:view-date.sync="viewDate" v-show="show.years"></years-picker>
 </div>
 
 </template>

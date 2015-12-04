@@ -4,7 +4,7 @@
   <table class="am-datepicker-table">
     <thead>
     <tr class="am-datepicker-header">
-      <th class="am-datepicker-prev" @click="prevDecade">
+      <th class="am-datepicker-prev" v-on:click="prevDecade">
         <i class="am-datepicker-prev-icon"></i>
       </th>
       <th class="am-datepicker-switch" colspan="5">
@@ -12,7 +12,7 @@
           {{ showYear }}
         </div>
       </th>
-      <th class="am-datepicker-next" @click="nextDecade">
+      <th class="am-datepicker-next" v-on:click="nextDecade">
         <i class="am-datepicker-next-icon"></i>
       </th>
     </tr>
@@ -20,7 +20,7 @@
     <tbody>
       <tr>
         <td colspan="7">
-          <span class="am-datepicker-year" v-for="year in years" :class="{'am-datepicker-old': year.isOld, 'am-datepicker-new': year.isNew, 'am-active': year.isActive}" @click="setViewYear(year)">
+          <span class="am-datepicker-year" v-for="year in years" v-bind:class="{'am-datepicker-old': year.isOld, 'am-datepicker-new': year.isNew, 'am-active': year.isActive}" v-on:click="setViewYear(year)">
             {{ year.show }}
           </span>
         </td>

@@ -1,6 +1,6 @@
 <template>
 
-<div :class="[small, middle, large]">
+<div v-bind:class="[small, middle, large]">
   <slot></slot>
 </div>
 

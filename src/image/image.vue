@@ -1,6 +1,6 @@
 <template>
 
-<img :src="src" :alt="alt" :class="{'am-radius': radius, 'am-round': round, 'am-circle': circle, 'am-img-responsive': responsive, 'am-img-thumbnail': thumbnail}">
+<img v-bind:src="src" v-bind:alt="alt" v-bind:class="{'am-radius': radius, 'am-round': round, 'am-circle': circle, 'am-img-responsive': responsive, 'am-img-thumbnail': thumbnail}">
 
 </template>
 

@@ -1,7 +1,7 @@
 <template>
 
 <div class="am-panel am-panel-{{ amStyle }}">
-  <div class="am-panel-hd" @click="show = !show">{{ header }}</div>
+  <div class="am-panel-hd" v-on:click="show = !show">{{ header }}</div>
   <div class="am-panel-collapse" v-if="collapse" v-show="show" transition="collapse"><slot></slot></div>
   <slot v-if="!collapse"></slot>
 </div>

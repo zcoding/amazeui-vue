@@ -4,13 +4,13 @@
   <table class="am-datepicker-table">
     <thead>
     <tr class="am-datepicker-header">
-      <th class="am-datepicker-prev" @click="prevMinute">
+      <th class="am-datepicker-prev" v-on:click="prevMinute">
         <i class="am-datepicker-prev-icon"></i>
       </th>
       <th class="am-datepicker-switch" colspan="5">
         <div class="am-datepicker-select">{{ showText.hour + ':' + showText.minute }}</div>
       </th>
-      <th class="am-datepicker-next" @click="nextMinute">
+      <th class="am-datepicker-next" v-on:click="nextMinute">
         <i class="am-datepicker-next-icon"></i>
       </th>
     </tr>
@@ -18,7 +18,7 @@
     <tbody>
     <tr>
       <td colspan="7">
-        <span class="am-datepicker-minute" v-for="m in minutes" @click="setSelectedMinute(m)" v-text="m.show < 10 ? m.hour + ':0' + m.show : m.hour + ':' + m.show"></span>
+        <span class="am-datepicker-minute" v-for="m in minutes" v-on:click="setSelectedMinute(m)" v-text="m.show < 10 ? m.hour + ':0' + m.show : m.hour + ':' + m.show"></span>
       </td>
     </tr>
     </tbody>

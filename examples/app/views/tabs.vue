@@ -1,12 +1,12 @@
 <template>
 
 <grid>
-  <column :sm="12">
+  <column v-bind:sm="12">
     <div class="am-padding">
-      <tab :items="tabs" justify></tab>
+      <tab v-bind:items="tabs" justify></tab>
     </div>
     <div class="am-padding">
-      <tab :items="tabs"></tab>
+      <tab v-bind:items="tabs"></tab>
     </div>
   </column>
 </grid>

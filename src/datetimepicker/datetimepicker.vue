@@ -3,15 +3,15 @@
 <div class="am-datepicker">
   <div class="am-datepicker-caret" v-if="caretDisplayed"></div>
   <div class="am-datepicker-date" v-if="showDatePicker">
-    <date-picker :selected-date.sync="dateTime">
+    <date-picker v-bind:selected-date.sync="dateTime">
   </div>
   <div class="am-datepicker-time" v-if="showTimePicker">
-    <time-picker :selected-date.sync="dateTime">
+    <time-picker v-bind:selected-date.sync="dateTime">
   </div>
-  <div class="am-datepicker-toggle" v-show="showDatePicker" @click="handleToggleTime">
+  <div class="am-datepicker-toggle" v-show="showDatePicker" v-on:click="handleToggleTime">
     <icon name="clock-o">
   </div>
-  <div class="am-datepicker-toggle" v-show="showTimePicker" @click="handleToggleDate">
+  <div class="am-datepicker-toggle" v-show="showTimePicker" v-on:click="handleToggleDate">
     <icon name="calendar">
   </div>
 </div>

@@ -3,14 +3,14 @@
 <div class="am-slider am-slider-default">
   <div class="am-viewport">
     <ul class="am-slides">
-      <li class="clone" v-repeat="item in list">
+      <li class="clone" v-for="item in list">
         <img v-attr="src: item.img">
         <div class="am-slider-desc" v-if="item.text">{{ item.text }}</div>
       </li>
     </ul>
   </div>
   <ol class="am-control-nav am-control-paging">
-    <li v-repeat="list"><a href="#" v-class="am-active: $index === current">{{ $index+1 }}</a></li>
+    <li v-for="i in list"><a href="#" v-class="am-active: $index === current">{{ $index+1 }}</a></li>
   </ol>
   <ul class="am-direction-nav">
     <li class="am-nav-prev"><a class="am-prev" href="#"> </a></li>

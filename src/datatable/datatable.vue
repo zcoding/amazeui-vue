@@ -3,7 +3,7 @@
 <table class="am-table am-table-bordered am-table-radius">
   <thead>
     <tr>
-      <th v-for="h in headers" @click="sort($index, h)">{{ h }}</th>
+      <th v-for="h in headers" v-on:click="sort($index, h)">{{ h }}</th>
     </tr>
   </thead>
   <tbody>

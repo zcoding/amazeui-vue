@@ -1,14 +1,14 @@
 <template>
 
 <grid>
-  <column :sm="12">
-    <pagination :page="2" :total="10" :link="createLink" left></pagination>
+  <column v-bind:sm="12">
+    <pagination v-bind:page="2" v-bind:total="10" v-bind:link="createLink" left></pagination>
   </column>
-  <column :sm="12">
-    <pagination :page="5" :total="10" :link="createLink" centered></pagination>
+  <column v-bind:sm="12">
+    <pagination v-bind:page="5" v-bind:total="10" v-bind:link="createLink" centered></pagination>
   </column>
-  <column :sm="12">
-    <pagination :page="8" :total="10" :link="createLink" right></pagination>
+  <column v-bind:sm="12">
+    <pagination v-bind:page="8" v-bind:total="10" v-bind:link="createLink" right></pagination>
   </column>
 </grid>
 

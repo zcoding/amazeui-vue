@@ -2,7 +2,7 @@
 
 <div class="am-form-group">
   <label class="am-checkbox-inline" v-for="item in items">
-    <input type="checkbox" :name="name" :value="item.value" v-model="model"> {{ item.label }}
+    <input type="checkbox" v-bind:name="name" v-bind:value="item.value" v-model="model"> {{ item.label }}
   </label>
 </div>
 

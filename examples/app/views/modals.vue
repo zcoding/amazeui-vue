@@ -1,24 +1,24 @@
 <template>
 
 <grid>
-  <column :sm="12" :md="8" :lg="6">
-    <button class="am-btn am-btn-default" type="button" @click="showModal=true">open modal</button>
-    <button class="am-btn am-btn-primary" type="button" @click="showAlert=true">alert</button>
-    <button class="am-btn am-btn-secondary" type="button" @click="showConfirm=true">confirm</button>
-    <button class="am-btn am-btn-success" type="button" @click="showPrompt=true">prompt</button>
+  <column v-bind:sm="12" v-bind:md="8" v-bind:lg="6">
+    <button class="am-btn am-btn-default" type="button" v-on:click="showModal=true">open modal</button>
+    <button class="am-btn am-btn-primary" type="button" v-on:click="showAlert=true">alert</button>
+    <button class="am-btn am-btn-secondary" type="button" v-on:click="showConfirm=true">confirm</button>
+    <button class="am-btn am-btn-success" type="button" v-on:click="showPrompt=true">prompt</button>
   </column>
 </grid>
 
-<modal :show.sync="showModal" lg>
+<modal v-bind:show.sync="showModal" lg>
   <div class="am-modal-hd" slot="header">yeah</div>
   <div class="am-modal-bd" slot="body">nothing</div>
 </modal>
 
-<alert :show.sync="showAlert" v-on:ok="clickAlertOK">好好好</alert>
+<alert v-bind:show.sync="showAlert" v-on:ok="clickAlertOK">好好好</alert>
 
-<confirm :show.sync="showConfirm" v-on:ok="clickConfirmOK" v-on:cancel="clickConfirmCancel">Are you OK ?</confirm>
+<confirm v-bind:show.sync="showConfirm" v-on:ok="clickConfirmOK" v-on:cancel="clickConfirmCancel">Are you OK ?</confirm>
 
-<prompt :show.sync="showPrompt" v-on:ok="clickPromptOK" v-on:cancel="clickPromptCancel">输入你的名字</prompt>
+<prompt v-bind:show.sync="showPrompt" v-on:ok="clickPromptOK" v-on:cancel="clickPromptCancel">输入你的名字</prompt>
 
 </template>
 
