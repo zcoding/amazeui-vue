@@ -9,10 +9,10 @@
     <time-picker v-bind:selected-date.sync="dateTime">
   </div>
   <div class="am-datepicker-toggle" v-show="showDatePicker" v-on:click="handleToggleTime">
-    <icon name="clock-o">
+    <icon name="clock-o"></icon>
   </div>
   <div class="am-datepicker-toggle" v-show="showTimePicker" v-on:click="handleToggleDate">
-    <icon name="calendar">
+    <icon name="calendar"></icon>
   </div>
 </div>
 
