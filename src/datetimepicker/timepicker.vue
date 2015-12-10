@@ -131,7 +131,7 @@ export default {
     },
 
     showDate() {
-      this.$dispatch('view-change', {
+      this.$dispatch('viewchange', {
         date: true,
         time: false
       });

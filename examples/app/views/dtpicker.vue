@@ -23,7 +23,7 @@ export default {
       myDate1: new Date('2010-1-3 4:5:6'),
       myDateMin1: '2010-1-1 4:5:6',
       myDateMax1: '2010-1-20 4:5:6',
-      myDate2: '2015-12-12 13:14:15',
+      myDate2: '2015-12-12 13:14',
       myDateMin2: '2015-12-1 13:14:15',
       myDateMax2: '2015-12-30 13:14:15'
     };

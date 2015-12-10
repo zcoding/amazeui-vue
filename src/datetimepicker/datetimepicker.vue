@@ -6,12 +6,12 @@
     <date-picker v-bind:selected-date.sync="dateTime">
   </div>
   <div class="am-datepicker-time" v-if="showTimePicker" v-show="show.time">
-    <time-picker v-bind:selected-date.sync="dateTime" v-on:view-change="handleViewChange">
+    <time-picker v-bind:selected-date.sync="dateTime" v-on:viewchange="handleViewChange">
   </div>
-  <div class="am-datepicker-toggle" v-if="showDatePicker&&showTimePicker" v-show="show.time" v-on:click="handleToggleTime">
+  <div class="am-datepicker-toggle" v-if="showDatePicker&&showTimePicker" v-show="show.date" v-on:click="handleToggleTime">
     <icon name="clock-o"></icon>
   </div>
-  <div class="am-datepicker-toggle" v-if="showTimePicker&&showTimePicker" v-show="show.date" v-on:click="handleToggleDate">
+  <div class="am-datepicker-toggle" v-if="showTimePicker&&showTimePicker" v-show="show.time" v-on:click="handleToggleDate">
     <icon name="calendar"></icon>
   </div>
 </div>
@@ -105,13 +105,13 @@ export default {
     add() {},
 
     handleToggleTime() {
-      this.show.date = true,
-      this.show.time = false;
+      this.show.date = false,
+      this.show.time = true;
     },
 
     handleToggleDate() {
-      this.show.date = false,
-      this.show.time = true;
+      this.show.date = true,
+      this.show.time = false;
     },
 
     handleViewChange(show) {

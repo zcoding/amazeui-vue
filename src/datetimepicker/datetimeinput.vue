@@ -1,9 +1,9 @@
 <template>
 
 <div class="am-form-group" v-el:pos-obj>
-  <input type="text" class="am-form-field" v-model="dateTime" v-on:focus="handleClick" v-on:blur="show=false">
+  <input type="text" class="am-form-field" v-model="dateTime" v-on:click="handleClick">
 </div>
-<date-time-picker v-if="show" v-bind:date-time.sync="dateTimePicker" v-bind:caret-displayed="true" v-bind:style="pos"></date-time-picker>
+<date-time-picker v-if="show" v-bind:date-time.sync="dateTimeDate" caret-displayed v-bind:style="pos"></date-time-picker>
 
 </template>
 
@@ -26,7 +26,7 @@ export default {
   },
 
   data() {
-    var dateTimePicker = new Date(this.dateTime);
+    var dateTimeDate = new Date(this.dateTime);
     return {
       show: false,
       pos: {
@@ -35,8 +35,15 @@ export default {
         "position": 'absolute',
         "z-index": 1120
       },
-      dateTimePicker: dateTimePicker
+      dateTimeDate: dateTimeDate
     };
+  },
+
+  watch: {
+    dateTimeDate(date) {
+      this.dateTime = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}`;
+      this.show = false;
+    }
   },
 
   methods: {
