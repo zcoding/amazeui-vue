@@ -4,7 +4,7 @@
   <div class="am-viewport">
     <ul class="am-slides">
       <li class="clone" v-for="item in list">
-        <img v-attr="src: item.img">
+        <img v-bind:src="item.img">
         <div class="am-slider-desc" v-if="item.text">{{ item.text }}</div>
       </li>
     </ul>
@@ -22,18 +22,15 @@
 
 <script>
 
-module.exports = {
+export default {
 
-  ready: function() {
+  ready() {
     // initialize
   },
 
   props: {
     list: {
       type: Array,
-      default: function() {
-        return [];
-      },
       required: true
     }
   },

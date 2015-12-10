@@ -15,8 +15,8 @@
 <style lang="stylus">
 
 .modal-fade-transition
-  transition background-color 300ms 0s
   -webkit-transition background-color 300ms 0s
+  transition background-color 300ms 0s
 .modal-fade-enter, .modal-fade-leave
   background-color rgba(0, 0, 0, 0)
 
