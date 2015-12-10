@@ -17,15 +17,10 @@ import yearsPicker from './yearspicker.vue';
 export default {
   props: {
     selectedDate: {
+      type: Date,
       twoWay: true,
-      default() {
-        return new Date();
-      }
+      required: true
     }
-  },
-
-  created() {
-    this.viewDate = new Date(this.selectedDate.valueOf());
   },
 
   components: {
@@ -35,13 +30,14 @@ export default {
   },
 
   data() {
+    var viewDate = new Date(this.selectedDate.valueOf());
     return {
       show: {
         days: true,
         months: false,
         years: false
       },
-      viewDate: new Date()
+      viewDate: viewDate
     };
   },
 

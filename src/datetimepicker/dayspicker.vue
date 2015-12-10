@@ -4,15 +4,15 @@
   <table class="am-datepicker-table">
     <thead>
     <tr class="am-datepicker-header">
-      <th class="am-datepicker-prev" @click="prevMonth">
+      <th class="am-datepicker-prev" v-on:click="prevMonth">
         <i class="am-datepicker-prev-icon"></i>
       </th>
-      <th class="am-datepicker-switch" colspan="5" @click="showMonths">
+      <th class="am-datepicker-switch" colspan="5" v-on:click="showMonths">
         <div class="am-datepicker-select">
-          {{ viewDate.getMonth()+1 }}月 {{ viewDate.getFullYear() }}
+          {{ viewDate.getFullYear() }} 年 {{ viewDate.getMonth() | localMonth }}
         </div>
       </th>
-      <th class="am-datepicker-next" @click="nextMonth">
+      <th class="am-datepicker-next" v-on:click="nextMonth">
         <i class="am-datepicker-next-icon"></i>
       </th>
     </tr>
@@ -23,13 +23,13 @@
     <tbody>
       <tr v-for="row in days">
         <td class="am-datepicker-day" v-for="day in row"
-        :class="{
+        v-bind:class="{
           'am-disabled': day.isDisabled,
           'am-active': day.isActive,
           'am-datepicker-old': day.isOld,
           'am-datepicker-new': day.isNew
         }"
-        @click="setSelectedDate(day)">{{ day.show }}</td>
+        v-on:click="setSelectedDate(day)">{{ day.show }}</td>
       </tr>
     </tbody>
   </table>
@@ -45,10 +45,12 @@ export default {
 
   props: {
     selectedDate: {
+      type: Date,
       twoWay: true,
       required: true
     },
     viewDate: {
+      type: Date,
       twoWay: true,
       required: true
     },
@@ -158,6 +160,23 @@ export default {
         , 5: '五'
         , 6: '六'
         , 7: '日'
+      }[num];
+    },
+
+    localMonth(num) {
+      return {
+        0: '一月',
+        1: '二月',
+        2: '三月',
+        3: '四月',
+        4: '五月',
+        5: '六月',
+        6: '七月',
+        7: '八月',
+        8: '九月',
+        9: '十月',
+        10: '十一月',
+        11: '十二月'
       }[num];
     }
   },

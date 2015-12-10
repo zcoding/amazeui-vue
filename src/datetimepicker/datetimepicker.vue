@@ -2,16 +2,16 @@
 
 <div class="am-datepicker">
   <div class="am-datepicker-caret" v-if="caretDisplayed"></div>
-  <div class="am-datepicker-date" v-if="showDatePicker">
+  <div class="am-datepicker-date" v-if="showDatePicker" v-show="show.date">
     <date-picker v-bind:selected-date.sync="dateTime">
   </div>
-  <div class="am-datepicker-time" v-if="showTimePicker">
-    <time-picker v-bind:selected-date.sync="dateTime">
+  <div class="am-datepicker-time" v-if="showTimePicker" v-show="show.time">
+    <time-picker v-bind:selected-date.sync="dateTime" v-on:view-change="handleViewChange">
   </div>
-  <div class="am-datepicker-toggle" v-show="showDatePicker" v-on:click="handleToggleTime">
+  <div class="am-datepicker-toggle" v-if="showDatePicker&&showTimePicker" v-show="show.time" v-on:click="handleToggleTime">
     <icon name="clock-o"></icon>
   </div>
-  <div class="am-datepicker-toggle" v-show="showTimePicker" v-on:click="handleToggleDate">
+  <div class="am-datepicker-toggle" v-if="showTimePicker&&showTimePicker" v-show="show.date" v-on:click="handleToggleDate">
     <icon name="calendar"></icon>
   </div>
 </div>
@@ -57,7 +57,7 @@ export default {
     },
     showTimePicker: {
       type: Boolean,
-      default: false
+      default: true
     },
     showDatePicker: {
       type: Boolean,
@@ -89,6 +89,12 @@ export default {
   },
 
   data() {
+    return {
+      show: {
+        date: true,
+        time: false
+      }
+    };
   },
 
   methods: {
@@ -99,13 +105,17 @@ export default {
     add() {},
 
     handleToggleTime() {
-      this.showDatePicker = false,
-      this.showTimePicker = true;
+      this.show.date = true,
+      this.show.time = false;
     },
 
     handleToggleDate() {
-      this.showDatePicker = true,
-      this.showTimePicker = false;
+      this.show.date = false,
+      this.show.time = true;
+    },
+
+    handleViewChange(show) {
+      this.show = show;
     }
   }
 

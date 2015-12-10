@@ -95,6 +95,11 @@ export default {
       newDate.setHours(hour.show);
       this.viewDate = newDate;
       this.selectedDate = new Date(newDate.valueOf());
+      this.$dispatch('view-change', {
+        wrapper: true,
+        hours: false,
+        minutes: false
+      });
     }
   }
 

@@ -9,7 +9,7 @@
           <i class="am-datepicker-prev-icon"></i>
         </th>
         <th class="am-datepicker-switch" colspan="5" v-on:click="showDate">
-          <div class="am-datepicker-select">today</div>
+          <div class="am-datepicker-select">{{ dateShow }}</div>
         </th>
         <th class="am-datepicker-next" v-on:click="nextMinute">
           <i class="am-datepicker-next-icon"></i>
@@ -78,6 +78,19 @@ export default {
         hour: hour,
         minute: minute
       };
+    },
+    dateShow() {
+      var viewDate = this.viewDate;
+      var year = viewDate.getFullYear();
+      var month = viewDate.getMonth() + 1;
+      if (month < 10) {
+        month = '0' + month;
+      }
+      var date = viewDate.getDate();
+      if (date < 10) {
+        date = '0' + date;
+      }
+      return  `${year}-${month}-${date}`;
     }
   },
 
@@ -117,7 +130,18 @@ export default {
       this.selectedDate = new Date(newDate.valueOf());
     },
 
-    showDate() {}
+    showDate() {
+      this.$dispatch('view-change', {
+        date: true,
+        time: false
+      });
+    }
+  },
+
+  events: {
+    "view-change"(show) {
+      this.show = show;
+    }
   }
 
 };
