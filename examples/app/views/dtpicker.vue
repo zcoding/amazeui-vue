@@ -16,6 +16,12 @@
   <column v-bind:sm="3">
     <date-time-input v-bind:date-time.sync="myDate2"></date-time-input>
   </column>
+  <column v-bind:sm="3">
+    <date-time-input v-bind:date-time.sync="myDate2" date-only></date-time-input>
+  </column>
+  <column v-bind:sm="3">
+    <date-time-input v-bind:date-time.sync="myDate2" time-only></date-time-input>
+  </column>
 </grid>
 
 </template>
