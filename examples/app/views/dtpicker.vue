@@ -4,10 +4,16 @@
   <column v-bind:sm="12">
     <p>{{ myDate1 | formatDate 'yyyy年MM月dd日,星期D hh:mm' }}</p>
   </column>
-  <column v-bind:sm="12">
+  <column v-bind:sm="3">
     <date-time-picker v-bind:date-time.sync="myDate1"></date-time-picker>
   </column>
-  <column v-bind:sm="4">
+  <column v-bind:sm="3">
+    <date-time-picker v-bind:date-time.sync="myDate1" v-bind:show-time-picker="false"></date-time-picker>
+  </column>
+  <column v-bind:sm="3">
+    <date-time-picker v-bind:date-time.sync="myDate1" v-bind:show-date-picker="false"></date-time-picker>
+  </column>
+  <column v-bind:sm="3">
     <date-time-input v-bind:date-time.sync="myDate2"></date-time-input>
   </column>
 </grid>

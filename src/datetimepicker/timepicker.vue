@@ -42,25 +42,21 @@ export default {
 
   props: {
     selectedDate: {
+      type: Date,
       twoWay: true,
-      default() {
-        return new Date();
-      }
+      required: true
     }
   },
 
-  created() {
-    this.viewDate = new Date(this.selectedDate.valueOf());
-  },
-
   data() {
+    var viewDate = new Date(this.selectedDate.valueOf());
     return {
       show: {
         wrapper: true,
         hours: false,
         minutes: false
       },
-      viewDate: new Date()
+      viewDate: viewDate
     };
   },
 

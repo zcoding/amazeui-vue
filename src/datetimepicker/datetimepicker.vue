@@ -11,7 +11,7 @@
   <div class="am-datepicker-toggle" v-if="showDatePicker&&showTimePicker" v-show="show.date" v-on:click="handleToggleTime">
     <icon name="clock-o"></icon>
   </div>
-  <div class="am-datepicker-toggle" v-if="showTimePicker&&showTimePicker" v-show="show.time" v-on:click="handleToggleDate">
+  <div class="am-datepicker-toggle" v-if="showDatePicker&&showTimePicker" v-show="show.time" v-on:click="handleToggleDate">
     <icon name="calendar"></icon>
   </div>
 </div>
@@ -88,6 +88,11 @@ export default {
     }
   },
 
+  compiled() {
+    this.show.date = this.showDatePicker;
+    this.show.time = !this.showDatePicker && this.showTimePicker;
+  },
+
   data() {
     return {
       show: {
@@ -115,7 +120,8 @@ export default {
     },
 
     handleViewChange(show) {
-      this.show = show;
+      this.show.date = show.date && this.showDatePicker;
+      this.show.time = show.time || !this.showDatePicker && this.showTimePicker;
     }
   }
 
