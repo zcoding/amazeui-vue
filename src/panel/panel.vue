@@ -10,7 +10,7 @@
 
 <style lang="stylus">
 
-speed = .3s
+speed = 300ms
 
 .collapse-transition
   position relative
@@ -51,6 +51,7 @@ module.exports = {
         utils.repaintTrigger(el);
       },
       afterEnter: function(el) {
+        el.style.height = '';
       },
       beforeLeave: function(el) {
         this.height = window.getComputedStyle(el).height;
