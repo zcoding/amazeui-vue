@@ -14,7 +14,7 @@
 
 import modal from './modal.vue';
 
-module.exports = {
+export default {
 
   props: {
     title: {
