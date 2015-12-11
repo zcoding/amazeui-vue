@@ -47,14 +47,6 @@ export default {
         return new Date();
       }
     },
-    onSelect: {
-      type: Function,
-      default: utils.noop
-    },
-    onClose: {
-      type: Function,
-      default: utils.noop
-    },
     showTimePicker: {
       type: Boolean,
       default: true
@@ -103,11 +95,6 @@ export default {
   },
 
   methods: {
-    subtract() {},
-
-    showFunc() {},
-
-    add() {},
 
     handleToggleTime() {
       this.show.date = false,

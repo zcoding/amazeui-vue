@@ -93,8 +93,8 @@ export default {
       nextMonth.setDate(nextMonth.getDate() + 42);
       nextMonth = nextMonth.valueOf();
 
-      // var minDate = this.props.minDate && fecha.parse(this.props.minDate);
-      // var maxDate = this.props.maxDate && fecha.parse(this.props.maxDate);
+      // var minDate = this.props.minDate;
+      // var maxDate = this.props.maxDate;
 
       var cells = [], prevY, prevM;
 
@@ -124,7 +124,7 @@ export default {
         // if ((minDate && prevMonth.valueOf() < minDate) || (maxDate && prevMonth.valueOf() > maxDate)) {
         // }
 
-         // week disabled
+        // week disabled
         // if (this.props.daysOfWeekDisabled) {
         //   _ref = this.props.daysOfWeekDisabled;
         //   for (_i = 0, _len = _ref.length; _i < _len; _i++) {
