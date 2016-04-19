@@ -60,7 +60,7 @@ var components = {
 
 module.exports = function(Vue) {
 
-  for (let name in components) {
+  for (var name in components) {
     Vue.component(name, components[name]);
   }
 

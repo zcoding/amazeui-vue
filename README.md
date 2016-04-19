@@ -1,5 +1,5 @@
 # amazeui-vue
-[amazeui](https://github.com/amazeui/amazeui) components built with [vue.js](https://github.com/vuejs/vue)
+[AmazeUI](https://github.com/amazeui/amazeui) components built with [vue.js](https://github.com/vuejs/vue)
 
 [![version](https://img.shields.io/npm/v/amazeui-vue.svg?style=flat-square "version")](https://www.npmjs.com/package/amazeui-vue)
 [![LICENSE](https://img.shields.io/npm/l/amazeui-vue.svg?style=flat-square "license")](./LICENSE)
@@ -8,13 +8,14 @@
 ### NPM
 `npm install amazeui-vue`
 
-it's recommended to use vuejs + webpack + amazeui-vue !
+It's recommended to use vuejs + webpack + amazeui-vue !
 
 ### Standalone
-The build-all-in-one file is in the 'build' folder.
+The build-all-in-one file is in the 'dist' folder.
 
 ```html
-<head>
+<body>
+  <!-- hello world -->
   <!-- remember to add vue.js lib and amazeui styles -->
   <link rel="stylesheet" href="path/to/amazeui.css">
   <script src="path/to/vue.js"></script>
@@ -25,7 +26,7 @@ The build-all-in-one file is in the 'build' folder.
   Vue.use(amazeuiVue);
   // now you can use it as you like
   </script>
-</head>
+</body>
 ```
 
 ## About
@@ -44,7 +45,11 @@ If you want to use the react version, you can find it [here](https://github.com/
 + [中文](./README.CN.md)
 
 ## Run examples
-`npm run dev` and then `npm start`
+__New__
+
+Now `amazeui-vue` use `webpack-dev-server` to run the examples.What you need to do is just `npm run dev` and then open your favourite browser and access `http://localhost:9999`.
+
+And hot-reload is support too.
 
 ## Components Available Now
 + `grid`

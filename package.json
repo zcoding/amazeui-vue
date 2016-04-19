@@ -1,6 +1,6 @@
 {
   "name": "amazeui-vue",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "author": "zcoding",
   "description": "Amaze UI components built with vue.js",
   "main": "src/index.js",
@@ -10,11 +10,8 @@
     "doc": "doc"
   },
   "scripts": {
-    "start": "node scripts/server.js",
-    "clean": "node scripts/clean.js",
-    "predev": "npm run clean",
-    "dev": "webpack --progress --colors --config ./examples/webpack.config.js",
-    "build": "webpack --progress --colors --config ./webpack.build.js"
+    "dev": "webpack-dev-server --progress --inline --hot --config examples-dev/webpack.dev.js --content-base examples-dev/ --port 9999",
+    "build": "webpack --progress --config webpack.build.js"
   },
   "repository": {
     "type": "git",
@@ -44,21 +41,19 @@
     "babel-runtime": "^6.2.0",
     "chalk": "^1.1.1",
     "css-loader": "^0.21.0",
-    "koa": "^1.1.2",
-    "koa-route": "^2.4.2",
     "koa-static": "^1.5.2",
     "open": "0.0.5",
     "style-loader": "^0.13.0",
     "stylus-loader": "^1.4.2",
-    "vue": "^1.0.10",
     "vue-hot-reload-api": "^1.2.0",
     "vue-html-loader": "^1.0.0",
     "vue-loader": "^7.1.5",
     "vue-router": "^0.7.5",
-    "webpack": "^1.12.9"
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
   },
   "peerDependencies": {
-    "vue": "^1.0.10",
+    "vue": "^1.0.21",
     "vue-loader": "^7.1.5",
     "stylus-loader": "^1.4.2"
   },

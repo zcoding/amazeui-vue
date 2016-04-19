@@ -11,10 +11,11 @@
 推荐使用 vuejs + webpack + amazeui-vue
 
 ### 非模块化
-build目录下有一个打包好的非模块化文件，用script标签引入即可使用
+dist目录下有一个打包好的非模块化文件，用script标签引入即可使用
 
 ```html
-<head>
+<body>
+  <!-- Hello world! -->
   <!-- 记得引入vue.js库和AmazeUI的样式文件 -->
   <link rel="stylesheet" href="path/to/amazeui.css">
   <script src="path/to/vue.js"></script>
@@ -25,7 +26,7 @@ build目录下有一个打包好的非模块化文件，用script标签引入即
   Vue.use(amazeuiVue);
   // 然后就可以正常使用了
   </script>
-</head>
+</body>
 ```
 
 ## 关于
@@ -44,7 +45,10 @@ build目录下有一个打包好的非模块化文件，用script标签引入即
 + [English](./README.md)
 
 ## 运行例子
-先跑 `npm run dev` 然后跑 `npm start`
+
+*__更新__*
+
+现在的例子使用`webpack-dev-server`来跑，而且支持hot-reload，你要做的就是运行`npm run dev`然后打开浏览器，访问`localhost:9999`
 
 ## 目前可以使用的组件
 + `grid`
@@ -76,47 +80,13 @@ build目录下有一个打包好的非模块化文件，用script标签引入即
 + `nprogress`
 
 ## 如何使用
-vue.js组件系统要求使用组件前必须先注册，安装amazeui-vue并不会将组件注册到你的项目中，所以你必须手动注册。当然，注册方法非常的简单。
+vue.js组件系统要求使用组件前必须先注册，安装amazeui-vue并不会将组件注册到你的项目中，所以你必须手动注册。
 
-你可以把amazeui-vue组件注册到全局或者局部，注意两者的区别：[vue.js: 如何使用组件](http://cn.vuejs.org/guide/components.html#使用组件)。
-
-### 注册到全局
-amazeui-vue提供了一个install函数，让你可以像使用vue.js插件一样使用amazeui-vue：
 ```javascript
-Vue.use(require('amazeui-vue').install);
-```
-这样amazeui-vue组件就注册到全局，而且他们将会被同步加载。
-
-如果你希望使用[异步组件](http://cn.vuejs.org/guide/components.html#异步组件)，就换成install-async函数：
-```javascript
-Vue.use(require('amazeui-vue').installAsync);
+Vue.use(require('amazeui-vue'));
 ```
 
-### 局部注册
-
-**_同步加载_**
-```javascript
-import amButton from 'amazeui-vue/src/button/am-button.vue'; // 你可能需要babel-loader来兼容ES2015语法
-// 或者用CommonJS语法
-// var amButton = require('amazeui-vue').button;
-// ...
-export default {
-  components: {
-    "amButton": amButton
-  }
-}
-```
-
-**_异步加载_** (使用webpack)
-```javascript
-export default {
-  components: {
-    "amButton": function(resolve) {
-      require(['amazeui-vue/src/button/am-button.vue'], resolve)
-    }
-  }
-}
-```
+然后就可以在全局范围内使用组件了。
 
 ## 组件
 请查看例子，以后我再补……
