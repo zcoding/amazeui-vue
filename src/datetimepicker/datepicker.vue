@@ -42,7 +42,7 @@ export default {
   },
 
   events: {
-    "view-change"(show) {
+    "view-change": function(show) {
       this.show = show;
     }
   }

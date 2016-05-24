@@ -10,8 +10,8 @@
 
 推荐使用 vuejs + webpack + amazeui-vue
 
-### 非模块化
-dist目录下有一个打包好的非模块化文件，用script标签引入即可使用
+### 全局使用
+dist目录下有一个打包好的文件，用script标签引入即可使用
 
 ```html
 <body>
@@ -48,7 +48,7 @@ dist目录下有一个打包好的非模块化文件，用script标签引入即�
 
 *__更新__*
 
-现在的例子使用`webpack-dev-server`来跑，而且支持hot-reload，你要做的就是运行`npm run dev`然后打开浏览器，访问`localhost:9999`
+现在的例子使用`webpack-dev-server`来跑，而且支持hot-reload，你要做的就是运行`npm run dev`然后打开浏览器，访问`http://localhost:9999`
 
 ## 目前可以使用的组件
 + `grid`
@@ -89,4 +89,4 @@ Vue.use(require('amazeui-vue'));
 然后就可以在全局范围内使用组件了。
 
 ## 组件
-请查看例子，以后我再补……
+请查看例子

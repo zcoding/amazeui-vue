@@ -18,7 +18,6 @@
 <script>
 
 export default {
-
   props: {
     headers: {
       type: Array,
@@ -39,7 +38,6 @@ export default {
       console.log(index);
     }
   }
-
 };
 
 </script>

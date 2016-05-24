@@ -8,8 +8,7 @@
 
 <script>
 
-module.exports = {
-
+export default {
   props: {
     slash: {
       type: Boolean,
@@ -23,7 +22,6 @@ module.exports = {
       required: true
     }
   }
-
 };
 
 </script>

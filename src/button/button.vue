@@ -10,7 +10,6 @@
 <script>
 
 export default {
-
   props: {
     "amStyle": {
       type: String,
@@ -60,10 +59,10 @@ export default {
   },
 
   computed: {
-    buttonStyle: function() {
-      return 'am-btn-' + this.amStyle;
+    buttonStyle() {
+      return `am-btn-${this.amStyle}`;
     },
-    buttonSize: function() {
+    buttonSize() {
       if (this.xl) {
         return 'am-btn-lg';
       }
@@ -79,7 +78,6 @@ export default {
       return '';
     }
   }
-
 };
 
 </script>

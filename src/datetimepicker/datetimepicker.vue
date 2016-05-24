@@ -18,10 +18,11 @@
 
 </template>
 
-<style lang="stylus">
+<style>
 
-.am-datepicker
-  display block
+.am-datepicker {
+  display: block;
+}
 
 </style>
 

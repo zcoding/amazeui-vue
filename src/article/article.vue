@@ -14,8 +14,7 @@
 
 <script>
 
-module.exports = {
-
+export default {
   props: {
     title: {
       type: String,
@@ -27,7 +26,6 @@ module.exports = {
       default: ''
     }
   }
-
 };
 
 </script>

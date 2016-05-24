@@ -1,12 +1,12 @@
 <template>
 
-<span class="am-badge" v-bind:class="[style, radius?'am-radius':'', round?'am-round':'']"><slot><slot></span>
+<span class="am-badge" :class="[style, radius?'am-radius':'', round?'am-round':'']"><slot><slot></span>
 
 </template>
 
 <script>
 
-module.exports = {
+export default {
   props: {
     amStyle: {
       type: String,
@@ -23,8 +23,8 @@ module.exports = {
   },
 
   computed: {
-    style: function() {
-      return 'am-badge-' + this.amStyle;
+    style() {
+      return `am-badge-${this.amStyle}`;
     }
   }
 };

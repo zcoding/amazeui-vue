@@ -58,10 +58,8 @@ var components = {
   tab: tab
 };
 
-module.exports = function(Vue) {
-
+export default function install(Vue) {
   for (var name in components) {
     Vue.component(name, components[name]);
   }
-
 };

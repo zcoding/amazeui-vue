@@ -1,3 +1,3 @@
-import amazeuiVue from '.';
+import amazeuiVue from './main';
 
 window.amazeuiVue = amazeuiVue;

@@ -3,15 +3,12 @@ var path = require('path');
 
 module.exports = {
 
-  entry: {
-    app: path.resolve(__dirname, './src/index.js'),
-    vendor: ["vue"]
-  },
+  entry: path.resolve(__dirname, '../src/standalone.js'),
 
   output: {
-    path: path.resolve(__dirname, './app'),
-    publicPath: "/app/",
-    filename: "app.js"
+    path: path.resolve(__dirname, '../dist'),
+    publicPath: "/",
+    filename: "amazeui-vue.js"
   },
 
   module: {
@@ -35,17 +32,17 @@ module.exports = {
     }
   },
 
-  resolve: {
-    alias: {
-      "amazeui-vue": path.resolve(__dirname, '..'),
-      "views": path.resolve(__dirname, './src/views')
-    }
-  },
-
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin("vendor", "vue.js")
-  ],
-
-  devtool: "#inline-source-map"
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ]
 
 };

@@ -8,18 +8,17 @@
 
 </template>
 
-<style lang="stylus">
+<style>
 
-speed = 300ms
-
-.collapse-transition
-  position relative
-  overflow hidden
-  -webkit-transition height speed ease
-  transition height speed ease
-
-.collapse-enter, .collapse-leave
-  height 0 !important
+.collapse-transition {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: height 300ms ease;
+  transition: height 300ms ease;
+}
+.collapse-enter, .collapse-leave {
+  height: 0 !important;
+}
 
 </style>
 

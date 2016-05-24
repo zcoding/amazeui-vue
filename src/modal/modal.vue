@@ -12,28 +12,31 @@
 
 </template>
 
-<style lang="stylus">
+<style>
 
-.modal-fade-transition
-  -webkit-transition background-color 300ms 0s
-  transition background-color 300ms 0s
-.modal-fade-enter, .modal-fade-leave
-  background-color rgba(0, 0, 0, 0)
+.modal-fade-transition {
+  -webkit-transition: background-color 300ms 0s;
+  transition: background-color 300ms 0s;
+}
+.modal-fade-enter, .modal-fade-leave {
+  background-color: rgba(0, 0, 0, 0);
+}
 
-.am-modal, .am-dimmer
-  display block
+.am-modal, .am-dimmer {
+  display: block;
+}
 
-.am-modal-lg
-  width 1024px
-  margin-left -512px
-  top 100px
+.am-modal-lg {
+  width: 1024px;
+  margin-left: -512px;
+  top: 100px;
+}
 
 </style>
 
 <script>
 
 export default {
-
   props: {
     show: {
       type: Boolean,
@@ -78,7 +81,6 @@ export default {
       }
     }
   }
-
 };
 
 </script>
