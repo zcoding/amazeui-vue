@@ -4,6 +4,16 @@
 [![version](https://img.shields.io/npm/v/amazeui-vue.svg?style=flat-square "version")](https://www.npmjs.com/package/amazeui-vue)
 [![LICENSE](https://img.shields.io/npm/l/amazeui-vue.svg?style=flat-square "license")](./LICENSE)
 
+## 计划
+
+我打算对这个项目进行一次大升级：不再是简单的封装 AmazeUI 的 HTML 结构，而是把 AmazeUI 的样式也封装进来，并且提供完全不依赖于 jQuery 的官方插件的组件化形式。
+
+以下是接下来的版本（0.4.x）可能会做的事情：
+
+- [ ] 封装 AmazeUI 的样式和 HTML 结构（可能会做一些修改）为 Vue 组件
+- [ ] AmazeUI 官方插件进行 Vue 组件化
+- [ ] 提供非官方的个性化组件 :wink:
+
 ## Installation
 ### NPM
 `npm install amazeui-vue`
